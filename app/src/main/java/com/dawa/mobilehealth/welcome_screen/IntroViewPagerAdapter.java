@@ -39,7 +39,6 @@ public class IntroViewPagerAdapter extends PagerAdapter {
         title.setText(mListScreen.get(position).getTitle());
         description.setText(mListScreen.get(position).getDescription());
         imgSlide.setImageResource(mListScreen.get(position).getScreenImg());
-
         container.addView(layoutScreen);
 
         return layoutScreen;
@@ -59,6 +58,5 @@ public class IntroViewPagerAdapter extends PagerAdapter {
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
 
         container.removeView((View)object);
-
     }
 }

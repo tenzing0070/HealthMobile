@@ -64,20 +64,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         chkRemember = findViewById(R.id.cbRemember);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
-
         if (rememberMe.getString("username", "").isEmpty()) {
             chkRemember.setChecked(false);
         } else {
             etusername.setText(rememberMe.getString("username", ""));
             etpassword.setText(rememberMe.getString("password", ""));
             chkRemember.setChecked(true);
-
         }
-
 
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
-
     }
 
     @Override
@@ -94,7 +90,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-
 
     private void login() {
 
@@ -140,7 +135,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         } else {
             Toast.makeText(LoginActivity.this, "Enter Field", Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -148,7 +142,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Intent openDash = new Intent(this, IntroActivity.class);
         startActivity(openDash);
     }
-
 
     public void openSignup(){
         Intent openSignup = new Intent(this, SignupActivity.class);

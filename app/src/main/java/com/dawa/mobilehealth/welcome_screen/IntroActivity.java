@@ -24,7 +24,6 @@ import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
 
-
     private ViewPager screenPager;
     IntroViewPagerAdapter introViewPagerAdapter ;
     TabLayout tabIndicator;
@@ -38,14 +37,11 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
         if (restorePrefData()) {
-
             Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class );
             startActivity(mainActivity);
             finish();
@@ -67,10 +63,7 @@ public class IntroActivity extends AppCompatActivity {
         screenPager =findViewById(R.id.screen_viewpager);
         introViewPagerAdapter = new IntroViewPagerAdapter(this,mList);
         screenPager.setAdapter(introViewPagerAdapter);
-
-
         tabIndicator.setupWithViewPager(screenPager);
-
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,50 +71,31 @@ public class IntroActivity extends AppCompatActivity {
 
                 position = screenPager.getCurrentItem();
                 if (position < mList.size()) {
-
                     position++;
                     screenPager.setCurrentItem(position);
-
-
                 }
 
                 if (position == mList.size()-1) {
-
-
                     loadLastScreen();
-
-
                 }
-
-
-
             }
         });
-
-
-
 
         tabIndicator.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
                 if (tab.getPosition() == mList.size()-1) {
-
                     loadLastScreen();
-
                 }
-
-
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
 
@@ -133,9 +107,6 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(mainActivity);
                 savePrefsData();
                 finish();
-
-
-
             }
         });
 
@@ -161,8 +132,6 @@ public class IntroActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean("isIntroOpnend",true);
         editor.commit();
-
-
     }
 
     private void loadLastScreen() {
@@ -172,9 +141,6 @@ public class IntroActivity extends AppCompatActivity {
         tvSkip.setVisibility(View.INVISIBLE);
         tabIndicator.setVisibility(View.INVISIBLE);
         btnGetStarted.setAnimation(btnAnim);
-
-
-
     }
 }
 

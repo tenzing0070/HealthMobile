@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectFragment = null;
                     switch (item.getItemId()){
 
-
                         case R.id.nav_home:
                             selectFragment = new HomeFragment();
                             break;

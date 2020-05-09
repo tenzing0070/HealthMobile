@@ -15,8 +15,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgotpassword);
     }
 
-    public void OpenLogin(View view) {
-        Intent openLogin = new Intent(this, LoginActivity.class);
-        startActivity(openLogin);
+    public void LoginOpen(View view) {
+        Intent loginopen = new Intent(this, LoginActivity.class);
+        startActivity(loginopen);
     }
 }

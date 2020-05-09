@@ -12,7 +12,6 @@ import retrofit2.Response;
 
 public class LoginBLL {
 
-
     boolean isSuccess = true;
 
     public boolean checkUser(String username, String password) {

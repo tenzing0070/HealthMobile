@@ -147,7 +147,7 @@ public class SignupActivity  extends AppCompatActivity {
         Call<ImageResponse> responseBodyCall = usersAPI.uploadImage(body);
 
         StrictModeClass.StrictMode();
-        //Synchronous methd
+        //Synchronous method
         try {
             Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
             imageName = imageResponseResponse.body().getFilename();

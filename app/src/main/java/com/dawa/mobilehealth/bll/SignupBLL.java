@@ -12,8 +12,6 @@ import retrofit2.Response;
 
 public class SignupBLL {
 
-
-
     boolean isSuccess = false;
 
     public boolean signUP(String firstname, String lastname, String address, String age, String phone, String email, String gender, String username, String password, String image) {
