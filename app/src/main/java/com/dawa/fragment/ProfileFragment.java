@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.login.LoginActivity;
+import com.dawa.mobilehealth.login.UpdateProfileActivity;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -37,7 +38,7 @@ public class ProfileFragment extends Fragment {
         btnMyProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileActivity()).commit();
 
             }
         });

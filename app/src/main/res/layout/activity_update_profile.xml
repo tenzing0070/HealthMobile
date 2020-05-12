@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.UpdateProfileActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfilee"
+        android:layout_width="186dp"
+        android:layout_height="147dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/noimage" />
+
+    <EditText
+        android:id="@+id/txtfirstname"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:drawableStart="@drawable/profileicon"
+        android:textSize="15sp"
+        android:drawableLeft="@drawable/profileicon" />
+
+    <EditText
+        android:id="@+id/txtlastname"
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:drawableStart="@drawable/profileicon"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableLeft="@drawable/profileicon" />
+
+    <EditText
+        android:id="@+id/txtaddress"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Current Address"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/iconaddress"
+        android:drawableLeft="@drawable/iconaddress" />
+
+    <EditText
+        android:id="@+id/txtage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:maxLength="3"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/iconage"
+        android:drawableLeft="@drawable/iconage" />
+
+
+    <EditText
+        android:id="@+id/txtphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone Number"
+        android:inputType="number"
+        android:maxLength="15"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/iconphone"
+        android:drawableLeft="@drawable/iconphone" />
+
+    <EditText
+        android:id="@+id/txtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/iconemail"
+        android:drawableLeft="@drawable/iconemail"/>
+
+    <EditText
+        android:id="@+id/txtgender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Gender"
+        android:inputType="text"
+        android:maxLength="15"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/icongender"
+        android:drawableLeft="@drawable/icongender" />
+
+
+
+    <EditText
+        android:id="@+id/txtusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Username"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:drawableStart="@drawable/iconusername"
+        android:drawableLeft="@drawable/iconusername" />
+
+
+    <Button
+        android:id="@+id/btnUpdateProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/register_button_custom"
+        android:fontFamily="monospace"
+        android:text="UPDATE"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
