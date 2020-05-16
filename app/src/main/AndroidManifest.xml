@@ -25,6 +25,7 @@
             android:label="@string/title_activity_login"></activity>
 
 
+        <activity android:name=".FuqActivity"/>
         <activity android:name=".welcome_screen.IntroActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".login.ForgotPasswordActivity"/>

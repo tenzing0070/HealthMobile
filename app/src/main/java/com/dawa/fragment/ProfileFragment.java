@@ -18,7 +18,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
+import com.dawa.mobilehealth.FuqActivity;
+import com.dawa.mobilehealth.MainActivity;
 import com.dawa.mobilehealth.R;
+
 import com.dawa.mobilehealth.login.LoginActivity;
 import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
@@ -60,6 +63,16 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileActivity()).commit();
 
+            }
+        });
+
+
+        //FAQ
+        Button btnFaq = v.findViewById(R.id.btnFaq);
+        btnFaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FuqActivity()).commit();
             }
         });
 
