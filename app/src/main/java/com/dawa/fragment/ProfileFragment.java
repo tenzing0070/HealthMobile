@@ -72,7 +72,9 @@ public class ProfileFragment extends Fragment {
         btnFaq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FuqActivity()).commit();
+                Intent in = new Intent(getActivity(),FuqActivity.class);
+                startActivity(in);
+
             }
         });
 
@@ -174,9 +176,6 @@ public class ProfileFragment extends Fragment {
         }
 
 
-
-
-        //return v;
     }
 
 

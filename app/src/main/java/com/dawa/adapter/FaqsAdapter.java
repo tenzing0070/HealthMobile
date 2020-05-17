@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,17 +22,17 @@ public class FaqsAdapter extends RecyclerView.Adapter<FaqsAdapter.FaqVH> {
 
     List<Faqs> faqsList;
 
-
-    public FaqsAdapter(List<Faqs> faqsList) {
+    public FaqsAdapter(List<Faqs> faqsList)
+    {
         this.faqsList = faqsList;
     }
 
     @NonNull
     @Override
     public FaqVH onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        //chage to activity_faq_list
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_update_profile,parent,false);
-        return new FaqVH(v);
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_faq_list,parent,false);
+        return new FaqVH(view);
     }
 
     @Override
@@ -56,6 +57,7 @@ public class FaqsAdapter extends RecyclerView.Adapter<FaqsAdapter.FaqVH> {
 
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
+
         public FaqVH(@NonNull View itemView) {
             super(itemView);
 

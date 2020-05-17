@@ -11,16 +11,28 @@
         android:id="@+id/rowlinear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorGrayLight">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
         <TextView
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Question"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:padding="16dp"
             android:textColor="@color/colorBlack"/>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,12 +46,8 @@
                 android:padding="16dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorGreen"/>
-
+                android:textColor="@color/colorBlack"/>
 
         </RelativeLayout>
-
-
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

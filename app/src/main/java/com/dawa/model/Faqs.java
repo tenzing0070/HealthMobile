@@ -36,7 +36,6 @@ public class Faqs {
         this.expandable = false;
     }
 
-
     @Override
     public String toString() {
         return "Faqs{" +
