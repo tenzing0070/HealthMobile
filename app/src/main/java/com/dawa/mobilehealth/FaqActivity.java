@@ -1,45 +1,45 @@
 package com.dawa.mobilehealth;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.adapter.FaqsAdapter;
-import com.dawa.fragment.ProfileFragment;
-import com.dawa.mobilehealth.login.LoginActivity;
 import com.dawa.model.Faqs;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FuqActivity extends AppCompatActivity {
+public class FaqActivity extends Fragment {
 
    RecyclerView recyclerView;
     List<Faqs> faqsList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_faq);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        recyclerView = findViewById(R.id.faq_recycler_view);
+        View view = inflater.inflate(R.layout.activity_faq, container, false);
+
+        recyclerView = view.findViewById(R.id.faq_recycler_view);
 
         initData();
         setRecyclerView();
+        return view;
     }
 
     private void setRecyclerView() {
         FaqsAdapter faqsAdapter = new FaqsAdapter(faqsList);
         recyclerView.setAdapter(faqsAdapter);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(FuqActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
     private void initData() {

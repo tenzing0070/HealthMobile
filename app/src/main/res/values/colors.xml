@@ -10,7 +10,7 @@
 
     //Custom colors
 
-    <color name="colorBlue">#3B94FD</color>
+    <color name="colorBlue">#1877F2</color>
     <color name="colorLightBlue">#25B8AA</color>
     <color name="colorRed">#DF0A0A</color>
     <color name="colorPanel">#BCEDF6</color>
@@ -19,7 +19,7 @@
     <color name="colorGreen">#2AC383</color>
     <color name="colorDarkBlue">#566573</color>
     <color name="colorBrightGreen">#40b33f</color>
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite">#ECF3FF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGrayLight">#C8D8E8</color>
 </resources>

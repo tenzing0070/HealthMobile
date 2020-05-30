@@ -18,8 +18,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
-import com.dawa.mobilehealth.FuqActivity;
-import com.dawa.mobilehealth.MainActivity;
+import com.dawa.mobilehealth.FaqActivity;
+import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.R;
 
 import com.dawa.mobilehealth.login.LoginActivity;
@@ -65,16 +65,12 @@ public class ProfileFragment extends Fragment {
 
             }
         });
-
-
         //FAQ
         Button btnFaq = v.findViewById(R.id.btnFaq);
         btnFaq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getActivity(),FuqActivity.class);
-                startActivity(in);
-
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FaqActivity()).commit();
             }
         });
 
@@ -88,17 +84,15 @@ public class ProfileFragment extends Fragment {
 //            }
 //        });
 //
-//
-//        Button btnFeedback = v.findViewById(R.id.btnFeedback);
-//        btnFeedback.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent openFeedback = new Intent(getActivity(),FeedbackActivity.class);
-//                startActivity(openFeedback);
-//            }
-//        });
+//         Feedback
+        Button btnFeedback = v.findViewById(R.id.btnFeedback);
+        btnFeedback.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FeedbackActivity()).commit();
+            }
+        });
 
         Button btnlogout = v.findViewById(R.id.btnlogout);
         btnlogout.setOnClickListener(new View.OnClickListener() {

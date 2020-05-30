@@ -1,6 +1,7 @@
 package com.dawa.api;
 
 
+import com.dawa.model.feedbacks;
 import com.dawa.model.users;
 import com.dawa.server_response.ImageResponse;
 import com.dawa.server_response.SignUpResponse;
@@ -28,9 +29,9 @@ public interface health_api {
 
     @POST ("users/login")
     Call<users> login(@Body users user);
-//
-//   @POST ("feedbacks/feed")
-//   Call<Void> feed(@Body feedbacks feedback);
+
+   @POST ("feedbacks/feed")
+   Call<Void> feed(@Body feedbacks feedback);
 
     @Multipart
     @POST("upload")

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".FeedbackActivity">
+
+    <TextView
+        android:id="@+id/TextView_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Feedback Is Important For Us!"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:paddingLeft="55dp"
+        android:paddingRight="55dp"
+        android:src="@drawable/health" />
+
+    <EditText
+        android:id="@+id/txtFeedbackEmail"
+        android:layout_height="wrap_content"
+        android:hint="Please enter your email here"
+        android:textColorHint="#090101"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/email"
+        android:padding="10dp"
+        android:drawablePadding="8dp"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/txtFeedbackMessage"
+        android:layout_width="match_parent"
+        android:layout_height="179dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:hint="Feedback here(Max 60 words)"
+        android:inputType="textMultiLine"
+        android:maxLength="60"
+        android:textColorHint="#090101" />
+
+    <Button
+        android:id="@+id/btnSendFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Submit"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:onClick="sendFeedback"
+        android:background="@color/colorPrimaryDark"
+        tools:ignore="OnClick">
+    </Button>
+
+</LinearLayout>
