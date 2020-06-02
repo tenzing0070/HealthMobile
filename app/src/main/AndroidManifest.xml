@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dawa.mobilehealth">
 
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -25,6 +26,7 @@
             android:label="@string/title_activity_login"></activity>
 
 
+        <activity android:name=".FootStepsActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".FaqActivity"/>
         <activity android:name=".welcome_screen.IntroActivity" />

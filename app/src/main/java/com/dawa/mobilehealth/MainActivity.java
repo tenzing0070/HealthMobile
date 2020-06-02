@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.dawa.fragment.HomeFragment;
 import com.dawa.fragment.ProfileFragment;
+import com.dawa.fragment.TrackFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
                             selectFragment = new HomeFragment();
                             break;
 
-//                        case R.id.nav_about_us:
-//                            selectFragment = new AboutUsFragment();
-//                            break;
+                        case R.id.nav_track:
+                            selectFragment = new TrackFragment();
+                            break;
 //
 //                        case R.id.nav_notification:
 //                            selectFragment = new NotificationFragment();
