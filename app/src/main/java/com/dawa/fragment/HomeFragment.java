@@ -10,6 +10,9 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.dawa.mobilehealth.BmiActivity;
+import com.dawa.mobilehealth.FeedbackActivity;
+import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.R;
 
 public class HomeFragment extends Fragment {
@@ -26,6 +29,27 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+        //Foot Steps
+        Button btnStepsCount = v.findViewById(R.id.btnFootSteps);
+        btnStepsCount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openStepCount = new Intent(getActivity(), FootStepsActivity.class);
+                startActivity(openStepCount);
+            }
+        });
+
+        //BMI
+        Button btnBmi = v.findViewById(R.id.btnBmi);
+        btnBmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new BmiActivity()).commit();
+            }
+        });
+
+
+
         return v;
     }
 }

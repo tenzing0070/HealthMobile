@@ -26,6 +26,7 @@
             android:label="@string/title_activity_login"></activity>
 
 
+        <activity android:name=".BmiActivity" />
         <activity android:name=".FootStepsActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".FaqActivity"/>
