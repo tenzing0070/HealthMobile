@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fbfbfb"
-    >
+    android:background="#F0F0F0">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSettings"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp">
 
     <TextView
         android:id="@+id/textView"
@@ -26,39 +36,60 @@
         android:layout_marginLeft="8dp" />
 
 
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"/>
 
-
-        <Button
-            android:id="@+id/btnFootSteps"
-            android:layout_width="wrap_content"
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="Foot\nSteps"
-            android:textColor="@android:color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"/>
-
-        <Button
-            android:id="@+id/btnBmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="Calculate Your\nBMI"
-            android:textColor="@android:color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_toEndOf="@+id/btnFootSteps"
-            android:layout_toRightOf="@+id/btnFootSteps" />
-
-    </RelativeLayout>
+            android:padding="15px"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="2">
 
 
+            <Button
+                android:id="@+id/btnFootSteps"
+                android:layout_width="190dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/settings_button_design"
+                android:text="Foot\nSteps"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/btnBmi"
+                android:layout_width="190dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/settings_button_design"
+                android:text="Calculate\nBMI"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnStopwatch"
+                android:layout_width="190dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/settings_button_design"
+                android:text="Stopwatch"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
+
+        </GridLayout>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

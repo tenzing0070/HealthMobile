@@ -14,6 +14,7 @@ import com.dawa.mobilehealth.BmiActivity;
 import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.StopwatchActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -48,7 +49,15 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
+        //Stopwatch
+        Button btnStopwatch = v.findViewById(R.id.btnStopwatch);
+        btnStopwatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openWatch = new Intent(getActivity(), StopwatchActivity.class);
+                startActivity(openWatch);
+            }
+        });
 
         return v;
     }

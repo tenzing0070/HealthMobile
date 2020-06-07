@@ -103,34 +103,6 @@
             android:rowCount="2">
 
 
-
-
-        <!--    <Button-->
-<!--        android:id="@+id/btnlocation"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="My Current Location"-->
-<!--        android:background="@drawable/settings_location"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:textSize="25sp"-->
-<!--        android:textColor="#fff"-->
-<!--        android:layout_gravity="center_horizontal"/>-->
-
-
-
-<!--    <Button-->
-<!--        android:id="@+id/btnFeedback"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/settings_feedback"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:textSize="25sp"-->
-<!--        android:textColor="#fff"-->
-<!--        android:layout_gravity="center_horizontal"-->
-<!--        android:text="Feedback"/>-->
-
             <Button
                 android:id="@+id/btnMyProfile"
                 android:layout_width="190dp"
