@@ -21,6 +21,7 @@ import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.StopwatchActivity;
+import com.dawa.mobilehealth.UpdateHealthRecordActivity;
 import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
 import com.dawa.url.url;
@@ -33,7 +34,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
 //    Button btn1;
-    ImageView imgProfile, imgstopwatch, imgemergencycall;
+    ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord;
     private TextView firstname;
     LinearLayout llfootstep, llbmiscale;
 
@@ -52,10 +53,12 @@ public class HomeFragment extends Fragment {
         firstname = v.findViewById(R.id.txtfirstname);
         imgProfile = v.findViewById(R.id.imgProfilee);
         imgstopwatch = v.findViewById(R.id.imgStopwatch);
+        imghealthrecord = v.findViewById(R.id.imgHealthrecord);
         imgemergencycall = v.findViewById(R.id.imgEmergencyCall);
 
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
+
         openuserinfo();
 
         //UserProfile
@@ -75,6 +78,16 @@ public class HomeFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new StopwatchActivity()).commit();
             }
         });
+
+        //Health Record
+        imghealthrecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateHealthRecordActivity()).commit();
+            }
+        });
+
 
 //Emergency Call
         imgemergencycall.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +118,7 @@ public class HomeFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new BmiActivity()).commit();
             }
         });
+
 
         return v;
     }

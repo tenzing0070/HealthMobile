@@ -109,6 +109,26 @@
                         android:layout_below="@+id/imgStopwatch"/>
 
                     <ImageView
+                        android:id="@+id/imgHealthrecord"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/healthrecord"
+                        android:layout_toRightOf="@+id/imgStopwatch"
+                        android:layout_marginLeft="50dp"
+                        android:layout_alignParentRight="false"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health\nRecord"
+                        android:layout_marginTop="5dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="95sp"
+                        android:layout_below="@+id/imgHealthrecord"/>
+
+                    <ImageView
                         android:id="@+id/imgEmergencyCall"
                         android:layout_width="40dp"
                         android:layout_height="50dp"
@@ -224,9 +244,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-
-
         </GridLayout>
+
     </LinearLayout>
 </ScrollView>

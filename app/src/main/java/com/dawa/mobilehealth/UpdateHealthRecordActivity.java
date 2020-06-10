@@ -1,6 +1,5 @@
-package com.dawa.mobilehealth.login;
+package com.dawa.mobilehealth;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,93 +15,101 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
-import com.dawa.fragment.ProfileFragment;
-import com.dawa.mobilehealth.MainActivity;
-import com.dawa.mobilehealth.R;
 import com.dawa.model.users;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UpdateProfileActivity extends Fragment {
+public class UpdateHealthRecordActivity extends Fragment {
 
     private Button btnUpdate;
-    private EditText firstname, lastname, address, age, gender, email, phone;
-    private TextView username;
+    private EditText weight,height,bloodgroup;
+    private TextView firstname, lastname, age, address, phone, gender, email, weight1, height1,bloodgroup1;
     ImageView imgProfile;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_update_profile, container, false);
-        btnUpdate = view.findViewById(R.id.btnUpdateProfile);
+        View view = inflater.inflate(R.layout.activity_health_record, container, false);
+        btnUpdate = view.findViewById(R.id.btnUpdateHealthRecord);
 
         firstname = view.findViewById(R.id.txtfirstname);
         lastname = view.findViewById(R.id.txtlastname);
-        address = view.findViewById(R.id.txtaddress);
         age = view.findViewById(R.id.txtage);
+        address = view.findViewById(R.id.txtaddress);
         phone = view.findViewById(R.id.txtphone);
-        email = view.findViewById(R.id.txtemail);
         gender = view.findViewById(R.id.txtgender);
-        imgProfile=view.findViewById(R.id.imgProfilee);
-        username = view.findViewById(R.id.txtusername);
+        email = view.findViewById(R.id.txtemail);
+        weight = view.findViewById(R.id.txtweight);
+        height = view.findViewById(R.id.txtheight);
+        bloodgroup = view.findViewById(R.id.txtbloodgroup);
+        imgProfile = view.findViewById(R.id.imgProfilee);
+        weight1 = view.findViewById(R.id.txtweight1);
+        height1 = view.findViewById(R.id.txtheight1);
+        bloodgroup1 = view.findViewById(R.id.txtbloodgroup1);
 
-        openuserdetails();
-
+        showuserdetails();
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateUser();
+                updateHealthRecord();
             }
-
         });
+
         return view;
     }
 
-    private void updateUser() {
-        users users = new users(
+    private void updateHealthRecord() {
+        users usershealthrecord = new users(
                 firstname.getText().toString(),
-                lastname.getText().toString(),
-                address.getText().toString(),
+                 lastname.getText().toString(),
                 age.getText().toString(),
+                address.getText().toString(),
                 phone.getText().toString(),
-                email.getText().toString(),
                 gender.getText().toString(),
-                username.getText().toString()
+                email.getText().toString(),
+                 weight.getText().toString(),
+                 height.getText().toString(),
+                bloodgroup.getText().toString()
         );
 
-        health_api registerUpdateApi = url.getInstance().create(health_api.class);
-        Call<users> registerUpdateCall = registerUpdateApi.updateUser(url.token, users);
-        registerUpdateCall.enqueue(new Callback<users>() {
+        health_api HealthUpdateApi = url.getInstance().create(health_api.class);
+        Call<users> healthUpdateCall = HealthUpdateApi.updateUser(url.token, usershealthrecord);
+        healthUpdateCall.enqueue(new Callback<users>() {
             @Override
             public void onResponse(Call<users> call, Response<users> response) {
 
                 firstname.setText(response.body().getFirstname());
                 lastname.setText(response.body().getLastname());
-                address.setText(response.body().getAddress());
                 age.setText(response.body().getAge());
+                address.setText(response.body().getAddress());
                 phone.setText(response.body().getPhone());
                 gender.setText(response.body().getGender());
                 email.setText(response.body().getEmail());
-                username.setText(response.body().getUsername());
+                weight.setText(response.body().getWeight());
+                height.setText(response.body().getHeight());
+                bloodgroup.setText(response.body().getBloodgroup());
+                weight1.setText(response.body().getWeight());
+                height1.setText(response.body().getHeight());
+                bloodgroup1.setText(response.body().getBloodgroup());
 
                 Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onFailure(Call<users> call, Throwable t) {
                 Toast.makeText(getActivity(), "Error" + t.getMessage(),Toast.LENGTH_SHORT).show();
 
             }
         });
-
     }
 
-    private void openuserdetails() {
+    private void showuserdetails(){
 
         health_api hrsApi = url.getInstance().create(health_api.class);
         Call<users> usersCall = hrsApi.getUserDetails(url.token);
@@ -129,12 +136,18 @@ public class UpdateProfileActivity extends Fragment {
 
                 firstname.setText(response.body().getFirstname());
                 lastname.setText(response.body().getLastname());
-                address.setText(response.body().getAddress());
                 age.setText(response.body().getAge());
+                address.setText(response.body().getAddress());
                 phone.setText(response.body().getPhone());
-                email.setText(response.body().getEmail());
                 gender.setText(response.body().getGender());
-                username.setText(response.body().getUsername());
+                email.setText(response.body().getEmail());
+                weight.setText(response.body().getWeight());
+                height.setText(response.body().getHeight());
+                bloodgroup.setText(response.body().getBloodgroup());
+                weight1.setText(response.body().getWeight());
+                height1.setText(response.body().getHeight());
+                bloodgroup1.setText(response.body().getBloodgroup());
+
             }
 
             @Override
@@ -144,6 +157,4 @@ public class UpdateProfileActivity extends Fragment {
             }
         });
     }
-
-
-}
+    }

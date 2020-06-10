@@ -10,12 +10,15 @@ public class users {
     private String phone;
     private String email;
     private String gender;
+    private String weight;
+    private String height;
+    private String bloodgroup;
     private String username;
     private String password;
     private String image;
     private String token;
 
-    public users(String firstname, String lastname, String address, String age, String phone, String email, String gender, String username, String password, String image) {
+    public users(String firstname, String lastname, String address, String age, String phone, String email, String gender, String weight, String height, String bloodgroup, String username, String password, String image) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
@@ -23,22 +26,41 @@ public class users {
         this.phone = phone;
         this.email = email;
         this.gender = gender;
+        this.weight = weight;
+        this.height = height;
+        this.bloodgroup = bloodgroup;
         this.username = username;
         this.password = password;
         this.image = image;
     }
 
-    public users(String firstname, String lastname, String address, String age, String phone, String email, String gender, String username) {
+    public users(String firstname, String lastname, String address, String age, String phone, String email, String gender,  String username) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
         this.age = age;
         this.phone = phone;
         this.email = email;
-        this.gender = gender;
+        this.bloodgroup = bloodgroup;
         this.username = username;
 
     }
+
+    public users(String firstname, String lastname, String age, String address, String phone, String gender, String email, String weight, String height, String bloodgroup) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.address = address;
+        this.phone = phone;
+        this.gender = gender;
+        this.email = email;
+        this.weight = weight;
+        this.height = height;
+        this.bloodgroup = bloodgroup;
+
+
+    }
+
 
     public users(String username, String password){
         this.username = username;
@@ -102,6 +124,18 @@ public class users {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public String getWeight(){ return weight;}
+
+    public void setWeight(String weight) {  this.weight = weight; }
+
+    public String getHeight(){ return height;}
+
+    public void setHeight(String height) {  this.height = height; }
+
+    public String getBloodgroup(){ return bloodgroup;}
+
+    public void setBloodgroup(String bloodgroup) {  this.bloodgroup = bloodgroup; }
 
     public String getUsername() {
         return username;

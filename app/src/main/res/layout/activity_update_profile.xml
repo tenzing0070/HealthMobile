@@ -92,7 +92,7 @@
         android:textColor="@android:color/black"
         android:textSize="15sp"
         android:drawableStart="@drawable/iconemail"
-        android:drawableLeft="@drawable/iconemail"/>
+        android:drawableLeft="@drawable/iconemail" />
 
     <EditText
         android:id="@+id/txtgender"
@@ -108,9 +108,7 @@
         android:drawableStart="@drawable/icongender"
         android:drawableLeft="@drawable/icongender" />
 
-
-
-    <EditText
+    <TextView
         android:id="@+id/txtusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,10 +116,11 @@
         android:inputType="text"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorRed"
         android:textSize="15sp"
         android:drawableStart="@drawable/iconusername"
-        android:drawableLeft="@drawable/iconusername" />
+        android:drawableLeft="@drawable/iconusername"
+        android:editable="false"/>
 
 
     <Button

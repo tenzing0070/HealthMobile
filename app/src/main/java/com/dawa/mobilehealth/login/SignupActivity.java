@@ -41,7 +41,7 @@ import retrofit2.Response;
 public class SignupActivity  extends AppCompatActivity {
 
     private CircleImageView imgProfile;
-    private EditText etfirstname, etlastname, etaddress, etage, etgender,etemail, etphone, etusername, etpassword, etConfirmPassword;
+    private EditText etfirstname, etlastname, etaddress, etage, etgender, etweight, etheight,etbloodgroup,etemail, etphone, etusername, etpassword, etConfirmPassword;
     private Button btnsignup;
     String imagePath;
     private String imageName = "";
@@ -62,6 +62,9 @@ public class SignupActivity  extends AppCompatActivity {
         etage = findViewById(R.id.txtage);
         etphone = findViewById(R.id.txtphone);
         etgender = findViewById(R.id.txtgender);
+        etweight = findViewById(R.id.txtweight);
+        etheight = findViewById(R.id.txtheight);
+        etbloodgroup = findViewById(R.id.txtbloodgroup);
         etemail = findViewById(R.id.txtemail);
         etusername = findViewById(R.id.txtusername);
         etpassword = findViewById(R.id.txtpassword);
@@ -167,10 +170,13 @@ public class SignupActivity  extends AppCompatActivity {
         String phone = etphone.getText().toString();
         String email = etemail.getText().toString();
         String gender = etgender.getText().toString();
+        String weight = etweight.getText().toString();
+        String height = etheight.getText().toString();
+        String bloodgroup = etbloodgroup.getText().toString();
         String username = etusername.getText().toString();
         String password = etpassword.getText().toString();
 
-        users users = new users(fname, lname, address, age, phone, email, gender,username, password, imageName);
+        users users = new users(fname, lname, address, age, phone, email, gender, weight, height, bloodgroup, username, password, imageName);
 
         health_api usersAPI = url.getInstance().create(health_api.class);
         Call<SignUpResponse> signUpCall = usersAPI.signup(users);

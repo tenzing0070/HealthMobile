@@ -43,6 +43,10 @@ public interface health_api {
     @PUT("users/me")
     Call<users> updateUser(@Header("Authorization") String token, @Body users users);
 
+//    @PUT("users/me")
+//    Call<users> updateHealthRecord(@Header("Authorization") String token, @Body users users);
+
+
 //    @GET("staffs/staffdetails")
 //    Call<List<staffs>> staffsDetails(@Header("Authorization") String token);
 

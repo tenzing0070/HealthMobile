@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="8dp"
         android:text="mHealth Registration"
         android:textColor="@android:color/white"
@@ -31,8 +31,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgProfile"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/noimage"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
@@ -47,8 +47,8 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="71dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <EditText
             android:id="@+id/txtfirstname"
@@ -111,6 +111,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="30dp"
             android:background="#B1B1B1" />
+
 
         <EditText
             android:id="@+id/txtage"
@@ -198,6 +199,70 @@
             android:background="#B1B1B1" />
 
         <EditText
+            android:id="@+id/txtweight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Weight(kg)"
+            android:inputType="numberDecimal"
+            android:padding="5dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="30dp"
+            android:background="#B1B1B1" />
+
+        <EditText
+            android:id="@+id/txtheight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Height(cm)"
+            android:inputType="numberDecimal"
+            android:padding="5dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="30dp"
+            android:background="#B1B1B1" />
+
+        <EditText
+            android:id="@+id/txtbloodgroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="Blood Group(O+,A+)"
+            android:inputType="text"
+            android:padding="5dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="30dp"
+            android:background="#B1B1B1" />
+
+        <EditText
             android:id="@+id/txtusername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -273,7 +338,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="10dp"
                 android:background="#4E525B"
                 android:padding="15dp"
@@ -286,8 +351,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="100dp">
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="20dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnRback"
@@ -327,4 +392,6 @@
 
         </RelativeLayout>
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
