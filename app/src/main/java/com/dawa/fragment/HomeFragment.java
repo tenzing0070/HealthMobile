@@ -2,6 +2,7 @@ package com.dawa.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
 //    Button btn1;
-    ImageView imgProfile, imgstopwatch;
+    ImageView imgProfile, imgstopwatch, imgemergencycall;
     private TextView firstname;
     LinearLayout llfootstep, llbmiscale;
 
@@ -51,6 +52,7 @@ public class HomeFragment extends Fragment {
         firstname = v.findViewById(R.id.txtfirstname);
         imgProfile = v.findViewById(R.id.imgProfilee);
         imgstopwatch = v.findViewById(R.id.imgStopwatch);
+        imgemergencycall = v.findViewById(R.id.imgEmergencyCall);
 
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
@@ -62,6 +64,24 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileActivity()).commit();
+            }
+        });
+
+        //Stopwatch
+        imgstopwatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new StopwatchActivity()).commit();
+            }
+        });
+
+//Emergency Call
+        imgemergencycall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                initiatePhoneCall();
             }
         });
 
@@ -86,17 +106,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //Stopwatch
-        imgstopwatch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new StopwatchActivity()).commit();
-            }
-        });
-
-
         return v;
+    }
+
+    private void initiatePhoneCall() {
+        Intent callUsIntent = new Intent(Intent.ACTION_CALL);
+        callUsIntent.setData(Uri.parse("tel:" + "+100"));
+        startActivity(callUsIntent);
     }
 
     private void openuserinfo() {
