@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
+import com.dawa.mobilehealth.BmiActivity;
 import com.dawa.mobilehealth.FaqActivity;
 import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.R;
@@ -39,6 +41,7 @@ public class ProfileFragment extends Fragment {
 
     private TextView firstname, lastname;
     ImageView imgProfile;
+    LinearLayout lllogout, llfaq, llfeedback;
 
     public ProfileFragment() {
 
@@ -55,6 +58,10 @@ public class ProfileFragment extends Fragment {
         lastname = v.findViewById(R.id.txtlastname);
         imgProfile = v.findViewById(R.id.imgProfilee);
 
+        lllogout = v.findViewById(R.id.llLogout);
+        llfaq = v.findViewById(R.id.llFaq);
+        llfeedback = v.findViewById(R.id.llFeedback);
+
         openuserinfo();
 
         imgProfile.setOnClickListener(new View.OnClickListener() {
@@ -65,22 +72,20 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        Button btnMyProfile = v.findViewById(R.id.btnMyProfile);
-        btnMyProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileActivity()).commit();
-
-            }
-        });
         //FAQ
-        Button btnFaq = v.findViewById(R.id.btnFaq);
-        btnFaq.setOnClickListener(new View.OnClickListener() {
+        llfaq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FaqActivity()).commit();
             }
         });
+//        Button btnFaq = v.findViewById(R.id.btnFaq);
+//        btnFaq.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FaqActivity()).commit();
+//            }
+//        });
 
 
 //        Button btnMap = v.findViewById(R.id.btnlocation);
@@ -93,17 +98,22 @@ public class ProfileFragment extends Fragment {
 //        });
 //
 //         Feedback
-        Button btnFeedback = v.findViewById(R.id.btnFeedback);
-        btnFeedback.setOnClickListener(new View.OnClickListener() {
-
+        llfeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FeedbackActivity()).commit();
             }
         });
+//        Button btnFeedback = v.findViewById(R.id.btnFeedback);
+//        btnFeedback.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FeedbackActivity()).commit();
+//            }
+//        });
 
-        Button btnlogout = v.findViewById(R.id.btnlogout);
-        btnlogout.setOnClickListener(new View.OnClickListener() {
+        lllogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
