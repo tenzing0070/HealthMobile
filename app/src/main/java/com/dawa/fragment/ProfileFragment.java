@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -36,7 +37,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class ProfileFragment extends Fragment {
 
-    private EditText firstname, lastname;
+    private TextView firstname, lastname;
     ImageView imgProfile;
 
     public ProfileFragment() {
@@ -56,8 +57,15 @@ public class ProfileFragment extends Fragment {
 
         openuserinfo();
 
-        Button btnMyProfile = v.findViewById(R.id.btnMyProfile);
+        imgProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileActivity()).commit();
+            }
+        });
+
+        Button btnMyProfile = v.findViewById(R.id.btnMyProfile);
         btnMyProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,7 +136,6 @@ public class ProfileFragment extends Fragment {
         });
 
         return v;
-
 
     }
         private void openuserinfo() {

@@ -1,46 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0F0">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:id="@+id/linearlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvSettings"
         android:orientation="vertical"
-        android:layout_marginTop="0dp">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:paddingLeft="20dp"
-        android:fontFamily="monospace"
-        android:text="Welcome to mHealth"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="@android:color/holo_blue_dark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp" />
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"/>
+       android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="32dp">
 
+        <TextView
+            android:id="@+id/tvdashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="My Dashboard"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvwelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, "
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/tvdashboard"
+            android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/txtfirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Name, "
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/tvdashboard"
+            android:layout_toEndOf="@+id/tvwelcome"
+            android:textColor="@color/colorWhite"
+            android:layout_toRightOf="@+id/tvwelcome" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfilee"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/noimage"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+        //next
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFFF"/>
+        //next
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="3dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgStopwatch"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/stopwatch"
+                        android:layout_alignParentRight="false"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stop\nWatch"
+                        android:layout_marginTop="5dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/imgStopwatch"/>
+                    <ImageView
+                        android:id="@+id/imgEmergencyCall"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/stopwatch"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+        //next
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="10dp"/>
+
+        //next
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,46 +138,83 @@
             android:columnOrderPreserved="false"
             android:rowCount="2">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
 
-            <Button
-                android:id="@+id/btnFootSteps"
-                android:layout_width="190dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/settings_button_design"
-                android:text="Foot\nSteps"
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:id="@+id/llFootstep"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:gravity="center"
+                android:padding="16dp"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnBmi"
-                android:layout_width="190dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/settings_button_design"
-                android:text="Calculate\nBMI"
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp" />
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/footstep"/>
 
-            <Button
-                android:id="@+id/btnStopwatch"
-                android:layout_width="190dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/settings_button_design"
-                android:text="Stopwatch"
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Foot\nSteps"
+                    android:layout_marginTop="12dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorBlack"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:fontFamily="serif-monospace"/>
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:id="@+id/llBmiScale"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/bmiscale"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BMI\nScale"
+                        android:layout_marginTop="12dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorBlack"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:fontFamily="serif-monospace"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
 
         </GridLayout>
     </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+</ScrollView>
