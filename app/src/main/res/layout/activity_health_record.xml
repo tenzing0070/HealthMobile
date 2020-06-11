@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/colorRed"
         />
 
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:background="#000000"/>
 
@@ -254,7 +254,7 @@
             android:layout_toEndOf="@+id/tvweight1"
             android:layout_toRightOf="@+id/tvweight1"
             android:layout_below="@id/txtemail"
-            android:hint="Height(cm)"
+            android:hint="Weight"
             android:inputType="text"
             android:textColor="@color/colorBlack"
             android:textSize="15sp"
@@ -268,7 +268,7 @@
             android:layout_toEndOf="@+id/imgProfile"
             android:layout_toRightOf="@+id/imgProfile"
             android:layout_below="@+id/tvweight1"
-            android:text="Weight"
+            android:text="Height(cm)"
             android:textSize="15sp"
             android:textColor="@color/colorPrimaryDark" />
 
@@ -319,10 +319,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:background="#000000"/>
-
 
     <GridLayout
         android:layout_width="match_parent"
@@ -481,22 +480,41 @@
     </GridLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnUpdateHealthRecord"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/register_button_custom"
-        android:fontFamily="monospace"
-        android:text="UPDATE"
-        android:textColor="@color/colorBlack"
-        android:textSize="15sp"
-        android:textStyle="normal"
-        android:layout_marginLeft="10dp"
-        />
+        <ImageView
+            android:id="@+id/qrPlaceHolder"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:src="@drawable/qr"
+            />
+
+        <Button
+            android:id="@+id/btnUpdateHealthRecord"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnQrGenerate"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/qrPlaceHolder"
+            android:layout_toEndOf="@+id/qrPlaceHolder"
+            android:layout_toRightOf="@+id/qrPlaceHolder"
+            android:text="UPDATE"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btnQrGenerate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QR generate"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/qrPlaceHolder"
+            android:layout_toRightOf="@id/qrPlaceHolder" />
 
     </RelativeLayout>
 

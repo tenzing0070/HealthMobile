@@ -1,5 +1,6 @@
 package com.dawa.mobilehealth;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,20 +18,23 @@ import androidx.fragment.app.Fragment;
 import com.dawa.api.health_api;
 import com.dawa.model.users;
 import com.dawa.url.url;
+
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
+import androidmads.library.qrgenearator.QRGContents;
+import androidmads.library.qrgenearator.QRGEncoder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UpdateHealthRecordActivity extends Fragment {
 
-    private Button btnUpdate;
+    private Button btnUpdate, btnQrGenerate;
     private EditText weight,height,bloodgroup;
     private TextView firstname, lastname, age, address, phone, gender, email, weight1, height1,bloodgroup1;
-    ImageView imgProfile;
+    ImageView imgProfile, qrImage;
 
     @Nullable
     @Override
@@ -38,6 +42,8 @@ public class UpdateHealthRecordActivity extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_health_record, container, false);
         btnUpdate = view.findViewById(R.id.btnUpdateHealthRecord);
+        btnQrGenerate = view.findViewById(R.id.btnQrGenerate);
+        qrImage = view.findViewById(R.id.qrPlaceHolder);
 
         firstname = view.findViewById(R.id.txtfirstname);
         lastname = view.findViewById(R.id.txtlastname);
@@ -55,6 +61,30 @@ public class UpdateHealthRecordActivity extends Fragment {
         bloodgroup1 = view.findViewById(R.id.txtbloodgroup1);
 
         showuserdetails();
+
+        btnQrGenerate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                String fnamedata = "First Name:" + firstname.getText().toString();
+                String lnamedata = "Last Name:" + lastname.getText().toString();
+                String agedata = "Age: " + age.getText().toString();
+                String addressdata = "Address:" + address.getText().toString();
+                String phonedata = "Phone:" + phone.getText().toString();
+                String genderdata = "Gender:" + gender.getText().toString();
+                String emaildata = "Email:" + email.getText().toString();
+                String weightdata = "Weight:" + weight1.getText().toString();
+                String heightdata = "Height:" + height1.getText().toString();
+                String bloodgroupdata = "BloodType:" + bloodgroup1.getText().toString();
+
+                QRGEncoder qrgEncoder = new QRGEncoder( fnamedata + "\n" +    lnamedata + "\n" + agedata + "\n" +
+                        addressdata + "\n" + phonedata + "\n" + genderdata + "\n" + emaildata + "\n"  + weightdata + "\n" +
+                        heightdata + "\n" + bloodgroupdata,  null, QRGContents.Type.TEXT,500 );
+                Bitmap qrBits = qrgEncoder.getBitmap();
+                qrImage.setImageBitmap(qrBits);
+            }
+        });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
