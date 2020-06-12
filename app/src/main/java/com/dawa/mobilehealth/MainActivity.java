@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.dawa.fragment.FirstaidFragment;
 import com.dawa.fragment.HomeFragment;
 import com.dawa.fragment.ProfileFragment;
 import com.dawa.fragment.TrackFragment;
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_track:
                             selectFragment = new TrackFragment();
                             break;
-//
-//                        case R.id.nav_notification:
-//                            selectFragment = new NotificationFragment();
-//                            break;
+
+                        case R.id.nav_firstaid:
+                            selectFragment = new FirstaidFragment();
+                            break;
 
                         case R.id.nav_profile:
                             selectFragment = new ProfileFragment();
