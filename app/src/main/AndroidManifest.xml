@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dawa.mobilehealth">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
@@ -27,7 +30,7 @@
 
             android:label="@string/title_activity_login"></activity>
 
-
+        <activity android:name=".QrScanActivity"/>
         <activity android:name=".StopwatchActivity"/>
         <activity android:name=".BmiActivity" />
         <activity android:name=".FootStepsActivity" />
@@ -40,13 +43,18 @@
         <activity android:name=".login.LoginActivity"/>
         <activity android:name=".splashscreen.SplashActivity">
 
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CaptureAct"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
 
         <meta-data

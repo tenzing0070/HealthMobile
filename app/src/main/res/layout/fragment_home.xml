@@ -88,7 +88,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="center"
-                    android:padding="16dp"
+                    android:padding="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -96,14 +96,17 @@
                         android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:src="@drawable/stopwatch"
+                        android:layout_marginLeft="10dp"
                         android:layout_alignParentRight="false"/>
 
                     <TextView
+                        android:id="@+id/tvstopwatch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Stop\nWatch"
                         android:layout_marginTop="5dp"
-                        android:textSize="10sp"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         android:layout_below="@+id/imgStopwatch"/>
@@ -114,25 +117,49 @@
                         android:layout_height="50dp"
                         android:src="@drawable/healthrecord"
                         android:layout_toRightOf="@+id/imgStopwatch"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_alignParentRight="false"/>
+
+                    <TextView
+                        android:id="@+id/tvhealthrecord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health\nRecords"
+                        android:layout_marginTop="5dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="50sp"
+                        android:layout_below="@+id/imgHealthrecord"
+                        android:layout_toRightOf="@+id/tvstopwatch"/>
+
+                    <ImageView
+                        android:id="@+id/imgQrScan"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/scannerqr"
+                        android:layout_toRightOf="@+id/imgHealthrecord"
+                        android:layout_marginLeft="40dp"
                         android:layout_alignParentRight="false"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Health\nRecord"
+                        android:text="QR\nScanner"
                         android:layout_marginTop="5dp"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
-                        android:layout_marginLeft="95sp"
-                        android:layout_below="@+id/imgHealthrecord"/>
+                        android:layout_marginLeft="40sp"
+                        android:layout_below="@+id/imgQrScan"
+                        android:layout_toRightOf="@+id/tvhealthrecord"/>
 
                     <ImageView
                         android:id="@+id/imgEmergencyCall"
                         android:layout_width="40dp"
                         android:layout_height="50dp"
                         android:src="@drawable/emergencycall"
+                        android:layout_marginRight="10dp"
                         android:layout_alignParentRight="true"/>
 
                     <TextView
@@ -140,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:text="Emergency\n        Cal"
                         android:layout_marginTop="5dp"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
                         android:layout_below="@+id/imgEmergencyCall"
@@ -245,6 +272,12 @@
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan"/>
 
     </LinearLayout>
 </ScrollView>

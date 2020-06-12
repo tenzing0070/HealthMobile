@@ -1,5 +1,6 @@
 package com.dawa.mobilehealth;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
