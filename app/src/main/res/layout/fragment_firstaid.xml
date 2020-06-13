@@ -19,17 +19,41 @@
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="20dp"
-      android:layout_marginBottom="20dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="5dp"
       android:gravity="center_horizontal"
       android:text="First Aid"
-      android:layout_marginLeft="20dp"
       android:textAlignment="center"
       android:textColor="@color/colorRed"
+      android:fontFamily="monospace"
       android:textSize="25sp"
       android:textStyle="bold" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+      <androidx.appcompat.widget.SearchView
+          android:id="@+id/search_view"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:hint="Search:Gender(male/female)"
+          android:layout_margin="1dp"/>
+
+      <Button
+          android:id="@+id/btnSearch"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Search"
+          android:layout_toEndOf="@+id/etSearch"
+          android:layout_toRightOf="@+id/etSearch"
+          />
+    </LinearLayout>
 
   <androidx.recyclerview.widget.RecyclerView
       android:layout_width="match_parent"

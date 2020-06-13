@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,8 +22,14 @@ import java.util.List;
 
 public class FirstaidFragment extends Fragment {
 
+    private SearchView searchinjury;
+    private Button btnSearch;
+    FirstaidAdapter firstaidAdapter;
+
     RecyclerView recyclerView;
     List<Instructions> instructionsList;
+
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,6 +37,22 @@ public class FirstaidFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_firstaid, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerViewFirstAid);
+        searchinjury = view.findViewById(R.id.search_view);
+
+        searchinjury.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(firstaidAdapter !=null){
+               firstaidAdapter.getFilter().filter(newText);}
+                return false;
+            }
+        });
 
         initData();
         setRecyclerView();
