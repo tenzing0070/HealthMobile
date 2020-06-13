@@ -3,12 +3,14 @@ package com.dawa.model;
 public class Instructions {
 
     private String codeName, instruction, description;
+    private int image;
     private boolean expandable;
 
-    public Instructions(String codeName, String instruction, String description) {
+    public Instructions(String codeName, String instruction, String description, int image) {
         this.codeName = codeName;
         this.instruction = instruction;
         this.description = description;
+        this.image = image;
         this.expandable = false;
     }
 
@@ -37,6 +39,15 @@ public class Instructions {
         this.description = description;
     }
 
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
     public boolean isExpandable() {
         return expandable;
     }
@@ -51,6 +62,7 @@ public class Instructions {
                 "codeName='" + codeName + '\'' +
                 ", instruction='" + instruction + '\'' +
                 ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 

@@ -16,6 +16,8 @@ import com.dawa.model.Instructions;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.FirstaidVH> {
 
 
@@ -43,6 +45,7 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
         holder.codeNameTxt.setText(instructions.getCodeName());
         holder.instructionTxt.setText(instructions.getInstruction());
         holder.descriptionTxt.setText(instructions.getDescription());
+        holder.photoimg.setImageResource(instructions.getImage());
 
         boolean isExpandable = instructionsList.get(position).isExpandable();
         holder.expandablelayout.setVisibility(isExpandable ? View.VISIBLE : View.GONE);
@@ -57,6 +60,7 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
     public class FirstaidVH extends RecyclerView.ViewHolder{
 
         TextView codeNameTxt, instructionTxt, descriptionTxt;
+        CircleImageView photoimg;
 
         LinearLayout linearLayout;
         RelativeLayout expandablelayout;
@@ -67,6 +71,7 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
             codeNameTxt = itemView.findViewById(R.id.code_name);
             instructionTxt = itemView.findViewById(R.id.instruction);
             descriptionTxt = itemView.findViewById(R.id.description_firstaid);
+            photoimg = (CircleImageView) itemView.findViewById(R.id.imgdisease);
 
             linearLayout = itemView.findViewById(R.id.linear_layout_firstaid);
             expandablelayout = itemView.findViewById(R.id.expandable_layout_firstaid);
