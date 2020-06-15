@@ -175,6 +175,9 @@ public class UpdateHealthRecordActivity extends Fragment {
                 phone.setText(response.body().getPhone());
                 gender.setText(response.body().getGender());
                 email.setText(response.body().getEmail());
+                weight.setText(response.body().getWeight());
+                height.setText(response.body().getHeight());
+                bloodgroup.setText(response.body().getBloodgroup());
                 weight1.setText(response.body().getWeight());
                 height1.setText(response.body().getHeight());
                 bloodgroup1.setText(response.body().getBloodgroup());

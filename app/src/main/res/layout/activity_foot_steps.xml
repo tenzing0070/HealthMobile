@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Track Your Steps"
         android:textColor="@color/colorBlack"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
@@ -25,9 +25,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Number of Steps"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textColor="@color/colorBlack"
-        android:layout_marginTop="150dp"/>
+             android:layout_marginTop="130dp"/>
 
        <TextView
            android:id="@+id/tv_steps"
@@ -37,5 +37,22 @@
            android:text="0"
            android:textSize="80sp"
            android:textColor="@color/colorRed"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnresetstep"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Reset"
+        android:textSize="30sp"
+        android:textColor="#FFF"
+        android:background="@drawable/stopwatchbuttonend"
+        android:layout_marginTop="70dp"/>
+
+
+
+</LinearLayout>
 
 </LinearLayout>

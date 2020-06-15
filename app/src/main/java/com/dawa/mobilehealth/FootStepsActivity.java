@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class FootStepsActivity extends Fragment implements SensorEventListener {
     TextView tv_steps;
     SensorManager sensorManager;
     boolean running = false;
+//    Button btnreset;
 
     @Nullable
     @Override
@@ -33,8 +35,22 @@ public class FootStepsActivity extends Fragment implements SensorEventListener {
 
         tv_steps = view.findViewById(R.id.tv_steps);
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+//        btnreset = view.findViewById(R.id.btnresetstep);
 
+
+
+//        btnreset.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                tv_steps.getText();
+//                fi
+//            }
+//
+//        });
         return view;
+
+
     }
 
     @Override

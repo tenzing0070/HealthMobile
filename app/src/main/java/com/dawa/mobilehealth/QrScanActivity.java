@@ -14,25 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class QrScanActivity extends AppCompatActivity implements View.OnClickListener{
+public class QrScanActivity extends AppCompatActivity {
 
-    Button btnscan;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
 
-        btnscan = findViewById(R.id.btnScan);
-        btnscan.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        scanCode();
-    }
-
-    private void scanCode() {
         IntentIntegrator  intergrator = new IntentIntegrator(this);
         intergrator.setCaptureActivity(CaptureAct.class);
         intergrator.setOrientationLocked(false);
@@ -51,8 +41,10 @@ public class QrScanActivity extends AppCompatActivity implements View.OnClickLis
                 builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        scanCode();
+                       scanCode();
                     }
+
+
                 }).setNegativeButton("Finish", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -70,4 +62,13 @@ public class QrScanActivity extends AppCompatActivity implements View.OnClickLis
         }
 
     }
+
+    private void scanCode() {
+        IntentIntegrator  intergrator = new IntentIntegrator(this);
+        intergrator.setCaptureActivity(CaptureAct.class);
+        intergrator.setOrientationLocked(false);
+        intergrator.setPrompt("Scanning Code");
+        intergrator.initiateScan();
+    }
+
 }

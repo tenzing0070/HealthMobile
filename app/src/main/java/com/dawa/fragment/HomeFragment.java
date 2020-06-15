@@ -1,6 +1,7 @@
 package com.dawa.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,18 +14,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.BmiActivity;
+import com.dawa.mobilehealth.CaptureAct;
 import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.FootStepsActivity;
+import com.dawa.mobilehealth.QrScanActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.StopwatchActivity;
 import com.dawa.mobilehealth.UpdateHealthRecordActivity;
 import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
 import com.dawa.url.url;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
@@ -33,8 +39,8 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
-//    Button btn1;
-    ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord;
+
+    ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord, imgqrscan;
     private TextView firstname;
     LinearLayout llfootstep, llbmiscale;
 
@@ -50,11 +56,13 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
+
         firstname = v.findViewById(R.id.txtfirstname);
         imgProfile = v.findViewById(R.id.imgProfilee);
         imgstopwatch = v.findViewById(R.id.imgStopwatch);
         imghealthrecord = v.findViewById(R.id.imgHealthrecord);
         imgemergencycall = v.findViewById(R.id.imgEmergencyCall);
+        imgqrscan = v.findViewById(R.id.imgQrScan);
 
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
@@ -87,6 +95,18 @@ public class HomeFragment extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateHealthRecordActivity()).commit();
             }
         });
+
+        //QR SCAN
+        imgqrscan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent openqrscan = new Intent(getActivity(), QrScanActivity.class);
+                startActivity(openqrscan);
+            }
+        });
+
+
 
 
 //Emergency Call
@@ -124,7 +144,7 @@ public class HomeFragment extends Fragment {
 
     private void initiatePhoneCall() {
         Intent callUsIntent = new Intent(Intent.ACTION_CALL);
-        callUsIntent.setData(Uri.parse("tel:" + "+100"));
+        callUsIntent.setData(Uri.parse("tel:" + "100"));
         startActivity(callUsIntent);
     }
 
