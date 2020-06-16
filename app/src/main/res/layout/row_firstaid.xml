@@ -27,7 +27,7 @@
             android:textColor="@color/colorBlack"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgdisease"
+            android:id="@+id/imgProblem"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:src="@drawable/bgcircle"

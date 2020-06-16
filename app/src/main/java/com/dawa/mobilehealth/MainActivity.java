@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.dawa.fragment.FirstaidFragment;
 import com.dawa.fragment.HomeFragment;
@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
                         case R.id.nav_firstaid:
                             selectFragment = new FirstaidFragment();
+                            Intent intent = new Intent(MainActivity.this, FirstaidActivity.class);
+                            startActivity(intent);
                             break;
 
                         case R.id.nav_profile:

@@ -1,6 +1,7 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
 import com.dawa.model.Instructions;
+import com.dawa.url.url;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,39 +24,47 @@ import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.FirstaidVH> {
+public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.FirstaidsViewHolder> {
 
-
-     private List<Instructions> filterinstructionList;
+    Context mContext;
     List<Instructions> instructionsList;
+    private List<Instructions> filterfirstaidList;
 
-    public FirstaidAdapter( List<Instructions> instructionsList)
+
+    public FirstaidAdapter( Context mContext, List<Instructions> instructionsList)
     {
-
+        this.mContext = mContext;
         this.instructionsList = instructionsList;
-        filterinstructionList = new ArrayList<>(instructionsList);
+        filterfirstaidList = new ArrayList<>(instructionsList);
     }
 
 
     @NonNull
     @Override
-    public FirstaidVH onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public FirstaidsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_firstaid,parent,false);
-        return new FirstaidVH(view);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_firstaid,parent,false);
+        return new FirstaidsViewHolder(v);
+    }
+
+    private void StrictMode() {
+        StrictMode.ThreadPolicy policy =
+                new StrictMode.ThreadPolicy.Builder()
+                        .permitAll().build();
+
+        StrictMode.setThreadPolicy(policy);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FirstaidAdapter.FirstaidVH holder, int position) {
+    public void onBindViewHolder(@NonNull FirstaidAdapter.FirstaidsViewHolder holder, int i) {
+        final Instructions instructions = instructionsList.get(i);
+        String imgPath = url.imagePath+instructions.getImage();
 
-        Instructions instructions = instructionsList.get(position);
-        holder.codeNameTxt.setText(instructions.getCodeName());
-        holder.instructionTxt.setText(instructions.getInstruction());
-        holder.descriptionTxt.setText(instructions.getDescription());
-        holder.photoimg.setImageResource(instructions.getImage());
+        Picasso.get().load(imgPath).into(holder.imgProblem);
+        holder.firstaidCodeName.setText(instructions.getCodename());
+        holder.firstaidInstruction.setText(instructions.getInstruction());
+        holder.firstaidDescription.setText(instructions.getDescription());
 
-        boolean isExpandable = instructionsList.get(position).isExpandable();
-        holder.expandablelayout.setVisibility(isExpandable ? View.VISIBLE : View.GONE);
 
     }
 
@@ -63,18 +74,18 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
     }
 
 
-    public  Filter getFilter() { return injuryfilter;}
+    public  Filter getFilter() { return instructionsfilter;}
 
-    private Filter injuryfilter = new Filter() {
+    private Filter instructionsfilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<Instructions> filteredList= new ArrayList<>();
             if (constraint == null || constraint.length()==0){
-                filteredList.addAll(instructionsList);
+                filteredList.addAll(filterfirstaidList);
             }else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (Instructions instructions : instructionsList){
-                    if(instructions.getCodeName().toLowerCase().contains(filterPattern)){
+                for (Instructions instructions : filterfirstaidList){
+                    if(instructions.getCodename().toLowerCase().contains(filterPattern)){
                         filteredList.add(instructions);
                     }
                 }
@@ -94,34 +105,23 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
         }
     };
 
-    public class FirstaidVH extends RecyclerView.ViewHolder{
+    public class FirstaidsViewHolder extends RecyclerView.ViewHolder{
 
-        TextView codeNameTxt, instructionTxt, descriptionTxt;
-        CircleImageView photoimg;
+        CircleImageView imgProblem;
+        TextView firstaidCodeName, firstaidInstruction, firstaidDescription;
 
-        LinearLayout linearLayout;
-        RelativeLayout expandablelayout;
-
-        public FirstaidVH(@NonNull View itemView) {
+        public FirstaidsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            codeNameTxt = itemView.findViewById(R.id.code_name);
-            instructionTxt = itemView.findViewById(R.id.instruction);
-            descriptionTxt = itemView.findViewById(R.id.description_firstaid);
-            photoimg = (CircleImageView) itemView.findViewById(R.id.imgdisease);
+            imgProblem =  itemView.findViewById(R.id.imgProblem);
+             firstaidCodeName= itemView.findViewById(R.id.code_name);
+            firstaidInstruction = itemView.findViewById(R.id.instruction);
+            firstaidDescription = itemView.findViewById(R.id.description_firstaid);
 
-            linearLayout = itemView.findViewById(R.id.linear_layout_firstaid);
-            expandablelayout = itemView.findViewById(R.id.expandable_layout_firstaid);
 
-            linearLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                    Instructions instructions = instructionsList.get(getAdapterPosition());
-                    instructions.setExpandable(!instructions.isExpandable());
-                    notifyItemChanged(getAdapterPosition());
-                }
-            });
         }
     }
+
+
 }

@@ -1,6 +1,7 @@
 package com.dawa.api;
 
 
+import com.dawa.model.Instructions;
 import com.dawa.model.feedbacks;
 import com.dawa.model.users;
 import com.dawa.server_response.ImageResponse;
@@ -47,12 +48,11 @@ public interface health_api {
 //    Call<users> updateHealthRecord(@Header("Authorization") String token, @Body users users);
 
 
-//    @GET("staffs/staffdetails")
-//    Call<List<staffs>> staffsDetails(@Header("Authorization") String token);
+    @GET("firstaids/firstaiddetails")
+    Call<List<Instructions>> firstaidsDetails(@Header("Authorization") String token);
 
-//
-//    @GET("staffs/{gender}")
-//    Call<List<staffs>> getGender(@Header("gender") String gender);
+    @GET("firstaids/{codename}")
+    Call<List<Instructions>> getCodename(@Header("codename") String codename);
 //
 //
 //    @FormUrlEncoded

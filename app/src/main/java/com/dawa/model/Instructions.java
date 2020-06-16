@@ -2,25 +2,28 @@ package com.dawa.model;
 
 public class Instructions {
 
-    private String codeName, instruction, description;
-    private int image;
-    private boolean expandable;
+    private String _id;
+    private String codename;
+    private String instruction;
+    private String description;
+    private String image;
 
-    public Instructions(String codeName, String instruction, String description, int image) {
-        this.codeName = codeName;
+   // private boolean expandable;
+
+    public Instructions(String codename, String instruction, String description, String image) {
+        this.codename = codename;
         this.instruction = instruction;
         this.description = description;
         this.image = image;
-        this.expandable = false;
+       // this.expandable = false;
     }
 
-
-    public String getCodeName() {
-        return codeName;
+    public String getCodename() {
+        return codename;
     }
 
-    public void setCodeName(String codeName) {
-        this.codeName = codeName;
+    public void setCodename(String codename) {
+        this.codename = codename;
     }
 
     public String getInstruction() {
@@ -39,31 +42,40 @@ public class Instructions {
         this.description = description;
     }
 
-
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public boolean isExpandable() {
-        return expandable;
+    public String get_id() {
+        return _id;
     }
 
-    public void setExpandable(boolean expandable) {
-        this.expandable = expandable;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
-    @Override
-    public String toString() {
-        return "Instructions{" +
-                "codeName='" + codeName + '\'' +
-                ", instruction='" + instruction + '\'' +
-                ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
-                '}';
-    }
+
+
+//    public boolean isExpandable() {
+//        return expandable;
+//    }
+//
+//    public void setExpandable(boolean expandable) {
+//        this.expandable = expandable;
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "Instructions{" +
+//                "codeName='" + codeName + '\'' +
+//                ", instruction='" + instruction + '\'' +
+//                ", description='" + description + '\'' +
+//                ", image='" + image + '\'' +
+//                '}';
+//    }
 
 }
