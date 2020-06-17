@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
+import com.dawa.model.Faqs;
 import com.dawa.model.Instructions;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -65,6 +66,8 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
         holder.firstaidInstruction.setText(instructions.getInstruction());
         holder.firstaidDescription.setText(instructions.getDescription());
 
+        boolean isExpandble = instructionsList.get(i).isExpandable();
+        holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
 
     }
 
@@ -109,6 +112,8 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
 
         CircleImageView imgProblem;
         TextView firstaidCodeName, firstaidInstruction, firstaidDescription;
+        LinearLayout linearLayout;
+        RelativeLayout expandableLayout;
 
         public FirstaidsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -118,6 +123,17 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
             firstaidInstruction = itemView.findViewById(R.id.instruction);
             firstaidDescription = itemView.findViewById(R.id.description_firstaid);
 
+            linearLayout = itemView.findViewById(R.id.linear_layout_firstaid);
+            expandableLayout = itemView.findViewById(R.id.expandable_layout_firstaid);
+
+            linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Instructions instructions = instructionsList.get(getAdapterPosition());
+                    instructions.setExpandable(!instructions.isExpandable());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
 
 
         }

@@ -8,14 +8,14 @@ public class Instructions {
     private String description;
     private String image;
 
-   // private boolean expandable;
+    private boolean expandable;
 
     public Instructions(String codename, String instruction, String description, String image) {
         this.codename = codename;
         this.instruction = instruction;
         this.description = description;
         this.image = image;
-       // this.expandable = false;
+        this.expandable = false;
     }
 
     public String getCodename() {
@@ -60,13 +60,15 @@ public class Instructions {
 
 
 
-//    public boolean isExpandable() {
-//        return expandable;
-//    }
-//
-//    public void setExpandable(boolean expandable) {
-//        this.expandable = expandable;
-//    }
+
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
+    }
 
 //    @Override
 //    public String toString() {
