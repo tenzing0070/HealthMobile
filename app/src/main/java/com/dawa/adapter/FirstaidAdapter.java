@@ -9,20 +9,16 @@ import android.widget.Filter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.dawa.mobilehealth.R;
 import com.dawa.model.Faqs;
 import com.dawa.model.Instructions;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.FirstaidsViewHolder> {
@@ -33,6 +29,7 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
 
 
     public FirstaidAdapter( Context mContext, List<Instructions> instructionsList)
+
     {
         this.mContext = mContext;
         this.instructionsList = instructionsList;
@@ -73,11 +70,15 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
 
     @Override
     public int getItemCount() {
+
         return instructionsList.size();
     }
 
+    public  Filter getFilter()
 
-    public  Filter getFilter() { return instructionsfilter;}
+    {
+        return instructionsfilter;
+    }
 
     private Filter instructionsfilter = new Filter() {
         @Override
@@ -119,7 +120,7 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
             super(itemView);
 
             imgProblem =  itemView.findViewById(R.id.imgProblem);
-             firstaidCodeName= itemView.findViewById(R.id.code_name);
+            firstaidCodeName= itemView.findViewById(R.id.code_name);
             firstaidInstruction = itemView.findViewById(R.id.instruction);
             firstaidDescription = itemView.findViewById(R.id.description_firstaid);
 
@@ -134,10 +135,6 @@ public class FirstaidAdapter extends RecyclerView.Adapter<FirstaidAdapter.Firsta
                     notifyItemChanged(getAdapterPosition());
                 }
             });
-
-
         }
     }
-
-
 }

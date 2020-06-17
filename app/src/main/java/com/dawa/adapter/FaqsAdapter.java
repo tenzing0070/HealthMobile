@@ -23,6 +23,7 @@ public class FaqsAdapter extends RecyclerView.Adapter<FaqsAdapter.FaqVH> {
     List<Faqs> faqsList;
 
     public FaqsAdapter(List<Faqs> faqsList)
+
     {
         this.faqsList = faqsList;
     }

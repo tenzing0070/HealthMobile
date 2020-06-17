@@ -1,8 +1,10 @@
 package com.dawa.fragment;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
@@ -143,8 +146,13 @@ public class HomeFragment extends Fragment {
     }
 
     private void initiatePhoneCall() {
+        String number = "100";
         Intent callUsIntent = new Intent(Intent.ACTION_CALL);
-        callUsIntent.setData(Uri.parse("tel:" + "100"));
+        callUsIntent.setData(Uri.parse("tel:" + number));
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+            return;
+        }
         startActivity(callUsIntent);
     }
 
