@@ -1,7 +1,9 @@
 package com.dawa.api;
 
 
+import com.dawa.model.Booking;
 import com.dawa.model.Instructions;
+import com.dawa.model.doctors;
 import com.dawa.model.feedbacks;
 import com.dawa.model.users;
 import com.dawa.server_response.ImageResponse;
@@ -53,13 +55,21 @@ public interface health_api {
 
     @GET("firstaids/{codename}")
     Call<List<Instructions>> getCodename(@Header("codename") String codename);
-//
-//
-//    @FormUrlEncoded
-//    @POST("bookingdetails/booking")
-//    Call<Booking> book(@Header("Authorization") String token, @Field("staffs") String staffs, @Field("purpose") String purpose,
-//                       @Field("date") String date, @Field("time") String time, @Field("hours") String hours);
-//
-//    @GET("bookingdetails/mybookings")
-//    Call<List<Booking>> getBooking(@Header("Authorization") String token);
+
+
+    @GET("doctors/doctordetails")
+    Call<List<doctors>> doctorsDetails (@Header("Authorization") String token);
+
+
+    @GET("doctors/{specialist}")
+    Call<List<doctors>> getSpecialist (@Header("specialist") String specialist);
+
+
+    @FormUrlEncoded
+    @POST("bookingdetails/booking")
+    Call<Booking> book(@Header("Authorization") String token, @Field("doctors") String doctors, @Field("purpose") String purpose,
+                       @Field("date") String date, @Field("time") String time, @Field("hours") String hours);
+
+    @GET("bookingdetails/mybookings")
+    Call<List<Booking>> getBooking(@Header("Authorization") String token);
 }

@@ -2,7 +2,7 @@ package com.dawa.model;
 
 public class doctors {
     private String _id;
-    
+
     private String firstname;
     private String lastname;
     private String specialist;
