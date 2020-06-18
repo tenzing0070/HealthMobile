@@ -117,7 +117,7 @@
                         android:layout_height="50dp"
                         android:src="@drawable/healthrecord"
                         android:layout_toRightOf="@+id/imgStopwatch"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="60dp"
                         android:layout_alignParentRight="false"/>
 
                     <TextView
@@ -129,7 +129,7 @@
                         android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
-                        android:layout_marginLeft="50sp"
+                        android:layout_marginLeft="65sp"
                         android:layout_below="@+id/imgHealthrecord"
                         android:layout_toRightOf="@+id/tvstopwatch"/>
 
@@ -139,7 +139,7 @@
                         android:layout_height="50dp"
                         android:src="@drawable/scannerqr"
                         android:layout_toRightOf="@+id/imgHealthrecord"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="60dp"
                         android:layout_alignParentRight="false"/>
 
                     <TextView
@@ -150,7 +150,7 @@
                         android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
-                        android:layout_marginLeft="40sp"
+                        android:layout_marginLeft="60sp"
                         android:layout_below="@+id/imgQrScan"
                         android:layout_toRightOf="@+id/tvhealthrecord"/>
 
@@ -261,6 +261,43 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="BMI\nScale"
+                        android:layout_marginTop="12dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorBlack"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:fontFamily="serif-monospace"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:id="@+id/llDocAppointment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/bmiscale"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doctor\nAppointment"
                         android:layout_marginTop="12dp"
                         android:textSize="15sp"
                         android:textColor="@color/colorBlack"

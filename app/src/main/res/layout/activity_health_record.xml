@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     tools:context=".UpdateHealthRecordActivity"
     android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Personal Health Record"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/colorRed"
         />
 
@@ -479,44 +483,59 @@
 
     </GridLayout>
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="#000000"/>
+
         <ImageView
             android:id="@+id/qrPlaceHolder"
-            android:layout_width="150dp"
-            android:layout_height="130dp"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
             android:src="@drawable/qr"
-            />
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:id="@+id/btnUpdateHealthRecord"
-            android:layout_width="152dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/btnQrGenerate"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="55dp"
             android:layout_toLeftOf="@+id/qrPlaceHolder"
             android:layout_toEndOf="@+id/qrPlaceHolder"
             android:layout_toRightOf="@+id/qrPlaceHolder"
             android:text="UPDATE"
+            android:background="@drawable/update_button_design"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:id="@+id/btnQrGenerate"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="QR generate"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="55dp"
             android:layout_toEndOf="@id/qrPlaceHolder"
-            android:layout_toRightOf="@id/qrPlaceHolder" />
+            android:layout_toRightOf="@id/qrPlaceHolder"
+            android:background="@drawable/qr_button_design"
+            android:layout_marginRight="10dp"/>
 
     </RelativeLayout>
 
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

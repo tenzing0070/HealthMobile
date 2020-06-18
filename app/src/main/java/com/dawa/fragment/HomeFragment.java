@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.BmiActivity;
 import com.dawa.mobilehealth.CaptureAct;
+import com.dawa.mobilehealth.DocAppointmentActivity;
 import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.QrScanActivity;
@@ -45,7 +46,7 @@ public class HomeFragment extends Fragment {
 
     ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord, imgqrscan;
     private TextView firstname;
-    LinearLayout llfootstep, llbmiscale;
+    LinearLayout llfootstep, llbmiscale, lldocappointment;
 
 
     public HomeFragment() {
@@ -69,7 +70,7 @@ public class HomeFragment extends Fragment {
 
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
-
+        lldocappointment = v.findViewById(R.id.llDocAppointment);
         openuserinfo();
 
         //UserProfile
@@ -138,6 +139,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new BmiActivity()).commit();
+            }
+        });
+
+        //Doctor Appointment
+        lldocappointment.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openDocAppointment = new Intent(getActivity(), DocAppointmentActivity.class);
+                startActivity(openDocAppointment);
             }
         });
 

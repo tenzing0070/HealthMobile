@@ -131,9 +131,6 @@ public class UpdateHealthRecordActivity extends Fragment {
                 bloodgroup1.setText(response.body().getBloodgroup());
 
                 Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
-                weight.getText().clear();
-                height.getText().clear();
-                bloodgroup.getText().clear();
             }
             @Override
             public void onFailure(Call<users> call, Throwable t) {
