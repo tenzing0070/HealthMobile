@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="158dp"
+    android:layout_height="145dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfileDoc"
+        android:layout_width="88dp"
+        android:layout_height="78dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:src="@drawable/doctor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginEnd="-78dp"
+        android:layout_marginRight="-78dp"
+        android:layout_toLeftOf="@id/imgProfileDoc"
+        android:text="Full Name:"
+        android:textColor="#ee3a2f" />
+
+    <TextView
+        android:id="@+id/doctorFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="-154dp"
+        android:layout_toLeftOf="@+id/imgProfileDoc"
+        android:layout_toEndOf="@+id/imgProfileDoc"
+        android:layout_toRightOf="@+id/imgProfileDoc"
+        android:gravity="center"
+        android:hint="First Name"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/doctorLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="-152dp"
+        android:layout_toLeftOf="@id/imgProfileDoc"
+        android:layout_toEndOf="@+id/imgProfileDoc"
+        android:layout_toRightOf="@+id/imgProfileDoc"
+        android:gravity="center"
+        android:hint="Last Name"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvspecialist"
+        android:layout_width="28dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:text="Age:"
+        android:textColor="#ee3a2f" />
+
+    <TextView
+        android:id="@+id/doctorSpecialist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-7dp"
+        android:layout_marginLeft="-7dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginRight="-107dp"
+        android:layout_toLeftOf="@+id/imgProfileDoc"
+        android:layout_toEndOf="@+id/imgProfileDoc"
+        android:layout_toRightOf="@+id/imgProfileDoc"
+        android:gravity="center"
+        android:hint="Specialist"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:layout_toLeftOf="@id/imgProfileDoc"
+        android:text="Gender:"
+        android:textColor="#ee3a2f" />
+
+    <TextView
+        android:id="@+id/doctortextGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
+        android:layout_toLeftOf="@id/imgProfileDoc"
+        android:hint="Gender"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
+        android:layout_toLeftOf="@id/imgProfileDoc"
+        android:text="Price:"
+        android:textColor="#ee3a2f" />
+
+    <TextView
+        android:id="@+id/viewholder_doctor_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:layout_toLeftOf="@id/imgProfileDoc"
+        android:hint="Price"
+        android:textColor="#ee3a2f" />
+
+</RelativeLayout>
+
