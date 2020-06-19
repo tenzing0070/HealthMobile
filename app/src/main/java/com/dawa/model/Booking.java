@@ -23,9 +23,6 @@ public class Booking {
     @SerializedName("time")
     @Expose
     private String time;
-    @SerializedName("hours")
-    @Expose
-    private String hours;
     @SerializedName("__v")
     @Expose
     private Integer v;
@@ -78,13 +75,13 @@ public class Booking {
         this.time = time;
     }
 
-    public String getHours() {
-        return hours;
-    }
-
-    public void setHours(String hours) {
-        this.hours = hours;
-    }
+//    public String getHours() {
+//        return hours;
+//    }
+//
+//    public void setHours(String hours) {
+//        this.hours = hours;
+//    }
 
     public Integer getV() {
         return v;

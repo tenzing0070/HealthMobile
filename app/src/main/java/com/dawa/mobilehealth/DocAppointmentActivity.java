@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.adapter.DoctorAdapter;
+import com.dawa.api.doctor_api;
 import com.dawa.api.health_api;
 import com.dawa.model.doctors;
 import com.dawa.url.url;
@@ -27,8 +28,7 @@ public class DocAppointmentActivity extends AppCompatActivity {
         private RecyclerView recyclerView;
         //search
         private SearchView searchDoctor;
-//        private TextView specialist;
-//        private Button btnSearchDoctor;
+
         DoctorAdapter doctor_Adapter;
 
         @Override
@@ -60,7 +60,7 @@ public class DocAppointmentActivity extends AppCompatActivity {
 
         private void loaddoctors() {
 
-        health_api doctorAPI = url.getInstance().create(health_api.class);
+        doctor_api doctorAPI = url.getInstance().create(doctor_api.class);
         Call<List<doctors>> doctorCall = doctorAPI.doctorsDetails(url.token);
 
 

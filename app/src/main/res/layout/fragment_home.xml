@@ -117,7 +117,7 @@
                         android:layout_height="50dp"
                         android:src="@drawable/healthrecord"
                         android:layout_toRightOf="@+id/imgStopwatch"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginLeft="55dp"
                         android:layout_alignParentRight="false"/>
 
                     <TextView
@@ -292,7 +292,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/bmiscale"/>
+                        android:src="@drawable/docappoint"/>
 
                     <TextView
                         android:layout_width="wrap_content"

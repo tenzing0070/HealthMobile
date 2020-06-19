@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dawa.api.doctor_api;
 import com.dawa.api.health_api;
 
 import com.dawa.model.Booking;
@@ -29,7 +30,7 @@ import retrofit2.Response;
 public class DoctorDetailActivity extends AppCompatActivity {
 
 
-    private EditText edpurpose, bokdate, boktime, bokhrs;
+    private EditText edpurpose, bokdate, boktime;
     private Button btnbooking;
     TextView firstName, lastName, specialist, gender, price;
     String id;
@@ -56,7 +57,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
         TextView time  = (TextView) findViewById(R.id.etTime);
         time.setText(date_t);
 
-        bokhrs = findViewById(R.id.etHrs);
 
 
 
@@ -130,12 +130,11 @@ public class DoctorDetailActivity extends AppCompatActivity {
         String purpose = edpurpose.getText().toString();
         String date = bokdate.getText().toString();
         String time = boktime.getText().toString();
-        String hours = bokhrs.getText().toString();
         String doctors = id;
 
-        health_api healthApi = url.getInstance().create(health_api.class);
+        doctor_api doctorApi = url.getInstance().create(doctor_api.class);
 
-        Call<Booking> bookingCall = healthApi.book(url.token,doctors,purpose,date,time,hours);
+        Call<Booking> bookingCall = doctorApi.book(url.token,doctors,purpose,date,time);
 
 
         bookingCall.enqueue(new Callback<Booking>() {

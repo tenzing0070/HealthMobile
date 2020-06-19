@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.adapter.FirstaidAdapter;
+import com.dawa.api.firstaid_api;
 import com.dawa.api.health_api;
 import com.dawa.model.Instructions;
 import com.dawa.url.url;
@@ -58,7 +59,7 @@ public class FirstaidActivity extends AppCompatActivity {
     }
     private void loadfirstaids() {
 
-        health_api firstaidAPI = url.getInstance().create(health_api.class);
+        firstaid_api firstaidAPI = url.getInstance().create(firstaid_api.class);
         Call<List<Instructions>> firstaidCall = firstaidAPI.firstaidsDetails(url.token);
 
         firstaidCall.enqueue(new Callback<List<Instructions>>() {

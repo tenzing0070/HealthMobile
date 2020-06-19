@@ -50,26 +50,29 @@ public interface health_api {
 //    Call<users> updateHealthRecord(@Header("Authorization") String token, @Body users users);
 
 
-    @GET("firstaids/firstaiddetails")
-    Call<List<Instructions>> firstaidsDetails(@Header("Authorization") String token);
-
-    @GET("firstaids/{codename}")
-    Call<List<Instructions>> getCodename(@Header("codename") String codename);
+    //another apis created firstaid and doctor
 
 
-    @GET("doctors/doctordetails")
-    Call<List<doctors>> doctorsDetails (@Header("Authorization") String token);
+//    @GET("firstaids/firstaiddetails")
+//    Call<List<Instructions>> firstaidsDetails(@Header("Authorization") String token);
+//
+//    @GET("firstaids/{codename}")
+//    Call<List<Instructions>> getCodename(@Header("codename") String codename);
 
 
-    @GET("doctors/{specialist}")
-    Call<List<doctors>> getSpecialist (@Header("specialist") String specialist);
-
-
-    @FormUrlEncoded
-    @POST("bookingdetails/booking")
-    Call<Booking> book(@Header("Authorization") String token, @Field("doctors") String doctors, @Field("purpose") String purpose,
-                       @Field("date") String date, @Field("time") String time, @Field("hours") String hours);
-
-    @GET("bookingdetails/mybookings")
-    Call<List<Booking>> getBooking(@Header("Authorization") String token);
+//    @GET("doctors/doctordetails")
+//    Call<List<doctors>> doctorsDetails (@Header("Authorization") String token);
+//
+//
+//    @GET("doctors/{specialist}")
+//    Call<List<doctors>> getSpecialist (@Header("specialist") String specialist);
+//
+//
+//    @FormUrlEncoded
+//    @POST("bookingdetails/booking")
+//    Call<Booking> book(@Header("Authorization") String token, @Field("doctors") String doctors, @Field("purpose") String purpose,
+//                       @Field("date") String date, @Field("time") String time, @Field("hours") String hours);
+//
+//    @GET("bookingdetails/mybookings")
+//    Call<List<Booking>> getBooking(@Header("Authorization") String token);
 }
