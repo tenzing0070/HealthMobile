@@ -75,13 +75,7 @@ public class Booking {
         this.time = time;
     }
 
-//    public String getHours() {
-//        return hours;
-//    }
-//
-//    public void setHours(String hours) {
-//        this.hours = hours;
-//    }
+
 
     public Integer getV() {
         return v;

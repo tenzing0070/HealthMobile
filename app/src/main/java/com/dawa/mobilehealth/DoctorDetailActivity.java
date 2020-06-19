@@ -35,7 +35,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
     TextView firstName, lastName, specialist, gender, price;
     String id;
     CircleImageView imgProfileDoc;
-
     String name;
 
     @Override
@@ -57,18 +56,14 @@ public class DoctorDetailActivity extends AppCompatActivity {
         TextView time  = (TextView) findViewById(R.id.etTime);
         time.setText(date_t);
 
-
-
-
         firstName = findViewById(R.id.doctorFirstName);
         lastName = findViewById(R.id.doctorLastName);
         specialist = findViewById(R.id.doctorSpecialist);
-      gender = findViewById(R.id.doctortextGender);
+         gender = findViewById(R.id.doctortextGender);
         price = findViewById(R.id.viewholder_doctor_price);
         imgProfileDoc = findViewById(R.id.imgProfileDoc);
 
         loaduser();
-
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -79,7 +74,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
              gender.setText(bundle.getString("gender"));
           price.setText(bundle.getString("price"));
             Picasso.get().load(url.imagePath+bundle.getString("image")).into(imgProfileDoc);
-
 
         }
 
@@ -101,7 +95,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
     }
 
     private void loaduser() {
-
 
         health_api healthApi = url.getInstance().create(health_api.class);
         Call<users> bookingCall = healthApi.getUserDetails(url.token);
@@ -136,7 +129,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
 
         Call<Booking> bookingCall = doctorApi.book(url.token,doctors,purpose,date,time);
 
-
         bookingCall.enqueue(new Callback<Booking>() {
             @Override
             public void onResponse(Call<Booking> call, Response<Booking> response) {
@@ -146,7 +138,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
                 }
 
                 Toast.makeText(DoctorDetailActivity.this, "Booked Successfully", Toast.LENGTH_SHORT).show();
-
 
             }
 
