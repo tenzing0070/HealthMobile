@@ -1,8 +1,7 @@
 package com.dawa.mobilehealth;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +27,8 @@ public class DocAppointmentActivity extends AppCompatActivity {
         private RecyclerView recyclerView;
         //search
         private SearchView searchDoctor;
-        private TextView specialist;
-        private Button btnSearchDoctor;
+//        private TextView specialist;
+//        private Button btnSearchDoctor;
         DoctorAdapter doctor_Adapter;
 
         @Override
@@ -62,10 +61,10 @@ public class DocAppointmentActivity extends AppCompatActivity {
         private void loaddoctors() {
 
         health_api doctorAPI = url.getInstance().create(health_api.class);
-        Call<List<doctors>> staffCall = doctorAPI.doctorsDetails(url.token);
+        Call<List<doctors>> doctorCall = doctorAPI.doctorsDetails(url.token);
 
 
-        staffCall.enqueue(new Callback<List<doctors>>() {
+        doctorCall.enqueue(new Callback<List<doctors>>() {
             @Override
             public void onResponse(Call<List<doctors>> call, Response<List<doctors>> response) {
                 if(!response.isSuccessful()) {

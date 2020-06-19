@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DocAppointmentActivity">
+    tools:context=".DocAppointmentActivity"
+    android:background="#E9EBEE">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +21,7 @@
             android:layout_gravity="center"
             android:textColor="@color/colorPrimaryDark"
             android:text="Doctor Appointment"/>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -28,20 +30,23 @@
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_view_doc"
-                android:layout_width="0dp"
+                android:layout_width="50dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:hint="Search:Gender(male/female)"
+                android:hint="Search:Specialist"
                 android:layout_margin="1dp"/>
 
-            <Button
-                android:id="@+id/btnSearchDoc"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Search"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:layout_marginRight="5dp"
                 android:layout_toEndOf="@+id/etSearch"
                 android:layout_toRightOf="@+id/etSearch"
                 />
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
