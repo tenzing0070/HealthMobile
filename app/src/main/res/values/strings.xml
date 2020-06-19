@@ -19,7 +19,7 @@
 
     //nav
     <string name="nav_home">Home</string>
-    <string name="nav_track">Track</string>
+    <string name="nav_notification">Notification</string>
     <string name="nav_information">Information</string>
     <string name="nav_profile">Profile</string>
     <string name="my_profile">My Profile</string>

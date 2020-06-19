@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.R;
 
-public class TrackFragment extends Fragment {
+public class NotificationFragment extends Fragment {
 
-    public TrackFragment() {
+    public NotificationFragment() {
 
     }
 

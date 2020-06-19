@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/colorGrayLight">
+        android:background="#FFFFFF">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff6600">
 
         <ImageView
             android:layout_width="36dp"
@@ -24,14 +25,16 @@
             android:layout_marginLeft="16dp"
             android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
-        <TextView
-            android:id="@+id/question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Question"
-            android:textSize="20sp"
-            android:padding="16dp"
-            android:textColor="@color/colorBlack"/>
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Question"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,8 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="Answer"
                 android:padding="16dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textSize="15sp"
                 android:textColor="@color/colorBlack"/>
 
         </RelativeLayout>

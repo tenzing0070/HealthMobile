@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.dawa.fragment.FirstaidFragment;
 import com.dawa.fragment.HomeFragment;
 import com.dawa.fragment.ProfileFragment;
-import com.dawa.fragment.TrackFragment;
+import com.dawa.fragment.NotificationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                             selectFragment = new HomeFragment();
                             break;
 
-                        case R.id.nav_track:
-                            selectFragment = new TrackFragment();
+                        case R.id.nav_notification:
+                            selectFragment = new NotificationFragment();
                             break;
 
                         case R.id.nav_firstaid:

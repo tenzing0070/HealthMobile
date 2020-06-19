@@ -8,9 +8,9 @@
         android:title="@string/nav_home"
        />
     <item
-        android:id="@+id/nav_track"
-        android:icon="@drawable/information"
-        android:title="@string/nav_track"
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/notification"
+        android:title="@string/nav_notification"
         />
     <item
         android:id="@+id/nav_firstaid"
