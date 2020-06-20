@@ -15,6 +15,7 @@ import com.dawa.api.health_api;
 import com.dawa.mobilehealth.R;
 
 import com.dawa.model.Password;
+import com.dawa.model.feedbacks;
 import com.dawa.model.users;
 import com.dawa.url.url;
 
@@ -24,82 +25,51 @@ import retrofit2.Response;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    private EditText etemail;
-    private Button btnsubmit;
-
-    String name;
+     EditText email;
+     Button btnsubmit;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgotpassword);
 
+        email = findViewById(R.id.etfpemail);
         btnsubmit = findViewById(R.id.btnfpsubmit);
-        etemail = findViewById(R.id.etfpemail);
-
-        loaduser();
 
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 submit();
-                displayNoti();
+
             }
         });
     }
 
-    private void displayNoti() {
-        Toast.makeText(this,"Sumbitted Successfully", Toast.LENGTH_LONG).show();
-        Intent displayNoti = new Intent(this,LoginActivity.class);
-        startActivity(displayNoti);
-    }
-
-    private void loaduser() {
-
-        health_api healthApi = url.getInstance().create(health_api.class);
-        Call<users> passwordCall = healthApi.getUserDetails(url.token);
-
-        passwordCall.enqueue(new Callback<users>() {
-            @Override
-            public void onResponse(Call<users> call, Response<users> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(ForgotPasswordActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                name = response.body().getUsername();
-            }
-
-            @Override
-            public void onFailure(Call<users> call, Throwable t) {
-
-                Toast.makeText(ForgotPasswordActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     private void submit() {
-        String email = etemail.getText().toString();
 
+        Password passwords = new Password(
+                email.getText().toString()
 
-        forgotpassword_api forgotpassword_Api = url.getInstance().create(forgotpassword_api.class);
+        );
 
-        Call<Password> passwordCall = forgotpassword_Api.submit(url.token,email);
-
-        passwordCall.enqueue(new Callback<Password>() {
+        forgotpassword_api passwordApi = url.getInstance().create(forgotpassword_api.class);
+        Call<Void> passwordCall = passwordApi. pass(passwords);
+        passwordCall.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<Password> call, Response<Password> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 if(!response.isSuccessful()) {
-                    Toast.makeText(ForgotPasswordActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "Please enter your email address", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                Toast.makeText(ForgotPasswordActivity.this, "Submitted Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ForgotPasswordActivity.this, "Submitted", Toast.LENGTH_SHORT).show();
+                email.getText().clear();
 
 
             }
 
             @Override
-            public void onFailure(Call<Password> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(ForgotPasswordActivity.this, "Error:" + t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
 
             }
         });
