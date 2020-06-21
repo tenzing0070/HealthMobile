@@ -201,37 +201,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                app:cardElevation="6dp"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
-            <LinearLayout
-                android:id="@+id/llFootstep"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:gravity="center"
-                android:padding="16dp"
-                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/llFootstep"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/footstep"/>
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/footstep" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Foot\nSteps"
-                    android:layout_marginTop="12dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/colorBlack"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"
-                    android:fontFamily="serif-monospace"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="serif-monospace"
+                        android:text="Foot\nSteps"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -245,7 +245,7 @@
                 <LinearLayout
                     android:id="@+id/llBmiScale"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="0"
                     android:gravity="center"
@@ -298,6 +298,43 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Doctor\nAppointment"
+                        android:layout_marginTop="12dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorBlack"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        android:fontFamily="serif-monospace"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:id="@+id/llHealthQuiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/docappoint"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health\nQuiz"
                         android:layout_marginTop="12dp"
                         android:textSize="15sp"
                         android:textColor="@color/colorBlack"

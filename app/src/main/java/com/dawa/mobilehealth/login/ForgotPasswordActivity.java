@@ -6,19 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.dawa.api.forgotpassword_api;
-import com.dawa.api.health_api;
-
 import com.dawa.mobilehealth.R;
-
 import com.dawa.model.Password;
-import com.dawa.model.feedbacks;
-import com.dawa.model.users;
 import com.dawa.url.url;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,7 +35,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void submit() {
 

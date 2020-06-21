@@ -27,6 +27,7 @@ import com.dawa.mobilehealth.DocAppointmentActivity;
 import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.QrScanActivity;
+import com.dawa.mobilehealth.QuizActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.StopwatchActivity;
 import com.dawa.mobilehealth.UpdateHealthRecordActivity;
@@ -46,7 +47,7 @@ public class HomeFragment extends Fragment {
 
     ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord, imgqrscan;
     private TextView firstname;
-    LinearLayout llfootstep, llbmiscale, lldocappointment;
+    LinearLayout llfootstep, llbmiscale, lldocappointment, llhealthquiz;
 
 
     public HomeFragment() {
@@ -71,6 +72,7 @@ public class HomeFragment extends Fragment {
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
         lldocappointment = v.findViewById(R.id.llDocAppointment);
+        llhealthquiz = v.findViewById(R.id.llHealthQuiz);
         openuserinfo();
 
         //UserProfile
@@ -149,6 +151,16 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent openDocAppointment = new Intent(getActivity(), DocAppointmentActivity.class);
                 startActivity(openDocAppointment);
+            }
+        });
+
+        //Quiz health
+        llhealthquiz.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openHealthQuiz = new Intent(getActivity(), QuizActivity.class);
+                startActivity(openHealthQuiz);
             }
         });
 
