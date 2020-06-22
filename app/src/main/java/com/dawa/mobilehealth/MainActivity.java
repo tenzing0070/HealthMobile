@@ -11,7 +11,6 @@ import android.view.MenuItem;
 
 import com.dawa.fragment.FirstaidFragment;
 import com.dawa.fragment.HomeFragment;
-import com.dawa.fragment.NotificationFragment;
 import com.dawa.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -42,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
                         case R.id.nav_notification:
                             selectFragment = new NotificationFragment();
-                            Intent intents = new Intent (MainActivity.this,NotificationActivity.class);
-                            startActivity(intents);
+//                            Intent intents = new Intent (MainActivity.this,NotificationActivity.class);
+//                            startActivity(intents);
                             break;
 
                         case R.id.nav_firstaid:
