@@ -2,7 +2,6 @@ package com.dawa.fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -10,32 +9,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.BmiActivity;
-import com.dawa.mobilehealth.CaptureAct;
 import com.dawa.mobilehealth.DocAppointmentActivity;
-import com.dawa.mobilehealth.FeedbackActivity;
 import com.dawa.mobilehealth.FootStepsActivity;
 import com.dawa.mobilehealth.QrScanActivity;
-import com.dawa.mobilehealth.QuizActivity;
+import com.dawa.mobilehealth.Quiz.QuizDashActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.StopwatchActivity;
 import com.dawa.mobilehealth.UpdateHealthRecordActivity;
 import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
 import com.dawa.url.url;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
@@ -48,7 +41,6 @@ public class HomeFragment extends Fragment {
     ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord, imgqrscan;
     private TextView firstname;
     LinearLayout llfootstep, llbmiscale, lldocappointment, llhealthquiz;
-
 
     public HomeFragment() {
 
@@ -73,6 +65,7 @@ public class HomeFragment extends Fragment {
         llbmiscale = v.findViewById(R.id.llBmiScale);
         lldocappointment = v.findViewById(R.id.llDocAppointment);
         llhealthquiz = v.findViewById(R.id.llHealthQuiz);
+
         openuserinfo();
 
         //UserProfile
@@ -130,8 +123,8 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FootStepsActivity()).commit();
-                ////Intent openStepCount = new Intent(getActivity(), FootStepsActivity.class);
-////                startActivity(openStepCount);
+//                Intent openStepCount = new Intent(getActivity(), FootStepsActivity.class);
+//                startActivity(openStepCount);
             }
         });
 
@@ -159,8 +152,9 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent openHealthQuiz = new Intent(getActivity(), QuizActivity.class);
+                Intent openHealthQuiz = new Intent(getActivity(), QuizDashActivity.class);
                 startActivity(openHealthQuiz);
+
             }
         });
 

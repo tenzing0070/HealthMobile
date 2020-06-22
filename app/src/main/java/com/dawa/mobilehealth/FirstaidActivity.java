@@ -1,22 +1,16 @@
 package com.dawa.mobilehealth;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.dawa.adapter.FirstaidAdapter;
 import com.dawa.api.firstaid_api;
-import com.dawa.api.health_api;
 import com.dawa.model.Instructions;
 import com.dawa.url.url;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,8 +21,6 @@ public class FirstaidActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SearchView searchinjury;
     FirstaidAdapter firstaid_Adapter;
-
-
 
 
     @Override

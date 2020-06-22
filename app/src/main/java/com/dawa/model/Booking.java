@@ -14,6 +14,7 @@ public class Booking {
     @SerializedName("doctors")
     @Expose
     private doctors doctors;
+
     @SerializedName("purpose")
     @Expose
     private String purpose;
@@ -25,6 +26,8 @@ public class Booking {
     private String time;
     @SerializedName("__v")
     @Expose
+
+
     private Integer v;
 
     public String getId() {
@@ -75,8 +78,6 @@ public class Booking {
         this.time = time;
     }
 
-
-
     public Integer getV() {
         return v;
     }
@@ -84,5 +85,6 @@ public class Booking {
     public void setV(Integer v) {
         this.v = v;
     }
+
 
 }

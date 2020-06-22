@@ -1,6 +1,6 @@
 package com.dawa.model;
 
-class Question {
+public class Question {
 
     private String question;
     private  String option1;

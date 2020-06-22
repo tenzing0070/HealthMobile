@@ -32,7 +32,9 @@
             android:label="@string/title_activity_login"></activity>
 
 
-        <activity android:name=".QuizActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".Quiz.QuizActivity" />
+        <activity android:name=".Quiz.QuizDashActivity" />
         <activity android:name=".DoctorDetailActivity" />
         <activity android:name="DocAppointmentActivity"/>
         <activity android:name=".FirstaidActivity"/>
