@@ -6,13 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.dawa.mobilehealth.R;
 import com.dawa.model.Booking;
 import com.dawa.url.url;
@@ -121,8 +117,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         CircleImageView imgProfile;
         TextView docfirstname, doclastname, docspecialist, docgender, docprice, username, date, time, purpose;
-        LinearLayout linearLayout;
-        RelativeLayout expandableLayout;
+//        LinearLayout linearLayout;
+//        RelativeLayout expandableLayout;
 
 
         public NotificationsViewHolder(@NonNull View itemView) {

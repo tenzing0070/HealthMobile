@@ -1,4 +1,4 @@
-package com.dawa.mobilehealth;
+package com.dawa.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.adapter.NotificationAdapter;
 import com.dawa.api.doctor_api;
+import com.dawa.mobilehealth.R;
 import com.dawa.model.Booking;
 import com.dawa.url.url;
 
