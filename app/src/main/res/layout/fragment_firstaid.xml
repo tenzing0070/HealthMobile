@@ -34,6 +34,7 @@
           android:text="Search"
           android:textColor="@color/colorBlue"
           android:textSize="20sp"
+          android:layout_marginTop="10dp"
           android:layout_toEndOf="@+id/etSearch"
           android:layout_toRightOf="@+id/etSearch"
           />

@@ -13,7 +13,7 @@
             android:textSize="25sp"
             android:layout_gravity="center"
             android:textColor="@color/colorRed"
-            android:text="Notification"
+            android:text="My Appointments"
             android:textStyle="bold"/>
 
         <androidx.recyclerview.widget.RecyclerView

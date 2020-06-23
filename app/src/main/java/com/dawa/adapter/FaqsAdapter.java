@@ -1,10 +1,12 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
+import android.widget.Filter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,18 +16,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
 import com.dawa.model.Faqs;
+import com.dawa.model.Instructions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FaqsAdapter extends RecyclerView.Adapter<FaqsAdapter.FaqVH> {
 
+    Context mContext;
     List<Faqs> faqsList;
+    private List<Faqs> filterfaqList;
 
-    public FaqsAdapter(List<Faqs> faqsList)
+    public FaqsAdapter( Context mContext, List<Faqs> faqsList)
 
     {
+        this.mContext = mContext;
         this.faqsList = faqsList;
+        filterfaqList = new ArrayList<>(faqsList);
+
     }
 
     @NonNull
@@ -36,14 +44,23 @@ public class FaqsAdapter extends RecyclerView.Adapter<FaqsAdapter.FaqVH> {
         return new FaqVH(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull FaqVH holder, int position) {
+    private void StrictMode() {
+        StrictMode.ThreadPolicy policy =
+                new StrictMode.ThreadPolicy.Builder()
+                        .permitAll().build();
 
-        Faqs faqs= faqsList.get(position);
-        holder.questionNameTxt.setText(faqs.getQuestionName());
+        StrictMode.setThreadPolicy(policy);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull FaqVH holder, int i) {
+
+       final Faqs faqs= faqsList.get(i);
+
+        holder.questionNameTxt.setText(faqs.getQuestion());
         holder.answerTxt.setText(faqs.getAnswer());
 
-        boolean isExpandable = faqsList.get(position).isExpandable();
+        boolean isExpandable = faqsList.get(i).isExpandable();
         holder.expandableLayout.setVisibility(isExpandable ? View.VISIBLE : View.GONE);
     }
 
@@ -51,6 +68,42 @@ public class FaqsAdapter extends RecyclerView.Adapter<FaqsAdapter.FaqVH> {
     public int getItemCount() {
         return faqsList.size();
     }
+
+    public Filter getFilter()
+
+    {
+        return faqsfilter;
+    }
+
+    private Filter faqsfilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Faqs> filteredList= new ArrayList<>();
+            if (constraint == null || constraint.length()==0){
+                filteredList.addAll(filterfaqList);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (Faqs faqs : filterfaqList){
+                    if(faqs.getQuestion().toLowerCase().contains(filterPattern)){
+                        filteredList.add(faqs);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            faqsList.clear();
+            faqsList.addAll((List)results.values);
+            notifyDataSetChanged();
+
+        }
+    };
+
 
     public class FaqVH extends RecyclerView.ViewHolder {
 
