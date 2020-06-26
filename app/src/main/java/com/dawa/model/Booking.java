@@ -87,4 +87,16 @@ public class Booking {
     }
 
 
+//        @Override
+//    public String toString() {
+//        return "Booking{" +
+//                "user='" + user + '\'' +
+//                ", doctors='" + doctors + '\'' +
+//                ", purpose='" + purpose + '\'' +
+//                ", date='" + date + '\'' +
+//                ", time='" + time + '\'' +
+//                '}';
+//    }
+
+
 }

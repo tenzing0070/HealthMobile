@@ -1,14 +1,15 @@
+
 package com.dawa.mobilehealth.bll;
 
-import com.dawa.api.health_api;
-import com.dawa.model.users;
-import com.dawa.url.url;
+        import com.dawa.api.health_api;
+        import com.dawa.model.users;
+        import com.dawa.url.url;
 
 
-import java.io.IOException;
+        import java.io.IOException;
 
-import retrofit2.Call;
-import retrofit2.Response;
+        import retrofit2.Call;
+        import retrofit2.Response;
 
 public class LoginBLL {
 
@@ -32,4 +33,7 @@ public class LoginBLL {
         }
         return isSuccess;
     }
+
+
+
 }

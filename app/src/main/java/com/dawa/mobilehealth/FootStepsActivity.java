@@ -1,6 +1,7 @@
 package com.dawa.mobilehealth;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,13 +17,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class FootStepsActivity extends Fragment implements SensorEventListener {
 
     TextView tv_steps;
     SensorManager sensorManager;
     boolean running = false;
-//    Button btnreset;
+
+//    SharedPreferences prefs = null;
+//    SharedPreferences.Editor editor;
+//    int steps;
+
 
     @Nullable
     @Override
@@ -32,21 +39,11 @@ public class FootStepsActivity extends Fragment implements SensorEventListener {
 
         tv_steps = view.findViewById(R.id.tv_steps);
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-//        btnreset = view.findViewById(R.id.btnresetstep);
 
+//        prefs = getActivity().getSharedPreferences("MY_PREFS", MODE_PRIVATE);
+//        editor = prefs.edit();
 
-
-//        btnreset.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                tv_steps.getText();
-//                fi
-//            }
-//
-//        });
         return view;
-
 
     }
 
@@ -66,6 +63,7 @@ public class FootStepsActivity extends Fragment implements SensorEventListener {
     public void onPause(){
         super.onPause();
         running = false;
+        //sensorManager.unregisterListener(this);
     }
 
     @Override
@@ -73,6 +71,11 @@ public class FootStepsActivity extends Fragment implements SensorEventListener {
 
         if(running) {
             tv_steps.setText(String.valueOf(event.values[0]));
+
+//            editor.putInt("steps", steps);
+//            editor.commit();
+            //  resetStepCount();
+           //tv_steps.setText(String.valueOf(prefs.getInt("steps", steps)));
         }
     }
 
@@ -80,4 +83,13 @@ public class FootStepsActivity extends Fragment implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+//    private void resetStepCount() {
+//        //   reset every 24 hours.
+//        editor.clear();
+//        steps = 0;
+//        editor.putInt("steps", steps);
+//        editor.commit();
+//
+//    }
 }

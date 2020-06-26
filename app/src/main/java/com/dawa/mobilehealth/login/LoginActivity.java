@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void notifiy() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.checked)
-                .setContentTitle("Human Rental System")
+                .setContentTitle("Mobile Health")
                 .setContentText("Login success :" + etusername.getText().toString())
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();

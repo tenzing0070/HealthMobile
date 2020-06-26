@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dawa.mobilehealth">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -26,44 +28,39 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".AdmindashActivity"></activity>
         <activity
             android:name="login.LoginActivity"
-
-            android:label="@string/title_activity_login"></activity>
-
-
+            android:label="@string/title_activity_login" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".Quiz.QuizActivity" />
         <activity android:name=".Quiz.QuizDashActivity" />
         <activity android:name=".DoctorDetailActivity" />
-        <activity android:name="DocAppointmentActivity"/>
-        <activity android:name=".FirstaidActivity"/>
-        <activity android:name=".QrScanActivity"/>
-        <activity android:name=".StopwatchActivity"/>
+        <activity android:name=".DocAppointmentActivity" />
+        <activity android:name=".FirstaidActivity" />
+        <activity android:name=".QrScanActivity" />
+        <activity android:name=".StopwatchActivity" />
         <activity android:name=".BmiActivity" />
         <activity android:name=".FootStepsActivity" />
         <activity android:name=".FeedbackActivity" />
-        <activity android:name=".FaqActivity"/>
+        <activity android:name=".FaqActivity" />
         <activity android:name=".welcome_screen.IntroActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".login.ForgotPasswordActivity"/>
-        <activity android:name=".login.SignupActivity"/>
-        <activity android:name=".login.LoginActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".login.ForgotPasswordActivity" />
+        <activity android:name=".login.SignupActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".splashscreen.SplashActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
