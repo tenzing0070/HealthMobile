@@ -123,26 +123,29 @@ public class ProfileFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //if user pressed "yes", then he is allowed to exit from application
-                        SharedPreferences rememberData = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
-                        SharedPreferences rememberToken = getActivity().getSharedPreferences("userToken", MODE_PRIVATE);
-                        rememberData.edit().clear().commit();
-                        rememberToken.edit().clear().commit();
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("Ride", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove("token");
+                        editor.remove("isadmin");
+                        editor.remove("status");
+                        editor.remove("username");
+                        editor.remove("password");
+                        editor.commit();
+                        url.token = "Bearer ";
+                        url.status = "Status";
                         Intent i = new Intent(getActivity(), LoginActivity.class);
                         startActivity(i);
-
                     }
                 });
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         dialog.cancel();
                     }
                 });
                 AlertDialog alert = builder.create();
                 alert.show();
             }
-
         });
 
         return v;

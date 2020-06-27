@@ -29,13 +29,13 @@ public interface health_api {
 
     @POST("users/signup")
     Call<SignUpResponse> signup(@Body users user);
+//
+//    @POST ("users/login")
+//    Call<users> login(@Body users user);
 
-    @POST ("users/login")
-    Call<users> login(@Body users user);
-
-//    @FormUrlEncoded
-//    @POST("users/login")
-//    Call<SignUpResponse> checkUser(@Field("username") String username, @Field("password") String password);
+    @FormUrlEncoded
+    @POST("users/login")
+    Call<SignUpResponse> checkUser(@Field("username") String username, @Field("password") String password);
 
    @POST ("feedbacks/feed")
    Call<Void> feed(@Body feedbacks feedback);

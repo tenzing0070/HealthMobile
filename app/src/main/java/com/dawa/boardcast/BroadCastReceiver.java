@@ -10,8 +10,10 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.dawa.createchannel.CreateChannel;
+import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
-
+import com.dawa.mobilehealth.UpdateHealthRecordActivity;
+import com.dawa.mobilehealth.login.LoginActivity;
 
 
 public class BroadCastReceiver extends BroadcastReceiver {
@@ -41,6 +43,10 @@ public class BroadCastReceiver extends BroadcastReceiver {
             }
         }
 
+//        Intent i = new Intent(context, LoginActivity.class);
+//        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        context.startActivity(i);
+
     }
 
     private void DisplayNotification() {
@@ -64,5 +70,7 @@ public class BroadCastReceiver extends BroadcastReceiver {
 
         notificationManagerCompat.notify(2,notification);
     }
+
+
 
 }
