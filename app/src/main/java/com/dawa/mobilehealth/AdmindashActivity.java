@@ -9,20 +9,35 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.dawa.api.health_api;
 import com.dawa.mobilehealth.login.LoginActivity;
+import com.dawa.model.users;
 import com.dawa.url.url;
+import com.squareup.picasso.Picasso;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AdmindashActivity extends AppCompatActivity {
 
-    ImageView imgAdminLogout;
+    private TextView firstname;
+    ImageView imgAdminLogout, imgProfileAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash);
 
+        firstname = findViewById(R.id.txtfirstname);
+        imgProfileAdmin = findViewById(R.id.imgProfileAdmin);
+
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
+
+        openadmininfo();
 
         imgAdminLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,4 +76,43 @@ public class AdmindashActivity extends AppCompatActivity {
         });
 
     }
+
+    private void openadmininfo() {
+
+        health_api hrsApi = url.getInstance().create(health_api.class);
+        Call<users> usersCall = hrsApi.getUserDetails(url.token);
+        System.out.println("token is:"+url.token);
+
+        usersCall.enqueue(new Callback<users>() {
+            @Override
+            public void onResponse(Call<users> call, Response<users> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(AdmindashActivity.this, "code" + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(response.body().getImage()!=null) {
+                    String imgpath = url.BASE_URL + response.body().getImage();
+                    System.out.println("image response is :"+imgpath);
+
+                    Picasso.get().load(imgpath).into(imgProfileAdmin);
+
+                }
+                else
+                {
+                    Picasso.get().load(R.drawable.image1).into(imgProfileAdmin);
+                }
+
+                firstname.setText(response.body().getFirstname());
+
+            }
+
+            @Override
+            public void onFailure(Call<users> call, Throwable t) {
+                Toast.makeText(AdmindashActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+
 }
