@@ -32,12 +32,12 @@
         <activity
             android:name="login.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".NotificationActivity" />
+
+        <activity android:name=".UpdateAdminProfileActivity" />
         <activity android:name=".Quiz.QuizActivity" />
         <activity android:name=".Quiz.QuizDashActivity" />
         <activity android:name=".DoctorDetailActivity" />
         <activity android:name=".DocAppointmentActivity" />
-        <activity android:name=".FirstaidActivity" />
         <activity android:name=".QrScanActivity" />
         <activity android:name=".StopwatchActivity" />
         <activity android:name=".BmiActivity" />

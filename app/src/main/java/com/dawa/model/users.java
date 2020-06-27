@@ -41,7 +41,7 @@ public class users {
         this.age = age;
         this.phone = phone;
         this.email = email;
-        this.bloodgroup = bloodgroup;
+        this.gender = gender;
         this.username = username;
 
     }

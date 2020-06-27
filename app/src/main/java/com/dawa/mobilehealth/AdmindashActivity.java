@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.login.LoginActivity;
+import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -24,7 +25,7 @@ import retrofit2.Response;
 
 public class AdmindashActivity extends AppCompatActivity {
 
-    private TextView firstname;
+    private TextView adminUsername;
     ImageView imgAdminLogout, imgProfileAdmin;
 
     @Override
@@ -32,12 +33,21 @@ public class AdmindashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash);
 
-        firstname = findViewById(R.id.txtfirstname);
+        adminUsername = findViewById(R.id.txtusername);
         imgProfileAdmin = findViewById(R.id.imgProfileAdmin);
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
 
         openadmininfo();
+
+        imgProfileAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent openAdminProfile = new Intent(AdmindashActivity.this, UpdateAdminProfileActivity.class);
+                startActivity(openAdminProfile);
+            }
+        });
 
         imgAdminLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +112,7 @@ public class AdmindashActivity extends AppCompatActivity {
                     Picasso.get().load(R.drawable.image1).into(imgProfileAdmin);
                 }
 
-                firstname.setText(response.body().getFirstname());
+                adminUsername.setText(response.body().getUsername());
 
             }
 
