@@ -9,12 +9,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dawa.mobilehealth.admin.UserInfoActivity;
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.login.LoginActivity;
-import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -27,6 +28,7 @@ public class AdmindashActivity extends AppCompatActivity {
 
     private TextView adminUsername;
     ImageView imgAdminLogout, imgProfileAdmin;
+    LinearLayout lluserinfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class AdmindashActivity extends AppCompatActivity {
 
         adminUsername = findViewById(R.id.txtusername);
         imgProfileAdmin = findViewById(R.id.imgProfileAdmin);
+
+        lluserinfo = findViewById(R.id.llUserInfo);
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
 
@@ -49,6 +53,7 @@ public class AdmindashActivity extends AppCompatActivity {
             }
         });
 
+        //Admin Logout
         imgAdminLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +87,17 @@ public class AdmindashActivity extends AppCompatActivity {
                 });
                 AlertDialog alert = builder.create();
                 alert.show();
+            }
+        });
+
+        //Admin UserInfo Display
+
+        lluserinfo.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openUserInfo = new Intent(AdmindashActivity.this, UserInfoActivity.class);
+                startActivity(openUserInfo);
             }
         });
 

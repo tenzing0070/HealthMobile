@@ -33,6 +33,7 @@
             android:name="login.LoginActivity"
             android:label="@string/title_activity_login" />
 
+        <activity android:name=".admin.UserInfoActivity" />
         <activity android:name=".UpdateAdminProfileActivity" />
         <activity android:name=".Quiz.QuizActivity" />
         <activity android:name=".Quiz.QuizDashActivity" />

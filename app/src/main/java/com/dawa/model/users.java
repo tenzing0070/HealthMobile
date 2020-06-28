@@ -18,6 +18,8 @@ public class users {
     private String image;
     private String token;
 
+    private boolean expandable;
+
     public users(String firstname, String lastname, String address, String age, String phone, String email, String gender, String weight, String height, String bloodgroup, String username, String password, String image) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -34,6 +36,7 @@ public class users {
         this.image = image;
     }
 
+
     public users(String firstname, String lastname, String address, String age, String phone, String email, String gender,  String username) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -43,6 +46,7 @@ public class users {
         this.email = email;
         this.gender = gender;
         this.username = username;
+        this.expandable = false;
 
     }
 
@@ -58,7 +62,6 @@ public class users {
         this.height = height;
         this.bloodgroup = bloodgroup;
 
-
     }
 
 
@@ -66,6 +69,8 @@ public class users {
         this.username = username;
         this.password = password;
     }
+
+
 
 
 
@@ -167,6 +172,15 @@ public class users {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
     }
 }
 
