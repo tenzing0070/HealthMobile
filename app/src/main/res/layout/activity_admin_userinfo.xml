@@ -16,6 +16,35 @@
         android:text="User Details"
         android:textStyle="bold"/>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <androidx.appcompat.widget.SearchView
+
+            android:id="@+id/admin_user_search_view"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Search by Username"
+            android:layout_margin="1dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textColor="@color/colorBlue"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/etSearch"
+            android:layout_toRightOf="@+id/etSearch"
+            android:layout_marginRight="5dp"
+            />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/users_list"
         android:layout_width="match_parent"

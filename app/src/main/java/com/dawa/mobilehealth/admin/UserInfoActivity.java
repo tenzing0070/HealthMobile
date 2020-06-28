@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +27,7 @@ public class UserInfoActivity extends AppCompatActivity {
 
     UserInfoActivity activity;
     private RecyclerView recyclerView;
-
+    private SearchView searchusername;
     UserInfoAdapter userinfo_Adapter;
 
     public UserInfoActivity() {
@@ -41,8 +42,23 @@ public class UserInfoActivity extends AppCompatActivity {
 
         activity = this;
         recyclerView = findViewById(R.id.users_list);
+        searchusername = findViewById(R.id.admin_user_search_view);
 
         loaduserinfo();
+
+        searchusername.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                userinfo_Adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
     }
     private void loaduserinfo() {
