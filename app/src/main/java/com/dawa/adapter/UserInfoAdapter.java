@@ -61,6 +61,9 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
         holder.phone.setText(users.getPhone());
         holder.email.setText(users.getEmail());
         holder.username.setText(users.getUsername());
+        holder.weight.setText(users.getWeight());
+        holder.height.setText(users.getHeight());
+        holder.bloodgroup.setText(users.getBloodgroup());
         Picasso.get().load(imgPath).into(holder.imgProfile);
 
         boolean isExpandble = usersList.get(i).isExpandable();
@@ -112,7 +115,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
     public class UserInfoViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView imgProfile;
-        TextView firstname, lastname, address, age, gender, email, phone, username;
+        TextView firstname, lastname, address, age, gender, email, phone, username, weight, height, bloodgroup;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
 
@@ -128,6 +131,9 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
             email = itemView.findViewById(R.id.user_email);
             phone = itemView.findViewById(R.id.user_phone);
             username = itemView.findViewById(R.id.user_username);
+            weight = itemView.findViewById(R.id.user_weight);
+            height = itemView.findViewById(R.id.user_height);
+            bloodgroup = itemView.findViewById(R.id.user_bloodgroup);
 
             linearLayout = itemView.findViewById(R.id.linear_layout_adminuserinfo);
             expandableLayout = itemView.findViewById(R.id.expandable_layout_adminuserdetails);

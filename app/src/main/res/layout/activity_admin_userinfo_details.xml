@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/linear_layout_adminuserinfo"
         android:orientation="vertical"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -188,12 +189,13 @@
                 android:textColor="@color/colorRed"/>
 
             <ImageView
+                android:id="@+id/imgdeleteuserinfo"
                 android:layout_width="46dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:background="@drawable/delete"
                 android:layout_toRightOf="@+id/tv11"
-                android:layout_marginTop="90dp"
-                android:layout_marginLeft="100dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="110dp"
                 />
 
 
@@ -203,7 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:text="Email:"
+                android:text="Email"
                 android:textColor="@color/colorBlack"
                 android:layout_below="@+id/user_lastname"
                 android:textSize="15sp" />
@@ -217,6 +219,75 @@
                 android:textColor="@color/colorRed"
                 android:layout_below="@+id/tv10"
                 android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/tv14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Weight"
+                android:textColor="@color/colorBlack"
+                android:layout_below="@+id/user_email"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/user_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Weight"
+                android:textSize="15sp"
+                android:textColor="@color/colorRed"
+                android:layout_below="@+id/tv14"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/tv15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:text="Height"
+                android:textColor="@color/colorBlack"
+                android:layout_toRightOf="@+id/tv14"
+                android:layout_below="@+id/user_email"/>
+
+            <TextView
+                android:id="@+id/user_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Height"
+                android:textSize="15sp"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/colorRed"
+                android:layout_marginLeft="50dp"
+                android:layout_below="@+id/tv15"
+                android:layout_toRightOf="@+id/tv6"/>
+
+            <TextView
+                android:id="@+id/tv16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:text="Blood Group"
+                android:textColor="@color/colorBlack"
+                android:layout_toRightOf="@+id/tv15"
+                android:layout_below="@+id/user_email"/>
+
+            <TextView
+                android:id="@+id/user_bloodgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Blood Group"
+                android:textSize="15sp"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/colorRed"
+                android:layout_marginLeft="45dp"
+                android:layout_below="@+id/tv16"
+                android:layout_toRightOf="@+id/tv15"/>
 
         </RelativeLayout>
     </LinearLayout>

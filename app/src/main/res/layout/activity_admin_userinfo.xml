@@ -6,15 +6,33 @@
     android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:textSize="25sp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="@color/colorRed"
         android:text="User Details"
         android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imgAdminBack"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/adminback"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="AdminDashOpen"
+            />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"

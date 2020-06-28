@@ -1,7 +1,9 @@
 package com.dawa.mobilehealth.admin;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dawa.adapter.UserInfoAdapter;
 import com.dawa.api.admin_api;
 
+import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 
 import com.dawa.model.users;
@@ -88,5 +91,10 @@ public class UserInfoActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void AdminDashOpen(View view) {
+        Intent admindashopen = new Intent(this, AdmindashActivity.class);
+        startActivity(admindashopen);
     }
 }
