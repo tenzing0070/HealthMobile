@@ -93,8 +93,13 @@ public class UserInfoActivity extends AppCompatActivity {
         });
     }
 
+    public void OpenAdminDashboard(View view) {
+        Intent openadmindashboard = new Intent(this, AdmindashActivity.class);
+        startActivity(openadmindashboard);
+    }
+
     public void AdminDashOpen(View view) {
-        Intent admindashopen = new Intent(this, AdmindashActivity.class);
+        Intent admindashopen = new Intent(this, UserActivity.class);
         startActivity(admindashopen);
     }
 }

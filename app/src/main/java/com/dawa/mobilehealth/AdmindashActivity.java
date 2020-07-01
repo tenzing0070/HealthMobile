@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dawa.mobilehealth.admin.UserActivity;
 import com.dawa.mobilehealth.admin.UserInfoActivity;
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.login.LoginActivity;
@@ -28,7 +29,7 @@ public class AdmindashActivity extends AppCompatActivity {
 
     private TextView adminUsername;
     ImageView imgAdminLogout, imgProfileAdmin;
-    LinearLayout lluserinfo;
+    LinearLayout lluserinfo, lluser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class AdmindashActivity extends AppCompatActivity {
         imgProfileAdmin = findViewById(R.id.imgProfileAdmin);
 
         lluserinfo = findViewById(R.id.llUserInfo);
+        lluser = findViewById(R.id.llUser);
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
 
@@ -90,16 +92,19 @@ public class AdmindashActivity extends AppCompatActivity {
             }
         });
 
-        //Admin UserInfo Display
+        //Display Admin`s user all info display CRUD
 
-        lluserinfo.setOnClickListener(new View.OnClickListener() {
+        lluser.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent openUserInfo = new Intent(AdmindashActivity.this, UserInfoActivity.class);
-                startActivity(openUserInfo);
+                Intent openAdminUserCRUD = new Intent(AdmindashActivity.this, UserActivity.class);
+                startActivity(openAdminUserCRUD);
             }
         });
+
+
+
 
     }
 

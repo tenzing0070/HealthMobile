@@ -130,7 +130,7 @@
                     android:layout_margin="12dp">
 
                     <LinearLayout
-                        android:id="@+id/llUserInfo"
+                        android:id="@+id/llUser1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_row="0"
@@ -142,12 +142,12 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/logout"/>
+                            android:src="@drawable/admindoctor"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="User\nInfo"
+                            android:text="Doctor"
                             android:layout_marginTop="12dp"
                             android:textSize="15sp"
                             android:textColor="@color/colorBlack"
@@ -167,7 +167,7 @@
                     android:layout_margin="12dp">
 
                     <LinearLayout
-                        android:id="@+id/llFaq"
+                        android:id="@+id/llUser"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_row="0"
@@ -179,12 +179,12 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/faq"/>
+                            android:src="@drawable/adminuser"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="FAQ"
+                            android:text="User"
                             android:layout_marginTop="12dp"
                             android:textSize="15sp"
                             android:textColor="@color/colorBlack"

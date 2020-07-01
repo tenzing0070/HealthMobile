@@ -12,9 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linear_layout_adminuserinfo"
-        android:orientation="vertical"
-        android:layout_marginBottom="20dp"
-        android:background="#FFFFFF">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
