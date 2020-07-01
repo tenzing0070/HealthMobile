@@ -10,6 +10,8 @@ public class doctors {
     private String gender;
     private String price;
 
+    private boolean expandable;
+
     public doctors(String firstname, String lastname, String specialist, String image, String gender, String price ) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -17,6 +19,7 @@ public class doctors {
         this.image = image;
         this.gender = gender;
         this.price = price;
+        this.expandable = false;
     }
 
     public String getFirstname() {
@@ -73,5 +76,13 @@ public class doctors {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
     }
 }
