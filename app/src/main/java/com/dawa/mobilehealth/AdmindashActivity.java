@@ -13,10 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dawa.adapter.DoctorAdapter;
+
+import com.dawa.mobilehealth.admin.AppointmentInfoActivity;
 import com.dawa.mobilehealth.admin.DoctorActivity;
 import com.dawa.mobilehealth.admin.UserActivity;
-import com.dawa.mobilehealth.admin.UserInfoActivity;
+
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.login.LoginActivity;
 import com.dawa.model.users;
@@ -31,7 +32,7 @@ public class AdmindashActivity extends AppCompatActivity {
 
     private TextView adminUsername;
     ImageView imgAdminLogout, imgProfileAdmin;
-    LinearLayout lldoctor, lluser;
+    LinearLayout lldoctor, lluser, llappoitment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class AdmindashActivity extends AppCompatActivity {
 
         lldoctor = findViewById(R.id.llDoctor);
         lluser = findViewById(R.id.llUser);
+        llappoitment = findViewById(R.id.llApointments);
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
 
@@ -116,6 +118,16 @@ public class AdmindashActivity extends AppCompatActivity {
             }
         });
 
+        //Display Doctor Appointment details
+
+        llappoitment.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openAppointmentDetails = new Intent(AdmindashActivity.this, AppointmentInfoActivity.class);
+                startActivity(openAppointmentDetails);
+            }
+        });
 
 
 

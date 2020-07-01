@@ -28,6 +28,7 @@ public class Booking {
     @Expose
 
 
+
     private Integer v;
 
     public String getId() {
@@ -85,6 +86,9 @@ public class Booking {
     public void setV(Integer v) {
         this.v = v;
     }
+
+
+
 
 
 //        @Override
