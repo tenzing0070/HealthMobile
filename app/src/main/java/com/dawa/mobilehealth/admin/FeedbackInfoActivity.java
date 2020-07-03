@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dawa.adapter.AppointmentInfoAdapter;
+import com.dawa.adapter.DoctorInfoAdapter;
 import com.dawa.adapter.FeedbackInfoAdapter;
 import com.dawa.api.admin_api;
 import com.dawa.mobilehealth.AdmindashActivity;
@@ -30,6 +31,8 @@ public class FeedbackInfoActivity extends AppCompatActivity {
     FeedbackInfoActivity activity;
     private RecyclerView recyclerView;
 
+    private SearchView searchfeedbackemail;
+
     FeedbackInfoAdapter feedbackinfo_Adapter;
 
     public FeedbackInfoActivity() {
@@ -45,8 +48,23 @@ public class FeedbackInfoActivity extends AppCompatActivity {
         activity = this;
         recyclerView = findViewById(R.id.feedbackslist);
 
+        searchfeedbackemail = findViewById(R.id.admin_feedback_search_view);
 
         loadfeedbackinfo();
+
+        searchfeedbackemail.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                feedbackinfo_Adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
 
 

@@ -4,9 +4,12 @@ public class feedbacks {
     private String email;
     private String message;
 
+    private boolean expandable;
+
     public feedbacks(String email, String feedback) {
         this.email = email;
         this.message = feedback;
+        this.expandable = false;
     }
 
     public String getEmail() {
@@ -23,5 +26,14 @@ public class feedbacks {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
     }
 }

@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
 
+import com.dawa.model.doctors;
 import com.dawa.model.feedbacks;
 
 
@@ -51,6 +54,10 @@ public class FeedbackInfoAdapter extends RecyclerView.Adapter<FeedbackInfoAdapte
 
         holder.useremail.setText(feedbacks.getEmail());
         holder.usermessage.setText(feedbacks.getMessage());
+
+        boolean isExpandble = feedbacksList.get(i).isExpandable();
+        holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
+
 
 
     }
@@ -100,6 +107,8 @@ public class FeedbackInfoAdapter extends RecyclerView.Adapter<FeedbackInfoAdapte
 
 
         TextView useremail, usermessage;
+        LinearLayout linearLayout;
+        RelativeLayout expandableLayout;
 
 
 
@@ -109,6 +118,18 @@ public class FeedbackInfoAdapter extends RecyclerView.Adapter<FeedbackInfoAdapte
 
             useremail= itemView.findViewById(R.id.user_feedback_email);
             usermessage = itemView.findViewById(R.id.user_feedback_message);
+
+            linearLayout = itemView.findViewById(R.id.linear_layout_feedback);
+            expandableLayout = itemView.findViewById(R.id.expandable_layout_feedback);
+
+            linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    feedbacks feedbacks = feedbacksList.get(getAdapterPosition());
+                    feedbacks.setExpandable(!feedbacks.isExpandable());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
 
 
         }
