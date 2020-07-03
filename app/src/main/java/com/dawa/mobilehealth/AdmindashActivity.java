@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.dawa.mobilehealth.admin.AppointmentInfoActivity;
 import com.dawa.mobilehealth.admin.DoctorActivity;
+import com.dawa.mobilehealth.admin.FeedbackInfoActivity;
 import com.dawa.mobilehealth.admin.UserActivity;
 
 import com.dawa.api.health_api;
@@ -32,7 +33,7 @@ public class AdmindashActivity extends AppCompatActivity {
 
     private TextView adminUsername;
     ImageView imgAdminLogout, imgProfileAdmin;
-    LinearLayout lldoctor, lluser, llappoitment;
+    LinearLayout lldoctor, lluser, llappoitment, llfeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class AdmindashActivity extends AppCompatActivity {
         lldoctor = findViewById(R.id.llDoctor);
         lluser = findViewById(R.id.llUser);
         llappoitment = findViewById(R.id.llApointments);
+        llfeedback = findViewById(R.id.llFeedback);
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
 
@@ -129,6 +131,16 @@ public class AdmindashActivity extends AppCompatActivity {
             }
         });
 
+        //Display Admin Feedback deails
+
+        llfeedback.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openFeedbackDetails = new Intent(AdmindashActivity.this, FeedbackInfoActivity.class);
+                startActivity(openFeedbackDetails);
+            }
+        });
 
 
 

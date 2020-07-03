@@ -33,6 +33,7 @@
             android:name="login.LoginActivity"
             android:label="@string/title_activity_login" />
 
+        <activity android:name=".admin.FeedbackInfoActivity" />
         <activity android:name=".admin.AppointmentInfoActivity" />
         <activity android:name=".admin.DoctorInfoActivity" />
         <activity android:name=".admin.DoctorActivity" />

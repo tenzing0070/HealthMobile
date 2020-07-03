@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_feedback"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8D46FA">
+
+            <TextView
+                android:id="@+id/user_feedback_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint=" Email"
+                android:textSize="18sp"
+                android:padding="16dp"
+                android:textColor="@color/colorWhite"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expandable_layout_feedback">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:text="Message"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/user_feedback_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Message"
+                android:textSize="15sp"
+                android:layout_marginTop="0dp"
+                android:layout_below="@+id/tv1"
+                android:textColor="@color/colorRed"
+                android:layout_marginLeft="5dp"/>
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="45dp"
+                android:background="@drawable/delete"
+                android:layout_toRightOf="@+id/tv11"
+                android:layout_marginTop="90dp"
+                android:layout_marginLeft="130dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

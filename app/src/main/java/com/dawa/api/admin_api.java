@@ -3,7 +3,9 @@ package com.dawa.api;
 
 
 import com.dawa.model.Booking;
+import com.dawa.model.Instructions;
 import com.dawa.model.doctors;
+import com.dawa.model.feedbacks;
 import com.dawa.model.users;
 
 
@@ -41,6 +43,15 @@ public interface admin_api {
 
     @GET("bookingdetails/mybookings")
     Call<List<Booking>> getAppointment(@Header("Authorization") String token);
+
+    //Admin Feedback details
+
+    @GET("feedbacks/feedbackdetails")
+    Call<List<feedbacks>> getUserFeedback(@Header("Authorization") String token);
+
+    @GET("feedbacks/{email}")
+    Call<List<feedbacks>> getEmail(@Header("email") String email);
+
 
 
 }
