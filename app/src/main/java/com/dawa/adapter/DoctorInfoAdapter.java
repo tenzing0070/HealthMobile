@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dawa.api.doctor_api;
 import com.dawa.mobilehealth.R;
 
+
 import com.dawa.model.doctors;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -120,7 +121,7 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
         ImageView ivdeletedoc;
         String id;
 
-        public DoctorInfoViewHolder(@NonNull View itemView) {
+        public DoctorInfoViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             imgProfile = itemView.findViewById(R.id.imgdoctorimage);
@@ -144,13 +145,15 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
                 }
             });
 
+
+
             ivdeletedoc.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     DeleteDoc();
                 }
 
-                    private void DeleteDoc() {
+                private void DeleteDoc() {
 
         doctor_api docApi = url.getInstance().create(doctor_api.class);
         Call<doctors> voidCall = docApi.deletePost(url.token, id);
@@ -158,14 +161,15 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
             @Override
             public void onResponse(Call<doctors> call, Response<doctors> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(mContext, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(itemView.getContext(), "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(mContext, "Deleted !!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(itemView.getContext(), "Deleted !!!", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onFailure(Call<doctors> call, Throwable t) {
-                Toast.makeText(mContext, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(itemView.getContext(), "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

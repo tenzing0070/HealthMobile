@@ -168,7 +168,7 @@ public class DoctorCrudActivity extends AppCompatActivity {
                     Toast.makeText(DoctorCrudActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(DoctorCrudActivity.this, "Registered", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DoctorCrudActivity.this, "Doctor Info Added to Database", Toast.LENGTH_SHORT).show();
 
             }
 

@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".admin.DoctorCrudActivity">
+    tools:context=".admin.DoctorCrudActivity"
+    android:background= "#FFFFFF">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="25dp">
 
     <ImageView
         android:id="@+id/imgAdminHome"
@@ -40,139 +53,123 @@
         android:onClick="OpenDocPage"
         android:src="@drawable/adminback" />
 
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/rrlayout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:background="#000000"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgAdminDoctorProfile"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:src="@drawable/noimage"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/rrlayout"
+            tools:ignore="NotSibling" />
 
     <EditText
         android:id="@+id/crud_doc_firstname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvadddoctor"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginRight="97dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:textColor="@color/colorBlack"
         android:textAllCaps="true"
         android:ems="10"
         android:hint="First name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_toRightOf="@+id/imgAdminDoctorProfile"/>
 
     <EditText
         android:id="@+id/crud_doc_lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crud_doc_firstname"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:textAllCaps="true"
         android:ems="10"
         android:hint="Last name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/imgAdminDoctorProfile"/>
 
     <EditText
         android:id="@+id/crud_doc_specialist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crud_doc_lastname"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="99dp"
-        android:layout_marginLeft="99dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:textAllCaps="true"
         android:ems="10"
         android:hint="Specialist"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/imgAdminDoctorProfile"/>
 
     <EditText
         android:id="@+id/crud_doc_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crud_doc_specialist"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginRight="97dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
         android:textAllCaps="true"
         android:hint="Gender"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/imgAdminDoctorProfile"/>
+
     <EditText
         android:id="@+id/crud_doc_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crud_doc_gender"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginRight="97dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
+        android:textColor="@color/colorBlack"
         android:hint="Price"
-        android:inputType="number" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgAdminDoctorProfile"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/noimage"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        android:layout_marginTop="60dp"/>
-
-<!--    <Spinner-->
-<!--        android:id="@+id/spinner"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_below="@+id/crud_doc_price"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_marginBottom="5dp"-->
-<!--        />-->
-<!--    <Button-->
-<!--        android:id="@+id/btnSelectPic"-->
-<!--        android:layout_width="191dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Choose pic . . . "-->
-<!--        android:textAllCaps="false"-->
-<!--        android:layout_below="@+id/spinner"-->
-<!--        android:layout_marginLeft="100dp"-->
-<!--        android:padding="10dp"-->
-<!--        android:textAlignment="viewStart"-->
-<!--        android:layout_gravity="start" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="136dp"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:layout_below="@+id/btnSelectPic"-->
-<!--        app:srcCompat="@drawable/admindoctor"-->
-<!--        android:layout_marginLeft="100dp"/>-->
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/imgAdminDoctorProfile"/>
 
     <Button
         android:id="@+id/btnAddDoc"
@@ -185,7 +182,13 @@
         android:layout_alignParentRight="true"
         android:layout_margin="30dp"
         android:text="Add"
-        android:textColor="@color/colorBlack" />
+        android:textSize="25sp"
+        android:background="@drawable/update_button_design"
+        android:textColor="@color/colorWhite" />
+
 
 
 </RelativeLayout>
+
+
+

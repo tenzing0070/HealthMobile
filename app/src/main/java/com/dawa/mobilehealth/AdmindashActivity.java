@@ -74,7 +74,7 @@ public class AdmindashActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //if user pressed "yes", then he is allowed to exit from application
-                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("Health", MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("Mobile Health", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.remove("token");
                         editor.remove("isadmin");

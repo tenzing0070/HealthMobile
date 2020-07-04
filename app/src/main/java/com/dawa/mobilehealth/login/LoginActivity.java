@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //            etpassword.setText(rememberMe.getString("password", ""));
 //            chkRemember.setChecked(true);
 //        }
-        SharedPreferences sharedPreferences = getSharedPreferences("Ride",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health",MODE_PRIVATE);
         String token = sharedPreferences.getString("token","empty");
         String status = sharedPreferences.getString("status","isadmin");
         if(!token.equals("empty") && status.equals("isadmin")){
@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         LoginBLL loginBLL = new LoginBLL();
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(username, password)) {
-            SharedPreferences sharedPreferences = getSharedPreferences("Ride", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("token", url.token);
             editor.putString("status", url.status);
@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             finish();
         } else {
             if (loginBLL.checkadmin(username, password)) {
-                SharedPreferences sharedPreferences = getSharedPreferences("Health", MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("token", url.token);
                 editor.putString("isadmin", url.status);
