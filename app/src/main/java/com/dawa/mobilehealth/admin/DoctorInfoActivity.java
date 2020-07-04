@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dawa.adapter.DoctorInfoAdapter;
 
 import com.dawa.api.admin_api;
+import com.dawa.api.doctor_api;
 import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.model.doctors;
@@ -32,6 +34,7 @@ public class DoctorInfoActivity extends AppCompatActivity {
     private SearchView searchdoctorspecialist;
     DoctorInfoAdapter doctorinfo_Adapter;
 
+
     public DoctorInfoActivity() {
 
     }
@@ -46,7 +49,11 @@ public class DoctorInfoActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.doctors_list);
         searchdoctorspecialist = findViewById(R.id.admin_doctor_search_view);
 
+
+
         loaddoctorinfo();
+
+
 
         searchdoctorspecialist.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
@@ -63,6 +70,8 @@ public class DoctorInfoActivity extends AppCompatActivity {
         });
 
     }
+
+
     private void loaddoctorinfo() {
 
 
@@ -91,6 +100,8 @@ public class DoctorInfoActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void OpenAdminDashboard(View view) {
         Intent openadmindashboard = new Intent(this, AdmindashActivity.class);

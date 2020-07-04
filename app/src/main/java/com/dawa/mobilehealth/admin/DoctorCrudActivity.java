@@ -180,7 +180,7 @@ public class DoctorCrudActivity extends AppCompatActivity {
 
     }
 
-    
+
     public void OpenAdminDashboard(View view) {
         Intent openadmindashboard = new Intent(this, AdmindashActivity.class);
         startActivity(openadmindashboard);

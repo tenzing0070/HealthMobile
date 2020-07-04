@@ -130,7 +130,7 @@
                 android:textColor="@color/colorRed"/>
 
             <ImageView
-                android:id="@+id/imgdeleteuserinfo"
+                android:id="@+id/imgdeletedoctorinfo"
                 android:layout_width="46dp"
                 android:layout_height="50dp"
                 android:background="@drawable/delete"

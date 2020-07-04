@@ -5,14 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dawa.api.doctor_api;
 import com.dawa.mobilehealth.R;
+
 import com.dawa.model.doctors;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -21,6 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.DoctorInfoViewHolder> {
 
@@ -110,6 +117,8 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
         TextView firstname, lastname,  gender, specialist, price;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
+        ImageView ivdeletedoc;
+        String id;
 
         public DoctorInfoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -120,6 +129,7 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
             gender = itemView.findViewById(R.id.doctor_gender);
             specialist = itemView.findViewById(R.id.doctor_specialist);
             price = itemView.findViewById(R.id.doctor_price);
+            ivdeletedoc = itemView.findViewById(R.id.imgdeletedoctorinfo);
 
 
             linearLayout = itemView.findViewById(R.id.linear_layout_admindoctorinfo);
@@ -132,6 +142,34 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
                     doctors.setExpandable(!doctors.isExpandable());
                     notifyItemChanged(getAdapterPosition());
                 }
+            });
+
+            ivdeletedoc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DeleteDoc();
+                }
+
+                    private void DeleteDoc() {
+
+        doctor_api docApi = url.getInstance().create(doctor_api.class);
+        Call<doctors> voidCall = docApi.deletePost(url.token, id);
+        voidCall.enqueue(new Callback<doctors>() {
+            @Override
+            public void onResponse(Call<doctors> call, Response<doctors> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(mContext, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(mContext, "Deleted !!!", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onFailure(Call<doctors> call, Throwable t) {
+                Toast.makeText(mContext, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
             });
         }
     }
