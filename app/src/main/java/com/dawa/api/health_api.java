@@ -29,9 +29,7 @@ public interface health_api {
 
     @POST("users/signup")
     Call<SignUpResponse> signup(@Body users user);
-//
-//    @POST ("users/login")
-//    Call<users> login(@Body users user);
+
 
     @FormUrlEncoded
     @POST("users/login")

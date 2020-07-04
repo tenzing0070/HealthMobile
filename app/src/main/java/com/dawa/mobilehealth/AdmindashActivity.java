@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.dawa.mobilehealth.admin.AppointmentInfoActivity;
 import com.dawa.mobilehealth.admin.DoctorActivity;
+import com.dawa.mobilehealth.admin.DoctorCrudActivity;
 import com.dawa.mobilehealth.admin.FeedbackInfoActivity;
 import com.dawa.mobilehealth.admin.UserActivity;
 
@@ -48,6 +49,7 @@ public class AdmindashActivity extends AppCompatActivity {
         llappoitment = findViewById(R.id.llApointments);
         llfeedback = findViewById(R.id.llFeedback);
 
+
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
 
         openadmininfo();
@@ -72,7 +74,7 @@ public class AdmindashActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //if user pressed "yes", then he is allowed to exit from application
-                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("Ride", MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("Health", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.remove("token");
                         editor.remove("isadmin");
@@ -141,6 +143,8 @@ public class AdmindashActivity extends AppCompatActivity {
                 startActivity(openFeedbackDetails);
             }
         });
+
+
 
 
 

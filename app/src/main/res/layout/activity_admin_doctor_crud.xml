@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".admin.DoctorCrudActivity">
+
+    <ImageView
+        android:id="@+id/imgAdminHome"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/homefragment"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="OpenAdminDashboard"
+        />
+
+
+    <TextView
+        android:id="@+id/tvadddoctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="@color/colorRed"
+        android:text="Add Doctor"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imgAdminBack"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="OpenDocPage"
+        android:src="@drawable/adminback" />
+
+
+
+    <EditText
+        android:id="@+id/crud_doc_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvadddoctor"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginRight="97dp"
+        android:textAllCaps="true"
+        android:ems="10"
+        android:hint="First name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/crud_doc_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crud_doc_firstname"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginRight="98dp"
+        android:textAllCaps="true"
+        android:ems="10"
+        android:hint="Last name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/crud_doc_specialist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crud_doc_lastname"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginRight="98dp"
+        android:textAllCaps="true"
+        android:ems="10"
+        android:hint="Specialist"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/crud_doc_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crud_doc_specialist"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginRight="97dp"
+        android:ems="10"
+        android:textAllCaps="true"
+        android:hint="Gender"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/crud_doc_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crud_doc_gender"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginRight="97dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAdminDoctorProfile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/noimage"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="60dp"/>
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_below="@+id/crud_doc_price"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        />-->
+<!--    <Button-->
+<!--        android:id="@+id/btnSelectPic"-->
+<!--        android:layout_width="191dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Choose pic . . . "-->
+<!--        android:textAllCaps="false"-->
+<!--        android:layout_below="@+id/spinner"-->
+<!--        android:layout_marginLeft="100dp"-->
+<!--        android:padding="10dp"-->
+<!--        android:textAlignment="viewStart"-->
+<!--        android:layout_gravity="start" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="136dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/btnSelectPic"-->
+<!--        app:srcCompat="@drawable/admindoctor"-->
+<!--        android:layout_marginLeft="100dp"/>-->
+
+    <Button
+        android:id="@+id/btnAddDoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/crud_doc_price"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        android:text="Add"
+        android:textColor="@color/colorBlack" />
+
+
+</RelativeLayout>

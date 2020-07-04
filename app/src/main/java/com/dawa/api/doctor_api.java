@@ -3,6 +3,9 @@ package com.dawa.api;
 
 import com.dawa.model.Booking;
 import com.dawa.model.doctors;
+import com.dawa.model.users;
+import com.dawa.server_response.ImageResponse;
+import com.dawa.server_response.SignUpResponse;
 
 
 import java.util.List;
@@ -36,4 +39,12 @@ public interface doctor_api {
 
     @GET("bookingdetails/mybookings")
     Call<List<Booking>> getBooking(@Header("Authorization") String token);
+
+
+    @POST("doctors/postDoctor")
+    Call<doctors> add(@Body doctors doctor);
+
+    @Multipart
+    @POST ("upload/")
+    Call <ImageResponse> DocImgUpload(@Header("Authorization") String token, @Part MultipartBody.Part file);
 }

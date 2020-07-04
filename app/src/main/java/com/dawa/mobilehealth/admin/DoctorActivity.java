@@ -10,9 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 
+
+
 public class DoctorActivity extends AppCompatActivity {
 
-    LinearLayout lldoctorinfo;
+    LinearLayout lldoctorinfo, lldocadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class DoctorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_doctor_dashboard);
 
         lldoctorinfo = findViewById(R.id.llDoctorInfo);
+        lldocadd = findViewById(R.id.llDoctorAdd);
 
         lldoctorinfo.setOnClickListener(new View.OnClickListener() {
 
@@ -27,6 +30,16 @@ public class DoctorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openDoctorInfo = new Intent(DoctorActivity.this, DoctorInfoActivity.class);
                 startActivity(openDoctorInfo);
+            }
+        });
+
+        //Admin Doctor Add update
+        lldocadd.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openDocAdd = new Intent(DoctorActivity.this, DoctorCrudActivity.class);
+                startActivity(openDocAdd);
             }
         });
     }

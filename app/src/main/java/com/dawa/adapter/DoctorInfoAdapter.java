@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
 import com.dawa.model.doctors;
-import com.dawa.model.users;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
 
