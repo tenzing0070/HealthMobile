@@ -11,7 +11,7 @@ import com.dawa.mobilehealth.R;
 
 public class FirstaidActivity extends AppCompatActivity {
 
-    LinearLayout llfirstaidinfo;
+    LinearLayout llfirstaidinfo, llfirstaidadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,10 @@ public class FirstaidActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_firstaid_dashboard);
 
         llfirstaidinfo = findViewById(R.id.llFirstaidInfo);
+        llfirstaidadd = findViewById(R.id.llFirstaidDash);
 
+
+// Admin firstaid info display
         llfirstaidinfo.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -28,7 +31,19 @@ public class FirstaidActivity extends AppCompatActivity {
                 startActivity(openFirstaidDash);
             }
         });
-    }
+
+
+    // Admin firstaid info ADD
+
+        llfirstaidadd.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            Intent openFirstaidCRUD = new Intent(FirstaidActivity.this, FirstaidCrudActivity.class);
+            startActivity(openFirstaidCRUD);
+        }
+    });
+}
 
 
     public void OpenAdminDashboard(View view) {

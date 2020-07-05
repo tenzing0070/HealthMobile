@@ -2,6 +2,8 @@ package com.dawa.api;
 
 
 import com.dawa.model.Instructions;
+import com.dawa.model.doctors;
+import com.dawa.server_response.ImageResponse;
 
 
 import java.util.List;
@@ -26,5 +28,11 @@ public interface firstaid_api {
     @GET("firstaids/{codename}")
     Call<List<Instructions>> getCodename(@Header("codename") String codename);
 
+    @POST("firstaids/postFirstaid")
+    Call<Instructions> addFirstaid(@Body Instructions Instructions);
+
+    @Multipart
+    @POST ("upload/")
+    Call <ImageResponse> FirstaidImgUpload(@Header("Authorization") String token, @Part MultipartBody.Part file);
 
 }
