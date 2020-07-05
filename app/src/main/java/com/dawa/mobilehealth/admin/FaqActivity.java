@@ -12,7 +12,7 @@ import com.dawa.mobilehealth.R;
 public class FaqActivity extends AppCompatActivity {
 
 
-    LinearLayout llfaqinfo;
+    LinearLayout llfaqinfo, llfaqadd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,9 @@ public class FaqActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_faq_dashboard);
 
         llfaqinfo = findViewById(R.id.llFaqInfo);
+        llfaqadd = findViewById(R.id.llFaqAdd);
 
+        // Admin open Faq details
         llfaqinfo.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -29,6 +31,17 @@ public class FaqActivity extends AppCompatActivity {
                 startActivity(openFaqInfo);
             }
         });
+
+        // Admin open Faq Add info
+        llfaqadd.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openFaqAdd = new Intent(FaqActivity.this, FaqCrudActivity.class);
+                startActivity(openFaqAdd);
+            }
+        });
+
     }
         public void OpenAdminDashboard(View view) {
             Intent openadmindashboard = new Intent(this, AdmindashActivity.class);

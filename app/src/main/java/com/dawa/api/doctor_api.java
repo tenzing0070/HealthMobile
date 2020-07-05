@@ -50,6 +50,6 @@ public interface doctor_api {
     @POST ("upload/")
     Call <ImageResponse> DocImgUpload(@Header("Authorization") String token, @Part MultipartBody.Part file);
 
-    @DELETE("doctors/delete/{id}")
+    @DELETE("doctors/deleteDoc/{id}")
     Call<doctors>deletePost(@Header("Authorization") String token, @Path("id") String id);
 }
