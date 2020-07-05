@@ -61,6 +61,15 @@ public interface admin_api {
     @GET("faqs/{question}")
     Call<List<Faqs>> getQuestion(@Header("question") String question);
 
+    //Admin Firstaid details
+
+    @GET("firstaids/firstaiddetails")
+    Call<List<Instructions>> getAdminFirstaidDetails(@Header("Authorization") String token);
+
+    @GET("firstaids/{codename}")
+    Call<List<Instructions>> getCodename(@Header("codename") String codename);
+
+
 
 
 

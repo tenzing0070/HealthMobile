@@ -29,7 +29,7 @@
             android:textSize="25sp"
             android:gravity="center"
             android:textColor="@color/colorRed"
-            android:text="Faq Details"
+            android:text="Firstaid Details"
             android:textStyle="bold"/>
 
         <ImageView
@@ -62,11 +62,11 @@
 
         <androidx.appcompat.widget.SearchView
 
-            android:id="@+id/admin_faq_search_view"
+            android:id="@+id/admin_firstaid_search_view"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Search by keywords"
+            android:hint="Search by Firstaid"
             android:layout_margin="1dp"/>
 
 
@@ -84,7 +84,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/faqs_list"
+        android:id="@+id/firstaids_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">

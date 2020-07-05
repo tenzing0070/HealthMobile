@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,60 +12,77 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linear_layout_feedback"
+        android:id="@+id/linear_layout_adminfirstaidinfo"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#8D46FA">
+            android:background="#1A5276">
 
             <TextView
-                android:id="@+id/user_feedback_email"
+                android:id="@+id/firstaid_codename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint=" Email"
+                android:hint=" Codename"
                 android:textSize="18sp"
                 android:padding="16dp"
                 android:textColor="@color/colorWhite"/>
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgAdminFirstaid"
+                android:layout_width="46dp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="1dp"
+                android:src="@drawable/bgcircle"
+                android:layout_marginTop="5dp"/>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/expandable_layout_feedback">
+            android:id="@+id/expandable_layout_adminfirstaiddetails">
 
             <TextView
-                android:id="@+id/tv1"
+                android:id="@+id/firstaid_instruction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
-                android:text="User Message"
-                android:textColor="@color/colorRed"/>
+                android:padding="15dp"
+                android:text="Instructions"
+                android:textColor="@color/colorRed"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/user_feedback_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Message"
+                android:id="@+id/firstaid_description"
+                android:text="Description"
+                android:padding="16dp"
                 android:textSize="15sp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/tv1"
                 android:textColor="@color/colorBlack"
-                android:layout_marginLeft="5dp"/>
+                android:layout_below="@+id/firstaid_instruction"
+                />
 
             <ImageView
+                android:id="@+id/imgdeleteuserinfo"
                 android:layout_width="46dp"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:background="@drawable/delete"
+                android:layout_below="@+id/imgAdminFirstaid"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="200dp"
+                android:layout_marginLeft="110dp"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="5dp"
+                tools:ignore="NotSibling" />
+
+
+
+
+
 
         </RelativeLayout>
     </LinearLayout>

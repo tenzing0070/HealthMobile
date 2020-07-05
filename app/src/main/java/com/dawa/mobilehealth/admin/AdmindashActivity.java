@@ -45,6 +45,7 @@ public class AdmindashActivity extends AppCompatActivity {
         llappoitment = findViewById(R.id.llApointments);
         llfeedback = findViewById(R.id.llFeedback);
         llfaq = findViewById(R.id.llFaq);
+        llfirstaid = findViewById(R.id.llFirstaid);
 
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
@@ -149,6 +150,17 @@ public class AdmindashActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openFaqDash = new Intent(AdmindashActivity.this, FaqActivity.class);
                 startActivity(openFaqDash);
+            }
+        });
+
+        //Display Admin Firstaid dashboard
+
+        llfirstaid.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openFirstaidDashboard = new Intent(AdmindashActivity.this, FirstaidActivity.class);
+                startActivity(openFirstaidDashboard);
             }
         });
 

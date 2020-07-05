@@ -34,6 +34,8 @@
             android:label="@string/title_activity_login" />
 
 
+        <activity android:name=".admin.FirstaidInfoActivity" />
+        <activity android:name=".admin.FirstaidActivity" />
         <activity android:name=".admin.FaqInfoActivity" />
         <activity android:name=".admin.FaqActivity" />
         <activity android:name=".admin.DoctorCrudActivity" />
