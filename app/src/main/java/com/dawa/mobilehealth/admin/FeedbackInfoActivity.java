@@ -11,10 +11,8 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dawa.adapter.DoctorInfoAdapter;
 import com.dawa.adapter.FeedbackInfoAdapter;
 import com.dawa.api.admin_api;
-import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 
 import com.dawa.model.feedbacks;

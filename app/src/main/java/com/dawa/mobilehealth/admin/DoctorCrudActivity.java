@@ -20,7 +20,6 @@ import androidx.loader.content.CursorLoader;
 
 import com.dawa.api.doctor_api;
 
-import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 
 
@@ -141,7 +140,8 @@ public class DoctorCrudActivity extends AppCompatActivity {
        }
         else {
 
-            Toast.makeText(DoctorCrudActivity.this, "Please choose file to update picture", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DoctorCrudActivity.this, "Please insert picture", Toast.LENGTH_SHORT).show();
+//            onStop();
 
         }
     }
@@ -149,7 +149,7 @@ public class DoctorCrudActivity extends AppCompatActivity {
 
     private void addDoc() {
 
-        String docfname = docFname.getText().toString();
+        final String docfname = docFname.getText().toString();
         String doclname = docLname.getText().toString();
         String docspecialist = docSpecialist.getText().toString();
 
@@ -169,6 +169,14 @@ public class DoctorCrudActivity extends AppCompatActivity {
                     return;
                 }
                 Toast.makeText(DoctorCrudActivity.this, "Doctor Info Added to Database", Toast.LENGTH_SHORT).show();
+                docFname.getText().clear();
+                docLname.getText().clear();
+                docSpecialist.getText().clear();
+                docGender.getText().clear();
+                docPrice.getText().clear();
+                imgAdminDoctorProfile.setImageResource(0);
+                imgAdminDoctorProfile.destroyDrawingCache();
+                imgAdminDoctorProfile.setImageResource(R.drawable.noimage);
 
             }
 

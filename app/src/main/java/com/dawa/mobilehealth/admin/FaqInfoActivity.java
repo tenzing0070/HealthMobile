@@ -11,12 +11,12 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dawa.adapter.UserInfoAdapter;
+import com.dawa.adapter.FaqInfoAdapter;
+
 import com.dawa.api.admin_api;
-
 import com.dawa.mobilehealth.R;
+import com.dawa.model.Faqs;
 
-import com.dawa.model.users;
 import com.dawa.url.url;
 
 import java.util.List;
@@ -25,14 +25,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserInfoActivity extends AppCompatActivity {
+public class FaqInfoActivity extends AppCompatActivity {
 
-    UserInfoActivity activity;
+    FaqInfoActivity activity;
     private RecyclerView recyclerView;
-    private SearchView searchusername;
-    UserInfoAdapter userinfo_Adapter;
+    private SearchView searchinfo;
+    FaqInfoAdapter faqinfo_Adapter;
 
-    public UserInfoActivity() {
+    public FaqInfoActivity() {
 
     }
 
@@ -40,15 +40,15 @@ public class UserInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_userinfo);
+        setContentView(R.layout.activity_admin_faqinfo);
 
         activity = this;
-        recyclerView = findViewById(R.id.users_list);
-        searchusername = findViewById(R.id.admin_user_search_view);
+        recyclerView = findViewById(R.id.faqs_list);
+        searchinfo = findViewById(R.id.admin_faq_search_view);
 
-        loaduserinfo();
+        loadfaqinfo();
 
-        searchusername.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchinfo.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -57,38 +57,38 @@ public class UserInfoActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                userinfo_Adapter.getFilter().filter(newText);
+                faqinfo_Adapter.getFilter().filter(newText);
                 return false;
             }
         });
 
     }
-    private void loaduserinfo() {
+    private void loadfaqinfo() {
 
 
-        admin_api userAPI = url.getInstance().create(admin_api.class);
-        Call<List<users>> usersCall = userAPI.getCustomer(url.token);
+        admin_api faqAPI = url.getInstance().create(admin_api.class);
+        Call<List<Faqs>> faqsCall = faqAPI.getAdminFaqDetails(url.token);
         System.out.println("token is:"+url.token);
 
-
-        usersCall.enqueue(new Callback<List<users>>() {
+        faqsCall.enqueue(new Callback<List<Faqs>>() {
             @Override
-            public void onResponse(Call<List<users>> call, Response<List<users>> response) {
+            public void onResponse(Call<List<Faqs>> call, Response<List<Faqs>> response) {
                 if(!response.isSuccessful()) {
-                    Toast.makeText(UserInfoActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FaqInfoActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
 
-                List<users> usersList = response.body();
-                activity.userinfo_Adapter = new UserInfoAdapter(UserInfoActivity.this, usersList);
-                recyclerView.setAdapter(userinfo_Adapter);
-                recyclerView.setLayoutManager(new GridLayoutManager(UserInfoActivity.this,1));
+                List<Faqs> faqsList = response.body();
+                activity.faqinfo_Adapter = new FaqInfoAdapter(FaqInfoActivity.this, faqsList);
+                recyclerView.setAdapter(faqinfo_Adapter);
+                recyclerView.setLayoutManager(new GridLayoutManager(FaqInfoActivity.this,1));
 
             }
 
             @Override
-            public void onFailure(Call<List<users>> call, Throwable t) {
+            public void onFailure(Call<List<Faqs>> call, Throwable t) {
 
             }
+
         });
     }
 
@@ -98,7 +98,8 @@ public class UserInfoActivity extends AppCompatActivity {
     }
 
     public void AdminDashOpen(View view) {
-        Intent admindashopen = new Intent(this, UserActivity.class);
+        Intent admindashopen = new Intent(this, FaqActivity.class);
         startActivity(admindashopen);
     }
 }
+

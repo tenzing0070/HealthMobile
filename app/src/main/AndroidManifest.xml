@@ -28,12 +28,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdmindashActivity"></activity>
+        <activity android:name=".admin.AdmindashActivity"></activity>
         <activity
             android:name="login.LoginActivity"
             android:label="@string/title_activity_login" />
 
 
+        <activity android:name=".admin.FaqInfoActivity" />
+        <activity android:name=".admin.FaqActivity" />
         <activity android:name=".admin.DoctorCrudActivity" />
         <activity android:name=".admin.FeedbackInfoActivity" />
         <activity android:name=".admin.AppointmentInfoActivity" />
@@ -41,7 +43,7 @@
         <activity android:name=".admin.DoctorActivity" />
         <activity android:name=".admin.UserActivity"/>
         <activity android:name=".admin.UserInfoActivity" />
-        <activity android:name=".UpdateAdminProfileActivity" />
+        <activity android:name=".admin.UpdateAdminProfileActivity" />
         <activity android:name=".Quiz.QuizActivity" />
         <activity android:name=".Quiz.QuizDashActivity" />
         <activity android:name=".DoctorDetailActivity" />

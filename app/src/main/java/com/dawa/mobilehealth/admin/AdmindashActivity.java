@@ -1,4 +1,4 @@
-package com.dawa.mobilehealth;
+package com.dawa.mobilehealth.admin;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.dawa.mobilehealth.admin.AppointmentInfoActivity;
-import com.dawa.mobilehealth.admin.DoctorActivity;
-import com.dawa.mobilehealth.admin.DoctorCrudActivity;
-import com.dawa.mobilehealth.admin.FeedbackInfoActivity;
-import com.dawa.mobilehealth.admin.UserActivity;
+import com.dawa.mobilehealth.R;
 
 import com.dawa.api.health_api;
 import com.dawa.mobilehealth.login.LoginActivity;
@@ -34,7 +30,7 @@ public class AdmindashActivity extends AppCompatActivity {
 
     private TextView adminUsername;
     ImageView imgAdminLogout, imgProfileAdmin;
-    LinearLayout lldoctor, lluser, llappoitment, llfeedback;
+    LinearLayout lldoctor, lluser, llappoitment, llfeedback, llfaq,llfirstaid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +44,7 @@ public class AdmindashActivity extends AppCompatActivity {
         lluser = findViewById(R.id.llUser);
         llappoitment = findViewById(R.id.llApointments);
         llfeedback = findViewById(R.id.llFeedback);
+        llfaq = findViewById(R.id.llFaq);
 
 
         imgAdminLogout = findViewById(R.id.imgAdminLogout);
@@ -141,6 +138,17 @@ public class AdmindashActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openFeedbackDetails = new Intent(AdmindashActivity.this, FeedbackInfoActivity.class);
                 startActivity(openFeedbackDetails);
+            }
+        });
+
+        //Display Admin Faq dashboard
+
+        llfaq.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openFaqDash = new Intent(AdmindashActivity.this, FaqActivity.class);
+                startActivity(openFaqDash);
             }
         });
 

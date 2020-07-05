@@ -16,7 +16,6 @@ import com.dawa.adapter.DoctorInfoAdapter;
 
 import com.dawa.api.admin_api;
 
-import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.model.doctors;
 import com.dawa.url.url;

@@ -1,4 +1,4 @@
-package com.dawa.mobilehealth;
+package com.dawa.mobilehealth.admin;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
 import com.dawa.api.health_api;
-import com.dawa.mobilehealth.login.LoginActivity;
+import com.dawa.mobilehealth.R;
 import com.dawa.model.users;
 import com.dawa.server_response.ImageResponse;
 import com.dawa.strictmode.StrictModeClass;

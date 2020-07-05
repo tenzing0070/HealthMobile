@@ -7,7 +7,6 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dawa.mobilehealth.AdmindashActivity;
 import com.dawa.mobilehealth.R;
 
 public class UserActivity extends AppCompatActivity {

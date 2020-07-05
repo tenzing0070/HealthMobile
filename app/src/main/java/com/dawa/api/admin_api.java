@@ -3,6 +3,7 @@ package com.dawa.api;
 
 
 import com.dawa.model.Booking;
+import com.dawa.model.Faqs;
 import com.dawa.model.Instructions;
 import com.dawa.model.doctors;
 import com.dawa.model.feedbacks;
@@ -52,7 +53,13 @@ public interface admin_api {
     @GET("feedbacks/{email}")
     Call<List<feedbacks>> getEmail(@Header("email") String email);
 
+    //Admin Faq details
 
+    @GET("faqs/faqdetails")
+    Call<List<Faqs>> getAdminFaqDetails(@Header("Authorization") String token);
+
+    @GET("faqs/{question}")
+    Call<List<Faqs>> getQuestion(@Header("question") String question);
 
 
 

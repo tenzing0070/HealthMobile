@@ -23,17 +23,14 @@ import androidx.core.app.NotificationManagerCompat;
 import com.dawa.boardcast.BroadCastReceiver;
 import com.dawa.createchannel.CreateChannel;
 
-import com.dawa.mobilehealth.AdmindashActivity;
+import com.dawa.mobilehealth.admin.AdmindashActivity;
 import com.dawa.mobilehealth.MainActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.bll.LoginBLL;
 import com.dawa.mobilehealth.welcome_screen.IntroActivity;
-import com.dawa.model.users;
 import com.dawa.strictmode.StrictModeClass;
 import com.dawa.url.url;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnLogin, btnSignup;
     EditText etusername, etpassword;
