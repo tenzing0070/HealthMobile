@@ -1,6 +1,7 @@
 package com.dawa.model;
 
 public class feedbacks {
+    private String _id;
     private String email;
     private String message;
 
@@ -26,6 +27,14 @@ public class feedbacks {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
 

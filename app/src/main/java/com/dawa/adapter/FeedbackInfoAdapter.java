@@ -1,10 +1,12 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
 
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
+import com.dawa.mobilehealth.admin.Admin_feedback_info_details_crud;
 import com.dawa.model.doctors;
 import com.dawa.model.feedbacks;
 
@@ -58,6 +62,19 @@ public class FeedbackInfoAdapter extends RecyclerView.Adapter<FeedbackInfoAdapte
         boolean isExpandble = feedbacksList.get(i).isExpandable();
         holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
 
+        holder.imgviewmorefeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Admin_feedback_info_details_crud.class);
+                notify.putExtra("id", feedbacks.get_id());
+                notify.putExtra("email",feedbacks.getEmail());
+                notify.putExtra("message",feedbacks.getMessage());
+                mContext.startActivity(notify);
+
+            }
+
+        });
 
 
     }
@@ -107,6 +124,7 @@ public class FeedbackInfoAdapter extends RecyclerView.Adapter<FeedbackInfoAdapte
 
 
         TextView useremail, usermessage;
+        ImageView imgviewmorefeedback;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
 
@@ -118,6 +136,8 @@ public class FeedbackInfoAdapter extends RecyclerView.Adapter<FeedbackInfoAdapte
 
             useremail= itemView.findViewById(R.id.user_feedback_email);
             usermessage = itemView.findViewById(R.id.user_feedback_message);
+
+            imgviewmorefeedback = itemView.findViewById(R.id.imgviewmorefeedback);
 
             linearLayout = itemView.findViewById(R.id.linear_layout_feedback);
             expandableLayout = itemView.findViewById(R.id.expandable_layout_feedback);

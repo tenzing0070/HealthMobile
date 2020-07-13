@@ -7,7 +7,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="2dp"
     app:cardElevation="3dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    tools:context=".admin.Admin_firstaid_info_details_crud">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,10 +68,10 @@
                 />
 
             <ImageView
-                android:id="@+id/imgviewmorefirstaid"
+                android:id="@+id/imgdeleteuserinfo"
                 android:layout_width="46dp"
                 android:layout_height="50dp"
-                android:background="@drawable/more"
+                android:background="@drawable/delete"
                 android:layout_below="@+id/imgAdminFirstaid"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="110dp"

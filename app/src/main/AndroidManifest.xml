@@ -28,7 +28,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".admin.Admin_faq_info_details_crud"></activity>
+        <activity android:name=".admin.Admin_feedback_info_details_crud"></activity>
+        <activity android:name=".admin.Admin_firstaid_info_details_crud" />
+        <activity android:name=".admin.Admin_faq_info_details_crud" />
         <activity android:name=".admin.Admin_user_info_details_crud" />
         <activity android:name=".admin.Admin_doc_info_details_crud" />
         <activity android:name=".admin.AdmindashActivity" />

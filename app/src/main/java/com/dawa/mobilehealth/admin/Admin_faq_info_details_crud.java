@@ -58,7 +58,7 @@ public class Admin_faq_info_details_crud extends AppCompatActivity {
                             Toast.makeText(Admin_faq_info_details_crud.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
 
                         }
-                        Toast.makeText(Admin_faq_info_details_crud.this, "Deleted Doctor Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Admin_faq_info_details_crud.this, "Deleted Faq Details Successfully !!!", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

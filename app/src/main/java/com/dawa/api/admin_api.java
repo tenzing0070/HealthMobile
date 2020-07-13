@@ -62,6 +62,9 @@ public interface admin_api {
     @GET("feedbacks/{email}")
     Call<List<feedbacks>> getEmail(@Header("email") String email);
 
+    @DELETE("feedbacks/deleteFeedback/{id}")
+    Call<feedbacks>deleteFeedbackPost(@Header("Authorization") String token, @Path("id") String id);
+
     //Admin Faq details
 
     @GET("faqs/faqdetails")
@@ -81,8 +84,8 @@ public interface admin_api {
     @GET("firstaids/{codename}")
     Call<List<Instructions>> getCodename(@Header("codename") String codename);
 
-
-
+    @DELETE("firstaids/deleteFirstaid/{id}")
+    Call<Instructions>deleteFirstaidPost(@Header("Authorization") String token, @Path("id") String id);
 
 
 }

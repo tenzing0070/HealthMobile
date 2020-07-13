@@ -52,10 +52,6 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
     public DoctorInfoAdapter.DoctorInfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_admin_doctorinfo_details, parent, false);
-
-
-
-
         return new DoctorInfoViewHolder(v);
 
     }

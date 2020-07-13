@@ -1,10 +1,12 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
+import com.dawa.mobilehealth.admin.Admin_firstaid_info_details_crud;
 import com.dawa.model.Instructions;
 
 import com.dawa.url.url;
@@ -59,6 +63,24 @@ public class FirstaidInfoAdapter extends RecyclerView.Adapter<FirstaidInfoAdapte
 
         boolean isExpandble = instructionsList.get(i).isExpandable();
         holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
+
+        holder.imgviewmorefirstaid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Admin_firstaid_info_details_crud.class);
+                notify.putExtra("id", Instructions.get_id());
+                notify.putExtra("codename",Instructions.getCodename());
+                notify.putExtra("instruction",Instructions.getInstruction());
+                notify.putExtra("description",Instructions.getDescription());
+                notify.putExtra("image", Instructions.getImage());
+                mContext.startActivity(notify);
+
+            }
+
+        });
+
+
 
     }
 
@@ -109,6 +131,7 @@ public class FirstaidInfoAdapter extends RecyclerView.Adapter<FirstaidInfoAdapte
         TextView codename, instruction,description;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
+        ImageView imgviewmorefirstaid;
 
         public FirstaidInfoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -117,6 +140,8 @@ public class FirstaidInfoAdapter extends RecyclerView.Adapter<FirstaidInfoAdapte
             codename = itemView.findViewById(R.id.firstaid_codename);
             instruction = itemView.findViewById(R.id.firstaid_instruction);
             description = itemView.findViewById(R.id.firstaid_description);
+
+            imgviewmorefirstaid = itemView.findViewById(R.id.imgviewmorefirstaid);
 
 
             linearLayout = itemView.findViewById(R.id.linear_layout_adminfirstaidinfo);
