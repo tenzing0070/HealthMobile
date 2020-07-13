@@ -1,27 +1,25 @@
-package com.dawa.mobilehealth;
+package com.dawa.mobilehealth.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dawa.api.admin_api;
+import com.dawa.mobilehealth.R;
 import com.dawa.model.doctors;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Admin_info_details_crud extends AppCompatActivity {
+public class Admin_doc_info_details_crud extends AppCompatActivity {
 
     TextView firstname, lastname, gender, specialist,price;
     CircleImageView imgProfile;
@@ -32,7 +30,7 @@ public class Admin_info_details_crud extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_info_details_crud);
+        setContentView(R.layout.activity_admin_doc_info_details_crud);
 
         firstname = findViewById(R.id.doctor_firstname);
         lastname = findViewById(R.id.doctor_lastname);
@@ -71,15 +69,15 @@ public class Admin_info_details_crud extends AppCompatActivity {
                 public void onResponse(Call<doctors> call, Response<doctors> response) {
                     if (!response.isSuccessful()) {
 
-                        Toast.makeText(Admin_info_details_crud.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Admin_doc_info_details_crud.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
 
                     }
-                    Toast.makeText(Admin_info_details_crud.this, "Deleted !!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Admin_doc_info_details_crud.this, "Deleted Doctor Details Successfully !!!", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onFailure(Call<doctors> call, Throwable t) {
-                    Toast.makeText(Admin_info_details_crud.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Admin_doc_info_details_crud.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
 

@@ -1,10 +1,12 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
 
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
+import com.dawa.mobilehealth.admin.Admin_user_info_details_crud;
 import com.dawa.model.users;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -68,6 +72,30 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
         boolean isExpandble = usersList.get(i).isExpandable();
         holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
 
+        holder.imgviewmoreuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Admin_user_info_details_crud.class);
+                notify.putExtra("id", users.get_id());
+                notify.putExtra("firstname",users.getFirstname());
+                notify.putExtra("lastname",users.getLastname());
+                notify.putExtra("address",users.getAddress());
+                notify.putExtra("age",users.getAge());
+                notify.putExtra("phone",users.getPhone());
+                notify.putExtra("email",users.getEmail());
+                notify.putExtra("gender",users.getGender());
+                notify.putExtra("weight",users.getWeight());
+                notify.putExtra("height",users.getHeight());
+                notify.putExtra("bloodgroup",users.getBloodgroup());
+                notify.putExtra("username",users.getUsername());
+                notify.putExtra("image", users.getImage());
+                mContext.startActivity(notify);
+
+            }
+
+        });
+
     }
 
     @Override
@@ -114,6 +142,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
     public class UserInfoViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView imgProfile;
+        ImageView imgviewmoreuser;
         TextView firstname, lastname, address, age, gender, email, phone, username, weight, height, bloodgroup;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
@@ -133,6 +162,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
             weight = itemView.findViewById(R.id.user_weight);
             height = itemView.findViewById(R.id.user_height);
             bloodgroup = itemView.findViewById(R.id.user_bloodgroup);
+            imgviewmoreuser = itemView.findViewById(R.id.imgviewmoreuserinfo);
 
             linearLayout = itemView.findViewById(R.id.linear_layout_adminuserinfo);
             expandableLayout = itemView.findViewById(R.id.expandable_layout_adminuserdetails);

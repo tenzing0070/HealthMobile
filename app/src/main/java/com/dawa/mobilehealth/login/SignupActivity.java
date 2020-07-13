@@ -83,7 +83,7 @@ public class SignupActivity  extends AppCompatActivity {
             public void onClick(View v) {
                 if (etpassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
                     if(validate()) {
-                        saveImageOnly();
+                       // saveImageOnly();
                         signUp();
                     }
                 } else {
@@ -140,26 +140,26 @@ public class SignupActivity  extends AppCompatActivity {
         return result;
     }
 
-    private void saveImageOnly() {
-        File file = new File(imagePath);
-        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-        MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile",
-                file.getName(), requestBody);
-
-        health_api usersAPI = url.getInstance().create(health_api.class);
-        Call<ImageResponse> responseBodyCall = usersAPI.uploadImage(body);
-
-        StrictModeClass.StrictMode();
-        //Synchronous method
-        try {
-            Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
-            imageName = imageResponseResponse.body().getFilename();
-            Toast.makeText(this, "Image inserted" + imageName, Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            Toast.makeText(this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
-    }
+//    private void saveImageOnly() {
+//        File file = new File(imagePath);
+//        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+//        MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile",
+//                file.getName(), requestBody);
+//
+//        health_api usersAPI = url.getInstance().create(health_api.class);
+//        Call<ImageResponse> responseBodyCall = usersAPI.uploadImage(body);
+//
+//        StrictModeClass.StrictMode();
+//        //Synchronous method
+//        try {
+//            Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
+//            imageName = imageResponseResponse.body().getFilename();
+//            Toast.makeText(this, "Image inserted" + imageName, Toast.LENGTH_SHORT).show();
+//        } catch (IOException e) {
+//            Toast.makeText(this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//            e.printStackTrace();
+//        }
+//    }
 
     private void signUp() {
 

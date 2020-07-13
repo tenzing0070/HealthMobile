@@ -1,6 +1,7 @@
 package com.dawa.model;
 
 public class users {
+    private String _id;
 
 
     private String firstname;
@@ -164,6 +165,14 @@ public class users {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getToken() {

@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.api.admin_api;
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
+import com.dawa.mobilehealth.admin.Admin_faq_info_details_crud;
 import com.dawa.mobilehealth.admin.AdmindashActivity;
 import com.dawa.model.Faqs;
 import com.dawa.model.doctors;
@@ -36,8 +38,7 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
     Context mContext;
     List<Faqs> faqsList;
     private List<Faqs> filterfaqList;
-    String id;
-    ImageView ivDeleteFaq;
+
 
     public FaqInfoAdapter(Context mContext, List<Faqs> faqsList) {
 
@@ -53,37 +54,6 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_admin_faqinfo_details,parent,false);
 
-        ivDeleteFaq =v.findViewById(R.id.imgFaqInfoDel);
-
-        ivDeleteFaq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteFaqInfo();
-            }
-
-            private void deleteFaqInfo() {
-
-                admin_api faqinfoApi = url.getInstance().create(admin_api.class);
-                Call<Faqs> voidCall = faqinfoApi.deleteFaqPost(url.token, id);
-                voidCall.enqueue(new Callback<Faqs>() {
-                    @Override
-                    public void onResponse(Call<Faqs> call, Response<Faqs> response) {
-                        if (!response.isSuccessful()) {
-
-                            Toast.makeText(mContext, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
-
-                        }
-                        Toast.makeText(mContext, "Deleted !!!", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailure(Call<Faqs> call, Throwable t) {
-                        Toast.makeText(mContext, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-            }
-        });
         return new FaqInfoViewHolder(v);
 
     }
@@ -99,6 +69,20 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
 
         boolean isExpandble = faqsList.get(i).isExpandable();
         holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
+
+        holder.imgviewmorefaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Admin_faq_info_details_crud.class);
+                notify.putExtra("id", Faqs.get_id());
+                notify.putExtra("question",Faqs.getQuestion());
+                notify.putExtra("answer",Faqs.getAnswer());
+                mContext.startActivity(notify);
+
+            }
+
+        });
 
     }
 
@@ -145,6 +129,7 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
 
     public class FaqInfoViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView imgviewmorefaq;
         TextView question, answer;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
@@ -154,6 +139,7 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
 
             question = itemView.findViewById(R.id.admin_question);
             answer = itemView.findViewById(R.id.admin_answer);
+            imgviewmorefaq = itemView.findViewById(R.id.imgviewmorefaq);
 
             linearLayout = itemView.findViewById(R.id.linear_layout_adminfaqinfo);
             expandableLayout = itemView.findViewById(R.id.expandable_layout_adminfaqdetails);

@@ -28,12 +28,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Admin_info_details_crud"></activity>
+        <activity android:name=".admin.Admin_faq_info_details_crud"></activity>
+        <activity android:name=".admin.Admin_user_info_details_crud" />
+        <activity android:name=".admin.Admin_doc_info_details_crud" />
         <activity android:name=".admin.AdmindashActivity" />
         <activity
             android:name="login.LoginActivity"
             android:label="@string/title_activity_login" />
-
         <activity android:name=".admin.FirstaidCrudActivity" />
         <activity android:name=".admin.FaqCrudActivity" />
         <activity android:name=".admin.FirstaidInfoActivity" />

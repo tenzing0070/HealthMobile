@@ -33,6 +33,9 @@ public interface admin_api {
     @GET("users/{username}")
     Call<List<users>> getUsername(@Header("username") String question);
 
+    @DELETE("users/deleteUser/{id}")
+    Call<users>deleteUserInfo(@Header("Authorization") String token, @Path("id") String id);
+
     //doctor detail
 
     @GET("doctors/doctordetails")

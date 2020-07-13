@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.dawa.mobilehealth.Admin_info_details_crud;
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
 import com.dawa.mobilehealth.R;
 
 
@@ -86,7 +86,7 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
             @Override
             public void onClick(View v) {
 
-                Intent notify = new Intent(mContext, Admin_info_details_crud.class);
+                Intent notify = new Intent(mContext, Admin_doc_info_details_crud.class);
                 notify.putExtra("id", doctors.get_id());
                 notify.putExtra("firstname",doctors.getFirstname());
                 notify.putExtra("lastname",doctors.getLastname());
