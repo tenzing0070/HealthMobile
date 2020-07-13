@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="2dp"
     app:cardElevation="3dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    tools:context=".Admin_info_details_crud">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,20 +30,8 @@
                 android:textColor="@color/colorWhite"/>
 
 
-            <TextView
-                android:id="@+id/tvdocid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint=" doctor id"
-                android:textSize="18sp"
-                android:layout_toRightOf="@+id/doctor_specialist"
-                android:visibility="invisible"
-                android:layout_marginLeft="10dp"
-                android:padding="16dp"
-                android:textColor="@color/colorWhite"/>
-
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgdoctorimage"
+                android:id="@+id/imgdocinfo_crud"
                 android:layout_width="46dp"
                 android:layout_height="45dp"
                 android:layout_alignParentRight="true"
@@ -87,10 +76,6 @@
                 android:textColor="@color/colorRed"
                 android:layout_below="@+id/doctor_firstname"
                 android:layout_marginLeft="5dp" />
-
-
-
-
 
             <TextView
                 android:id="@+id/tv4"
@@ -143,20 +128,14 @@
                 android:textColor="@color/colorRed"/>
 
             <ImageView
-                android:id="@+id/imgviewmore"
+                android:id="@+id/imgdeletedocinfo"
                 android:layout_width="46dp"
                 android:layout_height="50dp"
-                android:background="@drawable/more"
+                android:background="@drawable/delete"
                 android:layout_toRightOf="@+id/tv5"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="110dp"
                 />
-
-
-
-
-
-
 
         </RelativeLayout>
     </LinearLayout>

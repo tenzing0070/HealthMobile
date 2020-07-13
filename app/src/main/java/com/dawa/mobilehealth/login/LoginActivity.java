@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editor.putString("username",  username);
             editor.putString("password", password);
             editor.commit();
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
             startActivity(intent);
             finish();
         } else {

@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -27,11 +25,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DoctorInfoActivity extends AppCompatActivity {
-
+    String id;
     DoctorInfoActivity activity;
     private RecyclerView recyclerView;
     private SearchView searchdoctorspecialist;
     DoctorInfoAdapter doctorinfo_Adapter;
+
 
 
     public DoctorInfoActivity() {
@@ -48,12 +47,7 @@ public class DoctorInfoActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.doctors_list);
         searchdoctorspecialist = findViewById(R.id.admin_doctor_search_view);
 
-
-
-
         loaddoctorinfo();
-
-
 
 
         searchdoctorspecialist.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -77,21 +71,21 @@ public class DoctorInfoActivity extends AppCompatActivity {
 
         admin_api doctorAPI = url.getInstance().create(admin_api.class);
         Call<List<doctors>> doctorsCall = doctorAPI.getDoctor(url.token);
-        System.out.println("token is:"+url.token);
 
 
         doctorsCall.enqueue(new Callback<List<doctors>>() {
             @Override
             public void onResponse(Call<List<doctors>> call, Response<List<doctors>> response) {
-                if(!response.isSuccessful()) {
-                    Toast.makeText(DoctorInfoActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                if (response.body().size() == 0) {
+                    // Toast.makeText(DoctorInfoActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                } else {
+                    List<doctors> doctorsList = response.body();
+                    id=(response.body().get(0).get_id());
+                    activity.doctorinfo_Adapter = new DoctorInfoAdapter(DoctorInfoActivity.this, doctorsList);
+                    recyclerView.setAdapter(doctorinfo_Adapter);
+                    recyclerView.setLayoutManager(new GridLayoutManager(DoctorInfoActivity.this, 1));
+
                 }
-
-                List<doctors> doctorsList = response.body();
-                activity.doctorinfo_Adapter = new DoctorInfoAdapter(DoctorInfoActivity.this, doctorsList);
-                recyclerView.setAdapter(doctorinfo_Adapter);
-                recyclerView.setLayoutManager(new GridLayoutManager(DoctorInfoActivity.this,1));
-
             }
 
             @Override

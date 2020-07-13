@@ -1,9 +1,7 @@
 package com.dawa.api;
 
 
-import com.dawa.model.Booking;
-import com.dawa.model.Instructions;
-import com.dawa.model.doctors;
+
 import com.dawa.model.feedbacks;
 import com.dawa.model.users;
 import com.dawa.server_response.ImageResponse;
@@ -11,7 +9,6 @@ import com.dawa.server_response.SignUpResponse;
 
 
 
-import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;

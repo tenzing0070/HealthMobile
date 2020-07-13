@@ -14,11 +14,13 @@ import java.util.List;
 
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 
 public interface admin_api {
@@ -35,6 +37,10 @@ public interface admin_api {
 
     @GET("doctors/doctordetails")
     Call<List<doctors>> getDoctor (@Header("Authorization") String token);
+
+
+    @DELETE("doctors/deleteDoc/{id}")
+    Call<doctors>deletePost(@Header("Authorization") String token, @Path("id") String id);
 
 
     @GET("doctors/{specialist}")
@@ -60,6 +66,9 @@ public interface admin_api {
 
     @GET("faqs/{question}")
     Call<List<Faqs>> getQuestion(@Header("question") String question);
+
+    @DELETE("faqs/deleteFaq/{id}")
+    Call<Faqs>deleteFaqPost(@Header("Authorization") String token, @Path("id") String id);
 
     //Admin Firstaid details
 

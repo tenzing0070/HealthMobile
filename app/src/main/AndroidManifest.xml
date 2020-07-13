@@ -28,11 +28,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".admin.AdmindashActivity"></activity>
+        <activity android:name=".Admin_info_details_crud"></activity>
+        <activity android:name=".admin.AdmindashActivity" />
         <activity
             android:name="login.LoginActivity"
             android:label="@string/title_activity_login" />
-
 
         <activity android:name=".admin.FirstaidCrudActivity" />
         <activity android:name=".admin.FaqCrudActivity" />
@@ -45,7 +45,7 @@
         <activity android:name=".admin.AppointmentInfoActivity" />
         <activity android:name=".admin.DoctorInfoActivity" />
         <activity android:name=".admin.DoctorActivity" />
-        <activity android:name=".admin.UserActivity"/>
+        <activity android:name=".admin.UserActivity" />
         <activity android:name=".admin.UserInfoActivity" />
         <activity android:name=".admin.UpdateAdminProfileActivity" />
         <activity android:name=".Quiz.QuizActivity" />
@@ -74,7 +74,7 @@
             android:name=".CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,24 +1,34 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dawa.api.admin_api;
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.admin.AdmindashActivity;
 import com.dawa.model.Faqs;
+import com.dawa.model.doctors;
+import com.dawa.url.url;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoViewHolder> {
@@ -26,6 +36,8 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
     Context mContext;
     List<Faqs> faqsList;
     private List<Faqs> filterfaqList;
+    String id;
+    ImageView ivDeleteFaq;
 
     public FaqInfoAdapter(Context mContext, List<Faqs> faqsList) {
 
@@ -40,6 +52,38 @@ public class FaqInfoAdapter extends RecyclerView.Adapter<FaqInfoAdapter.FaqInfoV
     public FaqInfoAdapter.FaqInfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_admin_faqinfo_details,parent,false);
+
+        ivDeleteFaq =v.findViewById(R.id.imgFaqInfoDel);
+
+        ivDeleteFaq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteFaqInfo();
+            }
+
+            private void deleteFaqInfo() {
+
+                admin_api faqinfoApi = url.getInstance().create(admin_api.class);
+                Call<Faqs> voidCall = faqinfoApi.deleteFaqPost(url.token, id);
+                voidCall.enqueue(new Callback<Faqs>() {
+                    @Override
+                    public void onResponse(Call<Faqs> call, Response<Faqs> response) {
+                        if (!response.isSuccessful()) {
+
+                            Toast.makeText(mContext, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+
+                        }
+                        Toast.makeText(mContext, "Deleted !!!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Faqs> call, Throwable t) {
+                        Toast.makeText(mContext, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
         return new FaqInfoViewHolder(v);
 
     }
