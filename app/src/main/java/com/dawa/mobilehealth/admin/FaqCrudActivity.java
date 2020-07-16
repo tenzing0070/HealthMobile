@@ -50,7 +50,11 @@ public class FaqCrudActivity extends AppCompatActivity {
     private void addFaq() {
 
         final String faqquestion = faqQuestion.getText().toString();
+        if( faqQuestion.getText().toString().length() == 0 )
+            faqQuestion.setError( "Question is required!" );
         String faqanswer = faqAnswer.getText().toString();
+        if( faqAnswer.getText().toString().length() == 0 )
+            faqAnswer.setError( "Answer is required!" );
 
         Faqs Faqs = new Faqs(faqquestion, faqanswer);
 

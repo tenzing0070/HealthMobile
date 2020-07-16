@@ -2,12 +2,14 @@ package com.dawa.mobilehealth.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dawa.adapter.FaqInfoAdapter;
 import com.dawa.api.admin_api;
 import com.dawa.mobilehealth.R;
 import com.dawa.model.Faqs;
@@ -59,6 +61,8 @@ public class Admin_faq_info_details_crud extends AppCompatActivity {
 
                         }
                         Toast.makeText(Admin_faq_info_details_crud.this, "Deleted Faq Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                        Intent openFaqinfo = new Intent(Admin_faq_info_details_crud.this, FaqInfoActivity.class);
+                        startActivity(openFaqinfo);
                     }
 
                     @Override

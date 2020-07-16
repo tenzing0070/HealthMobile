@@ -54,6 +54,10 @@ public interface admin_api {
     @GET("bookingdetails/mybookings")
     Call<List<Booking>> getAppointment(@Header("Authorization") String token);
 
+
+    @DELETE("bookingdetails/deleteBooking/{id}")
+    Call<Booking>deleteBookingPost(@Header("Authorization") String token, @Path("id") String id);
+
     //Admin Feedback details
 
     @GET("feedbacks/feedbackdetails")

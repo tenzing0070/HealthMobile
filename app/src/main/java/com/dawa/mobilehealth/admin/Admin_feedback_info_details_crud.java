@@ -2,6 +2,7 @@ package com.dawa.mobilehealth.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -57,7 +58,9 @@ public class Admin_feedback_info_details_crud extends AppCompatActivity {
                             Toast.makeText(Admin_feedback_info_details_crud.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
 
                         }
-                        Toast.makeText(Admin_feedback_info_details_crud.this, "Deleted Faq Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Admin_feedback_info_details_crud.this, "Deleted Feedback Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                        Intent openFeedbackinfo = new Intent(Admin_feedback_info_details_crud.this, FeedbackInfoActivity.class);
+                        startActivity(openFeedbackinfo);
                     }
 
                     @Override

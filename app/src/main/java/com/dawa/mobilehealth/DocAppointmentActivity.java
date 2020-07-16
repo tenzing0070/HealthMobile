@@ -1,7 +1,9 @@
 package com.dawa.mobilehealth;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dawa.adapter.DoctorAdapter;
 import com.dawa.api.doctor_api;
 import com.dawa.api.health_api;
+import com.dawa.mobilehealth.admin.AdmindashActivity;
 import com.dawa.model.doctors;
 import com.dawa.url.url;
 
@@ -83,6 +86,11 @@ public class DocAppointmentActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void UserDashOpen(View view) {
+        Intent openUserDash = new Intent(this, MainActivity.class);
+        startActivity(openUserDash);
     }
     }
 

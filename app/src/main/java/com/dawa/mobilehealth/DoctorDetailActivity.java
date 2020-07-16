@@ -70,7 +70,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
             id = bundle.getString("id");
             firstName.setText(bundle.getString("firstname"));
             lastName.setText(bundle.getString("lastname"));
-            specialist.setText(bundle.getString("specialist"));
+            specialist.setText(bundle.getString("Specialist"));
              gender.setText(bundle.getString("gender"));
           price.setText(bundle.getString("price"));
             Picasso.get().load(url.imagePath+bundle.getString("image")).into(imgProfileDoc);
@@ -148,6 +148,17 @@ public class DoctorDetailActivity extends AppCompatActivity {
         });
 
     }
+
+    public void UserDashOpen(View view) {
+        Intent openUserDash = new Intent(this, MainActivity.class);
+        startActivity(openUserDash);
+    }
+
+    public void OpenDocApp(View view) {
+        Intent opendocapp = new Intent(this, DocAppointmentActivity.class);
+        startActivity(opendocapp);
+    }
+
 }
 
 

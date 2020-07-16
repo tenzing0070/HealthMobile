@@ -1,7 +1,11 @@
 package com.dawa.mobilehealth.admin;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dawa.api.admin_api;
+import com.dawa.mobilehealth.MainActivity;
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.login.LoginActivity;
 import com.dawa.model.doctors;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -58,6 +64,7 @@ public class Admin_doc_info_details_crud extends AppCompatActivity {
         docinfodelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 deletedocinfo();
             }
 
@@ -73,6 +80,8 @@ public class Admin_doc_info_details_crud extends AppCompatActivity {
 
                     }
                     Toast.makeText(Admin_doc_info_details_crud.this, "Deleted Doctor Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                    Intent openDocinfo = new Intent(Admin_doc_info_details_crud.this, DoctorInfoActivity.class);
+                    startActivity(openDocinfo);
                 }
 
                 @Override

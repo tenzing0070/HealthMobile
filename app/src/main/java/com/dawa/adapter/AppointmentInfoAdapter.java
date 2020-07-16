@@ -1,17 +1,22 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.admin.Admin_booking_info_details_crud;
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
 import com.dawa.model.Booking;
+import com.dawa.model.users;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
 
@@ -61,6 +66,28 @@ public class AppointmentInfoAdapter extends RecyclerView.Adapter<AppointmentInfo
         holder.date.setText(booking.getDate());
         holder.time.setText(booking.getTime());
 
+        holder.imgviewmoreBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Admin_booking_info_details_crud.class);
+              // notify.putExtra("id", Booking.get_id());
+                notify.putExtra("username", booking.getUser().getUsername());
+                notify.putExtra("firstname", booking.getDoctors().getFirstname());
+                notify.putExtra("lastname", booking.getDoctors().getLastname());
+                notify.putExtra("gender", booking.getDoctors().getGender());
+                notify.putExtra("price", booking.getDoctors().getPrice());
+                notify.putExtra("specialist", booking.getDoctors().getSpecialist());
+                notify.putExtra("lastname",booking.getPurpose());
+                notify.putExtra("gender",booking.getDate());
+                notify.putExtra("specialist",booking.getTime());
+                notify.putExtra("image", booking.getDoctors().getImage());
+                mContext.startActivity(notify);
+
+            }
+
+        });
+
     }
 
     @Override
@@ -108,6 +135,7 @@ public class AppointmentInfoAdapter extends RecyclerView.Adapter<AppointmentInfo
 
         CircleImageView imgProfile;
         TextView docfirstname, doclastname, docspecialist, docgender, docprice, username, date, time, purpose;
+        ImageView imgviewmoreBooking;
 
 
 
@@ -124,6 +152,8 @@ public class AppointmentInfoAdapter extends RecyclerView.Adapter<AppointmentInfo
             date = itemView.findViewById(R.id.appoint_Date);
             time = itemView.findViewById(R.id.appoint_Time);
             purpose = itemView.findViewById(R.id.appoint_Purpose);
+
+            imgviewmoreBooking = itemView.findViewById(R.id.imgviewmorebooking);
 
 
         }

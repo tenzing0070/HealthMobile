@@ -139,8 +139,14 @@ public class FirstaidCrudActivity extends AppCompatActivity {
     private void addFirstaid() {
 
         final String facodename = firstaidcodename.getText().toString();
+        if( firstaidcodename.getText().toString().length() == 0 )
+            firstaidcodename.setError( "Codename is required!" );
         String fainstruction = firstaidinstruction.getText().toString();
+        if( firstaidinstruction.getText().toString().length() == 0 )
+            firstaidinstruction.setError( "Instruction is required!" );
         String fadescription = firstaiddescription.getText().toString();
+        if( firstaiddescription.getText().toString().length() == 0 )
+            firstaiddescription.setError( "Description is required!" );
 
         Instructions Instructions = new Instructions(facodename, fainstruction, fadescription, imageName);
 

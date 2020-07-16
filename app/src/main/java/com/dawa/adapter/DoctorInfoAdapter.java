@@ -56,12 +56,6 @@ public class DoctorInfoAdapter extends RecyclerView.Adapter<DoctorInfoAdapter.Do
 
     }
 
-
-
-
-
-
-
     @Override
     public void onBindViewHolder(@NonNull DoctorInfoAdapter.DoctorInfoViewHolder holder, int i) {
 

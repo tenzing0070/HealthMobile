@@ -132,7 +132,8 @@ public class DoctorCrudActivity extends AppCompatActivity {
            try {
                Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
                imageName = imageResponseResponse.body().getFilename();
-               Toast.makeText(this, "Image inserted" + imageName, Toast.LENGTH_SHORT).show();
+
+               Toast.makeText(this, "" + imageName, Toast.LENGTH_SHORT).show();
            } catch (IOException e) {
                Toast.makeText(this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                e.printStackTrace();
@@ -140,21 +141,33 @@ public class DoctorCrudActivity extends AppCompatActivity {
        }
         else {
 
-            Toast.makeText(DoctorCrudActivity.this, "Please insert picture", Toast.LENGTH_SHORT).show();
-//            onStop();
+            Toast.makeText(DoctorCrudActivity.this, "Please Insert Picture", Toast.LENGTH_SHORT).show();
+
 
         }
     }
 
-
     private void addDoc() {
 
         final String docfname = docFname.getText().toString();
+        if( docFname.getText().toString().length() == 0 )
+            docFname.setError( "Doctor First name is required!" );
+
         String doclname = docLname.getText().toString();
+        if( docLname.getText().toString().length() == 0 )
+            docLname.setError( "Doctor Last name is required!" );
+
         String docspecialist = docSpecialist.getText().toString();
+        if( docSpecialist.getText().toString().length() == 0 )
+            docSpecialist.setError( "Doctor Specialist is required!" );
 
         String docgender = docGender.getText().toString();
+        if( docGender.getText().toString().length() == 0 )
+            docGender.setError( "Doctor Gender is required!" );
+
         String docprice = docPrice.getText().toString();
+        if( docPrice.getText().toString().length() == 0 )
+            docPrice.setError( "Doctor Price is required!" );
 
         doctors doctors = new doctors(docfname, doclname, docspecialist, imageName,docgender, docprice);
 

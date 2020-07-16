@@ -2,6 +2,7 @@ package com.dawa.mobilehealth.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -85,6 +86,8 @@ public class Admin_user_info_details_crud extends AppCompatActivity {
 
                         }
                         Toast.makeText(Admin_user_info_details_crud.this, "Deleted User Details Successfullt !!!", Toast.LENGTH_SHORT).show();
+                        Intent openUserinfo = new Intent(Admin_user_info_details_crud.this, UserInfoActivity.class);
+                        startActivity(openUserinfo);
                     }
 
                     @Override

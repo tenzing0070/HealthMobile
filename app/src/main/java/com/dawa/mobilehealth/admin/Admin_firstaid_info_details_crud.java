@@ -2,6 +2,7 @@ package com.dawa.mobilehealth.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -68,6 +69,8 @@ public class Admin_firstaid_info_details_crud extends AppCompatActivity {
 
                         }
                         Toast.makeText(Admin_firstaid_info_details_crud.this, "Deleted Firstaid Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                        Intent openFAinfo = new Intent(Admin_firstaid_info_details_crud.this, FirstaidInfoActivity.class);
+                        startActivity(openFAinfo);
                     }
 
                     @Override
