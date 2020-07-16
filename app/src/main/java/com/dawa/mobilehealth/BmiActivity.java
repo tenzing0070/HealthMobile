@@ -38,25 +38,32 @@ public class BmiActivity extends Fragment {
 
             private void calculateBMI() {
                 String S1 = weight.getText().toString();
+                if( weight.getText().toString().length() == 0 )
+                    weight.setError( "Weight is required!" );
+
                 String S2 = height.getText().toString();
+                if( height.getText().toString().length() == 0 )
+                    height.setError( "Height is required!" );
 
-                float weightValue = Float.parseFloat(S1);
-                float heightValue = Float.parseFloat(S2);
+                else {
+                    float weightValue = Float.parseFloat(S1);
+                    float heightValue = Float.parseFloat(S2);
 
-                float bmi = weightValue/(heightValue * heightValue)*10000;
+                    float bmi = weightValue / (heightValue * heightValue) * 10000;
 
-                if (bmi<18.5){
-                    BMIresult = "Under Weight\nPlease maintain you health.";
-                }else if(bmi >=18.5 && bmi <=24.9){
-                    BMIresult = "Normal Weight.\nKeep it up.";
-                }else if(bmi >=25 && bmi <=29.9){
-                    BMIresult = "Overweight.\nPlease maintain your health.";
-                }else{
-                    BMIresult ="Obese.\nPlease maintain your health.";
+                    if (bmi < 18.5) {
+                        BMIresult = "Under Weight\nPlease maintain you health.";
+                    } else if (bmi >= 18.5 && bmi <= 24.9) {
+                        BMIresult = "Normal Weight.\nKeep it up.";
+                    } else if (bmi >= 25 && bmi <= 29.9) {
+                        BMIresult = "Overweight.\nPlease maintain your health.";
+                    } else {
+                        BMIresult = "Obese.\nPlease maintain your health.";
+                    }
+                    calculation = "Your Result\n" + "BMI=" + bmi + "\n" + BMIresult;
+
+                    resulttext.setText(calculation);
                 }
-                calculation = "Your Result\n"+"BMI=" + bmi + "\n" + BMIresult;
-
-                resulttext.setText(calculation);
             }
         });
         return view;

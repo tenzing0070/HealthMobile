@@ -96,36 +96,49 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
     private void login() {
         final String username = etusername.getText().toString();
+        if( etusername.getText().toString().length() == 0 ) {
+            etusername.setError("Username is required!");
+            vibrator.vibrate(1000);
+        }
+
         final String password = etpassword.getText().toString();
-        LoginBLL loginBLL = new LoginBLL();
-        StrictModeClass.StrictMode();
-        if (loginBLL.checkUser(username, password)) {
-            SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health", MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("token", url.token);
-            editor.putString("status", url.status);
-            editor.putString("username",  username);
-            editor.putString("password", password);
-            editor.commit();
-            Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            if (loginBLL.checkadmin(username, password)) {
+        if( etpassword.getText().toString().length() == 0 ) {
+            etpassword.setError("Password is required!");
+            vibrator.vibrate(1000);
+        }
+
+        else{
+            LoginBLL loginBLL = new LoginBLL();
+            StrictModeClass.StrictMode();
+            if (loginBLL.checkUser(username, password)) {
                 SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("token", url.token);
-                editor.putString("isadmin", url.status);
+                editor.putString("status", url.status);
                 editor.putString("username", username);
                 editor.putString("password", password);
                 editor.commit();
-                Intent intent = new Intent(LoginActivity.this, AdmindashActivity.class);
+                Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
                 startActivity(intent);
-                finish();
+//            finish();
             } else {
-                Toast.makeText(this, "Username or Password doesnot match", Toast.LENGTH_SHORT).show();
-                vibrator.vibrate(1000);
-                etusername.requestFocus();
+                if (loginBLL.checkadmin(username, password)) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("token", url.token);
+                    editor.putString("isadmin", url.status);
+                    editor.putString("username", username);
+                    editor.putString("password", password);
+                    editor.commit();
+                    Intent intent = new Intent(LoginActivity.this, AdmindashActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                } else {
+                    Toast.makeText(this, "Username or Password Error", Toast.LENGTH_SHORT).show();
+                    vibrator.vibrate(1000);
+                    etusername.requestFocus();
+                }
             }
         }
 //        if (!username.isEmpty() && !password.isEmpty()) {

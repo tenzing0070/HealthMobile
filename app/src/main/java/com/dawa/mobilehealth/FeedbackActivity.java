@@ -42,22 +42,11 @@ public class FeedbackActivity extends Fragment {
         btnFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateFeedback();
-            }
-
-        });
-//                feedbacks userFeedback = new feedbacks(email.getText().toString(),
-//                        message.getText().toString());
-        return view;
-
-    }
-    private void updateFeedback () {
-        feedbacks feedbacks = new feedbacks(
-                email.getText().toString(),
-                message.getText().toString()
-        );
+               // updateFeedback();
+                feedbacks userFeedback = new feedbacks(email.getText().toString(),
+                        message.getText().toString());
                 health_api feedbackApi = url.getInstance().create(health_api.class);
-                Call<Void> feedbackCall = feedbackApi. feed(feedbacks);
+                Call<Void> feedbackCall = feedbackApi. feed(userFeedback);
                 feedbackCall.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
@@ -77,4 +66,36 @@ public class FeedbackActivity extends Fragment {
                     }
                 });
             }
+
+        });
+
+        return view;
+
+    }
+//    private void updateFeedback () {
+//        feedbacks feedbacks = new feedbacks(
+//                email.getText().toString(),
+//                message.getText().toString()
+//        );
+//                health_api feedbackApi = url.getInstance().create(health_api.class);
+//                Call<Void> feedbackCall = feedbackApi. feed(feedbacks);
+//                feedbackCall.enqueue(new Callback<Void>() {
+//                    @Override
+//                    public void onResponse(Call<Void> call, Response<Void> response) {
+//                        if(!response.isSuccessful()) {
+//                            Toast.makeText(getActivity(), "The email address has been already used by someone. Please use your own email address:", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
+//                        Toast.makeText(getActivity(), "Submitted", Toast.LENGTH_SHORT).show();
+//                        email.getText().clear();
+//                        message.getText().clear();
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<Void> call, Throwable t) {
+//                        Toast.makeText(getActivity(), "Error:" + t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
+//            }
 }

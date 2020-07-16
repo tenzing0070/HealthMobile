@@ -149,13 +149,29 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
             public void onResponse(Call<users> call, Response<users> response) {
 
                 firstname.setText(response.body().getFirstname());
+//                if( firstname.getText().toString().length() == 0 )
+//                    firstname.setError( "First name is required!" );
                 lastname.setText(response.body().getLastname());
+//                if( lastname.getText().toString().length() == 0 )
+//                    lastname.setError( "Last name is required!" );
                 address.setText(response.body().getAddress());
+//                if( address.getText().toString().length() == 0 )
+//                    address.setError( "Address is required!" );
                 age.setText(response.body().getAge());
+//                if( age.getText().toString().length() == 0 )
+//                    age.setError( "Age is required!" );
                 phone.setText(response.body().getPhone());
+//                if( phone.getText().toString().length() == 0 )
+//                    phone.setError( "Phone is required!" );
                 gender.setText(response.body().getGender());
+//                if( gender.getText().toString().length() == 0 )
+//                    gender.setError( "Gender is required!" );
                 email.setText(response.body().getEmail());
+//                if( email.getText().toString().length() == 0 )
+//                    email.setError( "Email is required!" );
                 username.setText(response.body().getUsername());
+//                if( username.getText().toString().length() == 0 )
+//                    username.setError( "Username is required!" );
 
                 Toast.makeText(UpdateAdminProfileActivity.this, "Updated", Toast.LENGTH_SHORT).show();
             }

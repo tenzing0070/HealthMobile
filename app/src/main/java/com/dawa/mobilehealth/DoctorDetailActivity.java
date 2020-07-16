@@ -121,33 +121,44 @@ public class DoctorDetailActivity extends AppCompatActivity {
 
     private void book(){
         String purpose = edpurpose.getText().toString();
+        if( edpurpose.getText().toString().length() == 0 ) {
+            edpurpose.setError("Purpose field is required!");
+        }
         String date = bokdate.getText().toString();
+        if( bokdate.getText().toString().length() == 0 ) {
+            bokdate.setError("Date field is required!");
+        }
         String time = boktime.getText().toString();
-        String doctors = id;
+        if( boktime.getText().toString().length() == 0 ) {
+            boktime.setError("Time field is required!");
+        }
 
-        doctor_api doctorApi = url.getInstance().create(doctor_api.class);
+            String doctors = id;
 
-        Call<Booking> bookingCall = doctorApi.book(url.token,doctors,purpose,date,time);
+            doctor_api doctorApi = url.getInstance().create(doctor_api.class);
 
-        bookingCall.enqueue(new Callback<Booking>() {
-            @Override
-            public void onResponse(Call<Booking> call, Response<Booking> response) {
-                if(!response.isSuccessful()) {
-                    Toast.makeText(DoctorDetailActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    return;
+            Call<Booking> bookingCall = doctorApi.book(url.token, doctors, purpose, date, time);
+
+            bookingCall.enqueue(new Callback<Booking>() {
+                @Override
+                public void onResponse(Call<Booking> call, Response<Booking> response) {
+                    if (!response.isSuccessful()) {
+                        Toast.makeText(DoctorDetailActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    Toast.makeText(DoctorDetailActivity.this, "Booked Successfully", Toast.LENGTH_SHORT).show();
+
                 }
 
-                Toast.makeText(DoctorDetailActivity.this, "Booked Successfully", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onFailure(Call<Booking> call, Throwable t) {
 
-            }
+                }
+            });
+        }
 
-            @Override
-            public void onFailure(Call<Booking> call, Throwable t) {
 
-            }
-        });
-
-    }
 
     public void UserDashOpen(View view) {
         Intent openUserDash = new Intent(this, MainActivity.class);
