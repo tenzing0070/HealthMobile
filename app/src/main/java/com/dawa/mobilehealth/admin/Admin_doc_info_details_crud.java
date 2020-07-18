@@ -95,5 +95,10 @@ public class Admin_doc_info_details_crud extends AppCompatActivity {
         });
     }
 
+    public void OpenDocinfoadmin(View view) {
+        Intent opendocinfoadmin = new Intent(this, DoctorInfoActivity.class);
+        startActivity(opendocinfoadmin);
+    }
+
 
 }

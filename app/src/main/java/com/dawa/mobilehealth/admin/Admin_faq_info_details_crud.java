@@ -76,4 +76,9 @@ public class Admin_faq_info_details_crud extends AppCompatActivity {
         });
 
     }
+
+    public void OpenFaqinfoadmin(View view) {
+        Intent openfaqinfoadmin = new Intent(this, FaqInfoActivity.class);
+        startActivity(openfaqinfoadmin);
+    }
 }

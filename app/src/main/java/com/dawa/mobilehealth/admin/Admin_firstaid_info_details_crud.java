@@ -83,4 +83,10 @@ public class Admin_firstaid_info_details_crud extends AppCompatActivity {
             }
         });
     }
+
+
+    public void OpenFirstaidinfoadmin(View view) {
+        Intent openfirstaidinfoadmin = new Intent(this, FirstaidInfoActivity.class);
+        startActivity(openfirstaidinfoadmin);
+    }
 }

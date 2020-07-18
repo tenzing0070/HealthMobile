@@ -100,4 +100,8 @@ public class Admin_user_info_details_crud extends AppCompatActivity {
         });
 
     }
+    public void OpenUserinfoadmin(View view) {
+        Intent openuserinfoadmin = new Intent(this, UserInfoActivity.class);
+        startActivity(openuserinfoadmin);
+    }
 }

@@ -74,4 +74,9 @@ public class Admin_feedback_info_details_crud extends AppCompatActivity {
         });
 
     }
+
+    public void OpenFeedbackinfoadmin(View view) {
+        Intent openfeedbackinfoadmin = new Intent(this, FeedbackInfoActivity.class);
+        startActivity(openfeedbackinfoadmin);
+    }
 }

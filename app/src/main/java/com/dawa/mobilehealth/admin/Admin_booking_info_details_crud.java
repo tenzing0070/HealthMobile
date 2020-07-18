@@ -96,4 +96,9 @@ public class Admin_booking_info_details_crud extends AppCompatActivity {
         });
 
     }
+
+    public void OpenAppointmentinfoadmin(View view) {
+        Intent openbookinfoadmin = new Intent(this, AppointmentInfoActivity.class);
+        startActivity(openbookinfoadmin);
+    }
 }
