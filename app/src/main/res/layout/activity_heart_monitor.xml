@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imgUserDash"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:src="@drawable/homefragment"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="UserDashOpen"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="@color/colorRed"
+        android:text="Heart Beat Monitor"
+        android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <com.dawa.mobilehealth.heart.HeartbeatPic
+        android:id="@+id/image"
+        android:layout_width="250dp"
+        android:layout_height="240dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+    </com.dawa.mobilehealth.heart.HeartbeatPic>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textColor="@color/colorRed"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"/>
+
+
+    <TextView
+        android:id="@+id/rollavg_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textColor="@color/colorGreen"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/img_avg_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rollavg_text"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textColor="@color/colorGreen"
+        android:layout_gravity="center_horizontal" />
+
+
+        <SurfaceView
+            android:id="@+id/preview"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="25dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+        </SurfaceView>
+
+    <TextView
+        android:id="@+id/asterik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textColor="@color/colorRed"
+        android:textSize="25sp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please place your finger on a camera"
+        android:textSize="14sp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="15sp"/>
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+    </LinearLayout>
+</LinearLayout>

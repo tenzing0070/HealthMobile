@@ -30,7 +30,109 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:src="@drawable/noimage" />
-<RelativeLayout
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvepotherinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="10dp"
+            android:text="Additional Information"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvepaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvepotherinfo"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="50dp"
+            android:text="Address"
+            android:textColor="@color/colorBlue"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtaddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvepaddress"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
+            android:hint="Address"
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvepgender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvepotherinfo"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="50dp"
+            android:text="Gender"
+            android:textColor="@color/colorBlue"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtgender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvepgender"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="5dp"
+            android:hint="Gender"
+            android:inputType="text"
+            android:maxLength="15"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvepage"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvepotherinfo"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="211dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="6dp"
+            android:layout_toRightOf="@+id/tvepaddress"
+            android:paddingLeft="10dp"
+            android:text="Age"
+            android:textColor="@color/colorBlue"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvepage"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="5dp"
+            android:hint="Age"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -96,107 +198,6 @@
         android:layout_marginEnd="10dp"
         android:background="#000000"
         android:layout_marginBottom="0dp"/>
-
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/tvepotherinfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Additional Information"
-        android:textStyle="bold"
-        android:textColor="@color/colorBlack"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:id="@+id/tvepaddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address"
-        android:textSize="13sp"
-        android:textColor="@color/colorBlue"
-        android:paddingLeft="50dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tvepotherinfo"/>
-
-    <EditText
-        android:id="@+id/txtaddress"
-        android:inputType="text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Address"
-        android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="15sp"
-        android:layout_below="@+id/tvepaddress"
-        android:layout_marginLeft="50dp"/>
-
-
-    <TextView
-        android:id="@+id/tvepgender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender"
-        android:textSize="13sp"
-        android:paddingLeft="50dp"
-        android:textColor="@color/colorBlue"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tvepotherinfo"
-        android:layout_marginLeft="140dp"/>
-
-    <EditText
-        android:id="@+id/txtgender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Gender"
-        android:inputType="text"
-        android:maxLength="15"
-        android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="15sp"
-        android:layout_marginLeft="190dp"
-        android:layout_below="@id/tvepgender"/>
-
-    <TextView
-        android:id="@+id/tvepage"
-        android:layout_width="116dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvepotherinfo"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="211dp"
-        android:textColor="@color/colorBlue"
-        android:textStyle="bold"
-        android:layout_marginTop="22dp"
-        android:layout_marginRight="6dp"
-        android:layout_toRightOf="@+id/tvepaddress"
-        android:paddingLeft="10dp"
-        android:text="Age"
-        android:textSize="13sp" />
-
-    <EditText
-        android:id="@+id/txtage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number"
-        android:maxLength="3"
-        android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="15sp"
-        android:layout_below="@id/tvepage"
-        android:layout_marginLeft="320dp"/>
-
-</RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -26,6 +26,7 @@ import com.dawa.mobilehealth.Quiz.QuizDashActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.mobilehealth.StopwatchActivity;
 import com.dawa.mobilehealth.UpdateHealthRecordActivity;
+import com.dawa.mobilehealth.heart.HeartRateMonitorActivity;
 import com.dawa.mobilehealth.login.UpdateProfileActivity;
 import com.dawa.model.users;
 import com.dawa.url.url;
@@ -40,7 +41,7 @@ public class HomeFragment extends Fragment {
 
     ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord, imgqrscan;
     private TextView firstname;
-    LinearLayout llfootstep, llbmiscale, lldocappointment, llhealthquiz;
+    LinearLayout llfootstep, llbmiscale, lldocappointment, llheartmonitor, llhealthquiz;
 
     public HomeFragment() {
 
@@ -64,6 +65,7 @@ public class HomeFragment extends Fragment {
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
         lldocappointment = v.findViewById(R.id.llDocAppointment);
+        llheartmonitor = v.findViewById(R.id.llHeartMonitor);
         llhealthquiz = v.findViewById(R.id.llHealthQuiz);
 
         openuserinfo();
@@ -146,6 +148,18 @@ public class HomeFragment extends Fragment {
                 startActivity(openDocAppointment);
             }
         });
+
+        //Heart Monitor
+        llheartmonitor.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openHeartDash = new Intent(getActivity(), HeartRateMonitorActivity.class);
+                startActivity(openHeartDash);
+            }
+        });
+
+
 
         //Quiz health
         llhealthquiz.setOnClickListener(new View.OnClickListener() {

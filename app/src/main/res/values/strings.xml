@@ -17,6 +17,8 @@
      
     <string name="back">BACK</string>
 
+    <string name="default_text">heart_default</string>
+
     //nav
     <string name="nav_home">Home</string>
     <string name="nav_notification">Notification</string>

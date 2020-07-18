@@ -11,7 +11,18 @@
         android:id="@+id/qhome"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/homefragment"/>
+        android:background="@drawable/reset"
+        android:onClick="reset"
+        tools:ignore="OnClick" />
+
+    <ImageView
+        android:id="@+id/imgexit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/adminlogout"
+        android:onClick="ExitGame"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/text_view_score"
@@ -44,7 +55,8 @@
         android:fontFamily="serif"
         android:textColor="@android:color/black"
         android:textSize="40sp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp"/>
 
     <TextView
         android:id="@+id/text_view_question"

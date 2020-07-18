@@ -22,9 +22,6 @@ import com.dawa.mobilehealth.login.UpdateProfileActivity;
 
 public class QuizDashActivity extends AppCompatActivity {
 
-    ImageView imghome;
-
-
     private static final int REQUEST_CODE_QUIZ = 1;
 
     public  static final String SHARED_PREFS = "sharedPrefs";
@@ -39,7 +36,7 @@ public class QuizDashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_dashboard);
 
-        imghome = findViewById(R.id.imghome);
+
 
          textViewHighscore =  findViewById(R.id.tex_view_highscore);
 
@@ -52,16 +49,6 @@ public class QuizDashActivity extends AppCompatActivity {
                 startQuiz();
             }
         });
-
-        //get HomeFragment
-        imghome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new QuizDashActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new HomeFragment()).commit();
-            }
-        });
-
 
     }
     private void startQuiz() {
@@ -100,5 +87,10 @@ public class QuizDashActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(KEY_HIGHSCORE, highscore);
         editor.apply();
+    }
+
+    public void UserDashOpen(View view) {
+        Intent userdash = new Intent(this, MainActivity.class);
+        startActivity(userdash);
     }
 }

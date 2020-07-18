@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dawa.mobilehealth.MainActivity;
 import com.dawa.mobilehealth.R;
 import com.dawa.model.Question;
 
@@ -225,6 +226,20 @@ public class QuizActivity extends AppCompatActivity {
         }
 
     }
+
+
+    public void reset(View view) {
+        Intent gamedash = new Intent(this, QuizDashActivity.class);
+        startActivity(gamedash);
+
+    }
+
+    public void ExitGame(View view) {
+        Intent userdash = new Intent(this, MainActivity.class);
+        startActivity(userdash);
+    }
+
+
 }
 
 

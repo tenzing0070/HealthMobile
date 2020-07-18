@@ -6,12 +6,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class url {
     //iphone hotspot
-//    public static final String BASE_URL = "http://172.20.10.8:3001/";
+//   public static final String BASE_URL = "http://172.20.10.8:3001/";
     //home wifi
   public static final String BASE_URL = "http://192.168.1.16:3001/";
 
   //ayadi home wifi
-   //public static final String BASE_URL = "http://192.168.1.91:3001/";
+  // public static final String BASE_URL = "http://192.168.1.91:3001/";
 
    //public static final String BASE_URL = "http://10.0.2.2:3001/";
     public static String imagePath = BASE_URL ;

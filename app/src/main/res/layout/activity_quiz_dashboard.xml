@@ -12,7 +12,8 @@
         android:id="@+id/imghome"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/homefragment" />
+        android:src="@drawable/homefragment"
+        android:onClick="UserDashOpen" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/quizimage"

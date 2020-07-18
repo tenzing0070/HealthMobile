@@ -79,11 +79,33 @@ public class UpdateProfileActivity extends Fragment {
         });
         return view;
     }
+
     //image upload from here
     private void chooseImage() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+    }
+
+    private void uploadFile(){
+        if(imagePath!=null){
+            File file = new File(imagePath);
+            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile", file.getName(), requestBody);
+
+            health_api mhealthApi = url.getInstance().create(health_api.class);
+            Call<ImageResponse> responseBodyCall = mhealthApi.uploadImage(body);
+            StrictModeClass.StrictMode();
+            try {
+                Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
+                imageName = imageResponseResponse.body().getFilename();
+            }catch (IOException e){
+                Toast.makeText(getActivity(), "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+        }else {
+            Toast.makeText(getActivity(), "Please choose file to update picture", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -113,38 +135,20 @@ public class UpdateProfileActivity extends Fragment {
         return res;
     }
 
-    private void uploadFile(){
-        if(imagePath!=null){
-            File file = new File(imagePath);
-            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-            MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile", file.getName(), requestBody);
 
-            health_api mhealthApi = url.getInstance().create(health_api.class);
-            Call<ImageResponse> responseBodyCall = mhealthApi.uploadImage(body);
-            StrictModeClass.StrictMode();
-            try {
-                Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
-                imageName = imageResponseResponse.body().getFilename();
-            }catch (IOException e){
-                Toast.makeText(getActivity(), "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-        }else {
-            Toast.makeText(getActivity(), "Please choose file to update picture", Toast.LENGTH_SHORT).show();
-        }
-    }
     //image upload till here
 
     private void updateUser() {
+        String fname = firstname.getText().toString();
+        String lname = lastname.getText().toString();
+        String userage = age.getText().toString();
+        String userphone = phone.getText().toString();
+        String useremail = email.getText().toString();
+        String usergender = gender.getText().toString();
+        String usname = username.getText().toString();
         users users = new users(
-                firstname.getText().toString(),
-                lastname.getText().toString(),
-                address.getText().toString(),
-                age.getText().toString(),
-                phone.getText().toString(),
-                email.getText().toString(),
-                gender.getText().toString(),
-                username.getText().toString()
+               fname,lname,userage,userphone,useremail,usergender,usname,
+                imageName
         );
 
         health_api registerUpdateApi = url.getInstance().create(health_api.class);
@@ -161,6 +165,7 @@ public class UpdateProfileActivity extends Fragment {
                 gender.setText(response.body().getGender());
                 email.setText(response.body().getEmail());
                 username.setText(response.body().getUsername());
+
 
                 Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
             }
