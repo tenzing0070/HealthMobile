@@ -54,11 +54,11 @@ public class Admin_booking_info_details_crud extends AppCompatActivity {
             purpose.setText(bundle.getString("purpose"));
             date.setText(bundle.getString("date"));
             time.setText(bundle.getString("time"));
-            docfirstname.setText(bundle.getString("docfirstname"));
-            doclastname.setText(bundle.getString("doclastname"));
-            docgender.setText(bundle.getString("docgender"));
-            docprice.setText(bundle.getString("docprice"));
-            docspecialist.setText(bundle.getString("docspecialist"));
+            docfirstname.setText(bundle.getString("firstname"));
+            doclastname.setText(bundle.getString("lastname"));
+            docgender.setText(bundle.getString("gender"));
+            docprice.setText(bundle.getString("price"));
+            docspecialist.setText(bundle.getString("specialist"));
             String imagepath = url.BASE_URL + bundle.getString("image");
             Picasso.get().load(imagepath).into(imgProfile);
         }

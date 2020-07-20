@@ -79,8 +79,9 @@ public class AppointmentInfoAdapter extends RecyclerView.Adapter<AppointmentInfo
                 notify.putExtra("price", booking.getDoctors().getPrice());
                 notify.putExtra("specialist", booking.getDoctors().getSpecialist());
                 notify.putExtra("lastname",booking.getPurpose());
-                notify.putExtra("gender",booking.getDate());
-                notify.putExtra("specialist",booking.getTime());
+                notify.putExtra("date",booking.getDate());
+                notify.putExtra("time",booking.getTime());
+                notify.putExtra("purpose",booking.getPurpose());
                 notify.putExtra("image", booking.getDoctors().getImage());
                 mContext.startActivity(notify);
 
