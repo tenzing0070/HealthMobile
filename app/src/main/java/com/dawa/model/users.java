@@ -21,6 +21,18 @@ public class users {
 
     private boolean expandable;
 
+    public users(String firstname, String lastname, String address, String age, String phone, String email, String gender, String username, String image, int adminUpdate) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+        this.age = age;
+        this.phone = phone;
+        this.email = email;
+        this.gender = gender;
+        this.username = username;
+        this.image = image;
+    }
+
     public users(String firstname, String lastname, String address, String age, String phone, String email, String gender, String weight, String height, String bloodgroup, String username, String password, String image) {
         this.firstname = firstname;
         this.lastname = lastname;

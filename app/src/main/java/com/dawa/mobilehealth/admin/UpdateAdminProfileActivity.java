@@ -36,7 +36,7 @@ import retrofit2.Response;
 public class UpdateAdminProfileActivity extends AppCompatActivity {
 
     private Button btnUpdate;
-    private EditText firstname, lastname, address, age, gender, email, phone, username;
+    private EditText Firstname, Lastname, Address, Age, Gender, Email, Phone, Username;
     ImageView imgProfile;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 200;
     String imagePath,imageName;
@@ -48,15 +48,15 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
 
         btnUpdate = findViewById(R.id.btnUpdateAdminProfile);
 
-        firstname = findViewById(R.id.txtfirstname);
-        lastname = findViewById(R.id.txtlastname);
-        address = findViewById(R.id.txtaddress);
-        age = findViewById(R.id.txtage);
-        phone = findViewById(R.id.txtphone);
-        email = findViewById(R.id.txtemail);
-        gender = findViewById(R.id.txtgender);
+        Firstname = findViewById(R.id.txtfirstname);
+        Lastname = findViewById(R.id.txtlastname);
+        Address = findViewById(R.id.txtaddress);
+        Age = findViewById(R.id.txtage);
+        Phone = findViewById(R.id.txtphone);
+        Email = findViewById(R.id.txtemail);
+        Gender = findViewById(R.id.txtgender);
         imgProfile=findViewById(R.id.imgAdminPic);
-        username = findViewById(R.id.txtusername);
+        Username = findViewById(R.id.txtusername);
 
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +82,27 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
     }
 
+
+    private void uploadAdminFile(){
+        if(imagePath!=null){
+            File file = new File(imagePath);
+            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile", file.getName(), requestBody);
+
+            health_api mhealthApi = url.getInstance().create(health_api.class);
+            Call<ImageResponse> responseBodyCall = mhealthApi.uploadImage(body);
+            StrictModeClass.StrictMode();
+            try {
+                Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
+                imageName = imageResponseResponse.body().getFilename();
+            }catch (IOException e){
+                Toast.makeText(UpdateAdminProfileActivity.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+        }else {
+            Toast.makeText(UpdateAdminProfileActivity.this, "Please choose file to update picture", Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -109,37 +130,18 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
         return res;
     }
 
-    private void uploadAdminFile(){
-        if(imagePath!=null){
-            File file = new File(imagePath);
-            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-            MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile", file.getName(), requestBody);
-
-            health_api mhealthApi = url.getInstance().create(health_api.class);
-            Call<ImageResponse> responseBodyCall = mhealthApi.uploadImage(body);
-            StrictModeClass.StrictMode();
-            try {
-                Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
-                imageName = imageResponseResponse.body().getFilename();
-            }catch (IOException e){
-                Toast.makeText(UpdateAdminProfileActivity.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
-            }
-        }else {
-            Toast.makeText(UpdateAdminProfileActivity.this, "Please choose file to update picture", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     private void updateAdmin() {
+
         users users = new users(
-                firstname.getText().toString(),
-                lastname.getText().toString(),
-                address.getText().toString(),
-                age.getText().toString(),
-                phone.getText().toString(),
-                email.getText().toString(),
-                gender.getText().toString(),
-                username.getText().toString()
+                Firstname.getText().toString(),
+                Lastname.getText().toString(),
+                Address.getText().toString(),
+                Age.getText().toString(),
+                Phone.getText().toString(),
+                Email.getText().toString(),
+                Gender.getText().toString(),
+                Username.getText().toString(), imageName, 1
         );
 
         health_api registerUpdateApi = url.getInstance().create(health_api.class);
@@ -148,28 +150,28 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<users> call, Response<users> response) {
 
-                firstname.setText(response.body().getFirstname());
+                //firstname.setText(response.body().getFirstname());
 //                if( firstname.getText().toString().length() == 0 )
 //                    firstname.setError( "First name is required!" );
-                lastname.setText(response.body().getLastname());
+              //  lastname.setText(response.body().getLastname());
 //                if( lastname.getText().toString().length() == 0 )
 //                    lastname.setError( "Last name is required!" );
-                address.setText(response.body().getAddress());
+               // address.setText(response.body().getAddress());
 //                if( address.getText().toString().length() == 0 )
 //                    address.setError( "Address is required!" );
-                age.setText(response.body().getAge());
+              //  age.setText(response.body().getAge());
 //                if( age.getText().toString().length() == 0 )
 //                    age.setError( "Age is required!" );
-                phone.setText(response.body().getPhone());
+               // phone.setText(response.body().getPhone());
 //                if( phone.getText().toString().length() == 0 )
 //                    phone.setError( "Phone is required!" );
-                gender.setText(response.body().getGender());
+                //gender.setText(response.body().getGender());
 //                if( gender.getText().toString().length() == 0 )
 //                    gender.setError( "Gender is required!" );
-                email.setText(response.body().getEmail());
+                //email.setText(response.body().getEmail());
 //                if( email.getText().toString().length() == 0 )
 //                    email.setError( "Email is required!" );
-                username.setText(response.body().getUsername());
+              //  username.setText(response.body().getUsername());
 //                if( username.getText().toString().length() == 0 )
 //                    username.setError( "Username is required!" );
 
@@ -210,14 +212,14 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
                     Picasso.get().load(R.drawable.image1).into(imgProfile);
                 }
 
-                firstname.setText(response.body().getFirstname());
-                lastname.setText(response.body().getLastname());
-                address.setText(response.body().getAddress());
-                age.setText(response.body().getAge());
-                phone.setText(response.body().getPhone());
-                email.setText(response.body().getEmail());
-                gender.setText(response.body().getGender());
-                username.setText(response.body().getUsername());
+                Firstname.setText(response.body().getFirstname());
+                Lastname.setText(response.body().getLastname());
+                Address.setText(response.body().getAddress());
+                Age.setText(response.body().getAge());
+                Phone.setText(response.body().getPhone());
+                Email.setText(response.body().getEmail());
+                Gender.setText(response.body().getGender());
+                Username.setText(response.body().getUsername());
                 //image update
                 String imagepath = url.BASE_URL + response.body().getImage();
                 Picasso.get().load(imagepath).into(imgProfile);
@@ -239,5 +241,3 @@ public class UpdateAdminProfileActivity extends AppCompatActivity {
 
 
 }
-
-

@@ -71,7 +71,7 @@ public class AppointmentInfoAdapter extends RecyclerView.Adapter<AppointmentInfo
             public void onClick(View v) {
 
                 Intent notify = new Intent(mContext, Admin_booking_info_details_crud.class);
-              // notify.putExtra("id", Booking.get_id());
+                notify.putExtra("id", booking.getId());
                 notify.putExtra("username", booking.getUser().getUsername());
                 notify.putExtra("firstname", booking.getDoctors().getFirstname());
                 notify.putExtra("lastname", booking.getDoctors().getLastname());

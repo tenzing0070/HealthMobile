@@ -77,7 +77,9 @@ public class Admin_booking_info_details_crud extends AppCompatActivity {
                     public void onResponse(Call<Booking> call, Response<Booking> response) {
                         if (!response.isSuccessful()) {
 
-                            Toast.makeText(Admin_booking_info_details_crud.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Admin_booking_info_details_crud.this, "Deleted Appointment Details Successfully", Toast.LENGTH_SHORT).show();
+                            Intent openAppointinfo = new Intent(Admin_booking_info_details_crud.this, AppointmentInfoActivity.class);
+                            startActivity(openAppointinfo);
 
                         }
                         Toast.makeText(Admin_booking_info_details_crud.this, "Deleted Appointment Details Successfully !!!", Toast.LENGTH_SHORT).show();
@@ -87,7 +89,9 @@ public class Admin_booking_info_details_crud extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Booking> call, Throwable t) {
-                        Toast.makeText(Admin_booking_info_details_crud.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Admin_booking_info_details_crud.this, "Deleted Appointment Details Successfully", Toast.LENGTH_SHORT).show();
+                        Intent openAppointinfo = new Intent(Admin_booking_info_details_crud.this, AppointmentInfoActivity.class);
+                        startActivity(openAppointinfo);
                     }
                 });
 

@@ -139,16 +139,17 @@ public class UpdateProfileActivity extends Fragment {
     //image upload till here
 
     private void updateUser() {
-        String fname = firstname.getText().toString();
-        String lname = lastname.getText().toString();
-        String userage = age.getText().toString();
-        String userphone = phone.getText().toString();
-        String useremail = email.getText().toString();
-        String usergender = gender.getText().toString();
-        String usname = username.getText().toString();
+
         users users = new users(
-               fname,lname,userage,userphone,useremail,usergender,usname,
-                imageName
+                firstname.getText().toString(),
+                lastname.getText().toString(),
+                address.getText().toString(),
+                age.getText().toString(),
+                phone.getText().toString(),
+                email.getText().toString(),
+                gender.getText().toString(),
+                username.getText().toString(), imageName, 1
+
         );
 
         health_api registerUpdateApi = url.getInstance().create(health_api.class);

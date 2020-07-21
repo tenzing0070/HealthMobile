@@ -5,9 +5,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class Booking {
 
+
     @SerializedName("_id")
     @Expose
     private String id;
+
     @SerializedName("user")
     @Expose
     private users user;
