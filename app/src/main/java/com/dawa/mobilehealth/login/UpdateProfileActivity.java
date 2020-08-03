@@ -135,7 +135,6 @@ public class UpdateProfileActivity extends Fragment {
         return res;
     }
 
-
     //image upload till here
 
     private void updateUser() {
@@ -166,7 +165,6 @@ public class UpdateProfileActivity extends Fragment {
                 gender.setText(response.body().getGender());
                 email.setText(response.body().getEmail());
                 username.setText(response.body().getUsername());
-
 
                 Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
             }

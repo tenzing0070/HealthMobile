@@ -56,13 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnSignup = findViewById(R.id.btnRegister);
         chkRemember = findViewById(R.id.cbRemember);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-//        if (rememberMe.getString("username", "").isEmpty()) {
-//            chkRemember.setChecked(false);
-//        } else {
-//            etusername.setText(rememberMe.getString("username", ""));
-//            etpassword.setText(rememberMe.getString("password", ""));
-//            chkRemember.setChecked(true);
-//        }
+
         SharedPreferences sharedPreferences = getSharedPreferences("Mobile Health",MODE_PRIVATE);
         String token = sharedPreferences.getString("token","empty");
         String status = sharedPreferences.getString("status","isadmin");
@@ -141,46 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         }
-//        if (!username.isEmpty() && !password.isEmpty()) {
-//            users userLogin = new users(username, password);
-//            health_api loginApi = url.getInstance().create(health_api.class);
-//            Call<users> loginCall = loginApi.login(userLogin);
-//
-//            loginCall.enqueue(new Callback<users>() {
-//                @Override
-//                public void onResponse(Call<users> call, Response<users> response) {
-//                    System.out.println("The response is : " + response);
-//                    if (!response.isSuccessful()) {
-//                        Toast.makeText(LoginActivity.this, "Username or Password do not matched", Toast.LENGTH_SHORT).show();
-//                        vibrator.vibrate(3000);
-//                        return;
-//                    } else {
-//                        if (chkRemember.isChecked()) {
-//                            rememberMe = getSharedPreferences("User", Context.MODE_PRIVATE);
-//                            SharedPreferences.Editor editor = rememberMe.edit();
-//
-//                            editor.putString("username", username);
-//                            editor.putString("password", password);
-//                            editor.putString("firstName", response.body().getFirstname());
-//                            editor.commit();
-//                        } else {
-//                            rememberMe.edit().clear().commit();
-//                        }
-//                        url.token += response.body().getToken();
-//                        openDashboard();
-//                    }
-//                }
-//
-//                @Override
-//                public void onFailure(Call<users> call, Throwable t) {
-//                    Toast.makeText(LoginActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-//
-//                }
-//            });
-//
-//        } else {
-//            Toast.makeText(LoginActivity.this, "Enter Field", Toast.LENGTH_SHORT).show();
-//        }
+
     }
     public void openDashboard(){
         Intent openDash = new Intent(this, IntroActivity.class);

@@ -1,2 +1,3 @@
+include ':mobilehealthwearable'
 rootProject.name='Mobile Health'
 include ':app'
