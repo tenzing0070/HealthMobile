@@ -1,7 +1,6 @@
 package com.poll.mobilehealthwearable;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
@@ -19,9 +18,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MainActivity extends WearableActivity {
+public class MainActivity extends WearableActivity  {
 
-    Button btnLogin, btnSignup;
+    Button btnLogin;
     EditText etusername, etpassword;
 
     @Override

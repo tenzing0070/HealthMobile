@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+
+    tools:context=".FootStepsActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track Your Steps"
+        android:textColor="@color/colorRed"
+        android:textSize="13sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"/>
+
+    <ImageView
+        android:id="@+id/imgAdminBack"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/adminback"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:onClick="OpenAdminDashboard"
+        android:layout_marginRight="5dp"
+        />
+
+</RelativeLayout>
+
+    <TextView
+            android:id="@+id/tv_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Steps"
+            android:textSize="10sp"
+            android:textColor="@color/colorBlack" />
+
+       <TextView
+           android:id="@+id/tv_steps"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:text="0"
+           android:textSize="16sp"
+           android:textColor="@color/colorRed"
+           android:layout_below="@+id/tv_in"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/btnresetstep"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="Reset"
+        android:textSize="10sp"
+        android:textColor="#FFF"
+        android:background="@drawable/stopwatchbuttonend"
+        android:layout_marginTop="5dp"/>
+
+
+</LinearLayout>
+
+</LinearLayout>

@@ -40,6 +40,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".FootStepsActivity" />
+        <activity android:name=".StopwatchActivity" />
         <activity android:name=".UpdateHealthRecordActivity" />
         <activity android:name=".Dashboard" />
 

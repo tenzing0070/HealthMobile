@@ -2,37 +2,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_grey"
+    android:background="@color/colorBlue"
     android:padding="@dimen/box_inset_layout_padding"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity"
     tools:deviceIds="wear">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to login"/>_
+        android:text="Welcome to Login"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="5dp"/>_
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username"/>
+
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Username"/>
+        android:hint="Username"
+        android:textColor="@color/colorWhite" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"/>
+
     <EditText
         android:id="@+id/password"
         android:inputType="textPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
         android:hint="Password"/>
 
     <Button

@@ -1,5 +1,7 @@
 package com.poll.mobilehealthwearable;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -28,7 +30,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class UpdateHealthRecordActivity extends AppCompatActivity {
+public class UpdateHealthRecordActivity extends Activity {
 
     private Button  btnQrGenerate;
     private TextView firstname, lastname, age, address, phone, gender, email, weight, height, bloodgroup;
@@ -128,5 +130,10 @@ public class UpdateHealthRecordActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void OpenAdminDashboard(View view) {
+        Intent openWearableDash = new Intent(this, Dashboard.class);
+        startActivity(openWearableDash);
     }
 }

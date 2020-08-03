@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
@@ -8,7 +8,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
-        android:textSize="20sp"/>
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/txtfirstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Name "
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/welcome"
+        android:textColor="@color/colorRed"
+        android:layout_toRightOf="@+id/welcome" />
+
+    <ImageView
+        android:id="@+id/imgAdminLogout"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:src="@drawable/adminlogout"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        />
+
 
     <ImageView
         android:id="@+id/imgHealthrecord"
@@ -23,12 +48,61 @@
         android:id="@+id/tvhealthrecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Health\nRecords"
+        android:text="Health\nInfo"
         android:layout_marginTop="5dp"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/imgHealthrecord"
         android:textColor="#000000"/>
+
+    <ImageView
+        android:id="@+id/imgStopwatch"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:src="@drawable/stopwatch"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@+id/imgHealthrecord"
+        android:layout_below="@+id/welcome"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tvstopwatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fitness\nWatch"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="10sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_below="@+id/imgStopwatch"
+        android:layout_toRightOf="@+id/tvhealthrecord"/>
+
+
+
+        <ImageView
+            android:id="@+id/imgFootstep"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/footstep"
+            android:layout_below="@+id/welcome"
+            android:layout_toRightOf="@+id/imgStopwatch"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foot\nSteps"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="10sp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_below="@+id/imgFootstep"
+            android:layout_toRightOf="@+id/tvstopwatch"/>
+
 
 </RelativeLayout>
