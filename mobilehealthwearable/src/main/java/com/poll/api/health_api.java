@@ -2,7 +2,7 @@ package com.poll.api;
 
 
 
-import com.poll.model.staffs;
+
 import com.poll.model.users;
 
 
@@ -23,8 +23,7 @@ public interface health_api {
     Call<users> login(@Body users user);
 
 
-    @GET("staffs/staffdetails")
-    Call<List<staffs>> staffsDetails(@Header("Authorization") String token);
+
 
     @GET("users/me")
     Call<users> getUserDetails(@Header("Authorization") String token);

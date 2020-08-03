@@ -1,22 +1,25 @@
 package com.poll.model;
 
-public class staffs {
+public class doctors {
     private String _id;
 
     private String firstname;
     private String lastname;
-    private String age;
+    private String specialist;
     private String image;
     private String gender;
     private String price;
 
-    public staffs(String firstname, String lastname, String age, String image, String gender, String price ) {
+    private boolean expandable;
+
+    public doctors(String firstname, String lastname, String specialist, String image, String gender, String price ) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.age = age;
+        this.specialist = specialist;
         this.image = image;
         this.gender = gender;
         this.price = price;
+        this.expandable = false;
     }
 
     public String getFirstname() {
@@ -35,12 +38,12 @@ public class staffs {
         this.lastname = lastname;
     }
 
-    public String getAge() {
-        return age;
+    public String getSpecialist() {
+        return specialist;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setSpecialist(String specialist) {
+        this.specialist = specialist;
     }
 
     public String getImage() {
@@ -73,5 +76,13 @@ public class staffs {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
     }
 }

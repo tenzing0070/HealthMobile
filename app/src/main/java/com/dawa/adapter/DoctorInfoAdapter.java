@@ -1,7 +1,6 @@
 package com.dawa.adapter;
 
 import android.content.Context;
-
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,16 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
 import com.dawa.mobilehealth.R;
-
-
-
+import com.dawa.mobilehealth.admin.Admin_doc_info_details_crud;
 import com.dawa.model.doctors;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;

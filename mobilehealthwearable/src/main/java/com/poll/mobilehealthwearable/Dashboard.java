@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import com.poll.Url.url;
 import com.poll.api.health_api;
@@ -24,7 +24,7 @@ import retrofit2.Response;
 
 public class Dashboard extends Activity {
 
-    ImageView imgHealthrecord, imgAdminLogout, imgStopwatch, imgFootstep;
+    ImageView imgHealthrecord, imgAdminLogout, imgStopwatch, imgFootstep, imgDocAppointment;
     private TextView firstname;
 
 
@@ -38,6 +38,7 @@ public class Dashboard extends Activity {
         imgHealthrecord = findViewById(R.id.imgHealthrecord);
         imgStopwatch = findViewById(R.id.imgStopwatch);
         imgFootstep = findViewById(R.id.imgFootstep);
+        imgDocAppointment = findViewById(R.id.imgDocAppointment);
 
 
         openuserinfo();
@@ -68,6 +69,14 @@ public class Dashboard extends Activity {
             }
         });
 
+        imgDocAppointment.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openDocAppointment = new Intent(Dashboard.this, DocAppointmentActivity.class);
+                startActivity(openDocAppointment);
+            }
+        });
 
 
 
