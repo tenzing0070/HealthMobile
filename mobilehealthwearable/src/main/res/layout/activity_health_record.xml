@@ -344,14 +344,6 @@
     </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="10dp"
-        android:background="#000000"/>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -363,7 +355,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/qr"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="0dp"/>
 
 
         <Button
@@ -373,7 +365,7 @@
             android:text="QR \n generate"
             android:textColor="#FFFFFF"
             android:textSize="10sp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/qrPlaceHolder"
             android:layout_toRightOf="@id/qrPlaceHolder"

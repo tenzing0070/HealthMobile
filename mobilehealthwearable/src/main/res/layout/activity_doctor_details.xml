@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DoctorDetailActivity"
+    android:background="#e9ebee">
+
+
+
+
+<!--    </RelativeLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgUserDash"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/homefragment"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="UserDashOpen"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:textColor="@color/colorRed"
+            android:text="Appointment Info"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imgDocApp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/adminback"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="OpenDocApp" />
+
+        <RelativeLayout
+            android:id="@+id/rlline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#000000"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/imgUserDash"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfileDoc"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/doctor"
+            android:layout_below="@+id/rlline"/>
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textColor="#ee3a2f"
+            android:textSize="8sp"
+            android:layout_toEndOf="@+id/imgProfileDoc"
+            android:layout_toRightOf="@+id/imgProfileDoc"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_below="@+id/rlline"/>
+
+        <TextView
+            android:id="@+id/doctorFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="First Name"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            android:layout_toRightOf="@id/textViewName"
+            android:layout_marginLeft="0dp"
+            android:layout_below="@+id/rlline"
+            />
+
+        <TextView
+            android:id="@+id/doctorLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            android:layout_marginTop="0dp"
+            android:layout_below="@id/rlline"
+            android:layout_toRightOf="@id/doctorFirstName"
+            android:layout_marginLeft="1dp"/>
+
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender:"
+            android:textColor="#ee3a2f"
+            android:textSize="8sp"
+            android:layout_toRightOf="@+id/imgProfileDoc"
+            android:layout_below="@+id/textViewName"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"/>
+
+        <TextView
+            android:id="@+id/doctortextGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/doctorLastName"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/textViewGender"
+            android:text="Gender"
+            android:textColor="#000000"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/textViewSpecialist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Specialist:"
+            android:textColor="#ee3a2f"
+            android:textSize="8sp"
+            android:layout_below="@id/textViewGender"
+            android:layout_toRightOf="@id/imgProfileDoc"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"/>
+
+        <TextView
+            android:id="@+id/doctorSpecialist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="1dp"
+            android:text="Specialist"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            android:layout_below="@+id/doctortextGender"
+            android:layout_toRightOf="@id/textViewSpecialist"/>
+
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price(Nrs):"
+            android:textColor="#ee3a2f"
+            android:textSize="8sp"
+            android:layout_below="@+id/textViewSpecialist"
+            android:layout_toRightOf="@id/imgProfileDoc"/>
+
+        <TextView
+            android:id="@+id/viewholder_doctor_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="Amount"
+            android:textColor="#000000"
+            android:textSize="8sp"
+            android:layout_toRightOf="@+id/price"
+            android:layout_below="@+id/doctorSpecialist"
+            android:layout_marginLeft="1dp"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvbp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="0sp"
+        android:layout_marginLeft="5dp"
+        android:text="Appointment Information"
+        android:textColor="@color/colorWhite"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvinfo"
+        android:layout_width="160dp"
+        android:layout_height="10dp"
+        android:text="Appointment purpose"
+        android:textColor="#ee3a2f"
+        android:textSize="8sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/txtPurpose"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:textSize="8dp"
+        android:hint="Example: X-Ray, Backpain, Neckpain"
+        android:textColor="#000000"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Date"
+            android:textSize="8sp"
+            android:textColor="#ee3a2f"
+            android:layout_marginLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/tvDate"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="D/M/Y"
+            android:textSize="8sp"
+            android:inputType="date"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textColor="#ee3a2f"
+            android:textSize="8sp"
+            android:layout_toRightOf="@+id/tvDate"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"/>
+
+        <EditText
+            android:id="@+id/etTime"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:hint="Hrs/Min/AM/PM"
+            android:inputType="datetime"
+            android:textSize="8sp"
+            android:textColor="#000000"
+            android:layout_below="@id/tvTime"
+            android:layout_toRightOf="@+id/etDate"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+        <Button
+            android:id="@+id/btncontinue_booking"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="@color/colorRed"
+            android:text="Appoint"
+            android:textSize="10sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tvTime"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+</ScrollView>

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.poll.Url.url;
+import com.poll.mobilehealthwearable.DoctorDetailActivity;
 import com.poll.mobilehealthwearable.R;
 import com.poll.model.doctors;
 import com.squareup.picasso.Picasso;
@@ -63,21 +64,21 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorsVie
        holder.doctorGender.setText(doctors.getGender());
        holder.doctorPrice.setText(doctors.getPrice());
 
-//        holder.imgProfileDoc.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent viewDetails = new Intent(mContext, DoctorDetailActivity.class);
-//                viewDetails.putExtra("id",doctors.get_id());
-//                viewDetails.putExtra("firstname", doctors.getFirstname());
-//                viewDetails.putExtra("lastname", doctors.getLastname());
-//                viewDetails.putExtra("Specialist", doctors.getSpecialist());
-//                viewDetails.putExtra("gender", doctors.getGender());
-//               viewDetails.putExtra("price", doctors.getPrice());
-//               viewDetails.putExtra("image", doctors.getImage());
-//                mContext.startActivity(viewDetails);
-//
-//            }
-//        });
+        holder.imgProfileDoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewDetails = new Intent(mContext, DoctorDetailActivity.class);
+                viewDetails.putExtra("id",doctors.get_id());
+                viewDetails.putExtra("firstname", doctors.getFirstname());
+                viewDetails.putExtra("lastname", doctors.getLastname());
+                viewDetails.putExtra("Specialist", doctors.getSpecialist());
+                viewDetails.putExtra("gender", doctors.getGender());
+               viewDetails.putExtra("price", doctors.getPrice());
+               viewDetails.putExtra("image", doctors.getImage());
+                mContext.startActivity(viewDetails);
+
+            }
+        });
 
     }
 

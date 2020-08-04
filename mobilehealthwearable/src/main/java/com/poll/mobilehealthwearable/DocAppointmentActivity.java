@@ -26,8 +26,7 @@ public class DocAppointmentActivity extends Activity {
 
         DocAppointmentActivity activity;
         private RecyclerView recyclerView;
-        //search
-//        private SearchView searchDoctor;
+
 
         DoctorAdapter doctor_Adapter;
 
@@ -39,22 +38,10 @@ public class DocAppointmentActivity extends Activity {
 
 
         recyclerView = findViewById(R.id.doctor_list);
-//        searchDoctor =(SearchView) findViewById(R.id.search_view_doc);
+
         loaddoctors();
 
-//        searchDoctor.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                doctor_Adapter.getFilter().filter(newText);
-//                return false;
-//            }
-//        });
+
 
     }
 
