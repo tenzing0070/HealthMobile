@@ -27,6 +27,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
+
+        <activity android:name=".Appointment_info_details_crud" />
         <activity android:name=".admin.Admin_booking_info_details_crud"></activity>
         <activity android:name=".admin.Admin_feedback_info_details_crud" />
         <activity android:name=".admin.Admin_firstaid_info_details_crud" />

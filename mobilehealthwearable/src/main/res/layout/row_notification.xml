@@ -221,6 +221,15 @@
             android:layout_marginLeft="40dp"
             android:textColor="@color/colorBlue"/>
 
+            <ImageView
+                android:id="@+id/imgviewmorenotification"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/more"
+                android:layout_toRightOf="@+id/tv11"
+                android:layout_marginTop="65dp"
+                android:layout_marginLeft="35dp"/>
+
 
 </RelativeLayout>
     </LinearLayout>

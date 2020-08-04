@@ -1,11 +1,13 @@
 package com.poll.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.poll.Url.url;
+import com.poll.mobilehealthwearable.Appointment_info_details_crud;
 import com.poll.mobilehealthwearable.R;
 import com.poll.model.Booking;
 import com.squareup.picasso.Picasso;
@@ -73,6 +76,26 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 //       boolean isExpandble = bookingList.get(i).isExpandable();
 //       holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
 
+        holder.imgviewmoreNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Appointment_info_details_crud.class);
+                notify.putExtra("id", booking.getId());
+                notify.putExtra("username", booking.getUser().getUsername());
+                notify.putExtra("firstname", booking.getDoctors().getFirstname());
+                notify.putExtra("lastname", booking.getDoctors().getLastname());
+                notify.putExtra("gender", booking.getDoctors().getGender());
+                notify.putExtra("price", booking.getDoctors().getPrice());
+                notify.putExtra("specialist", booking.getDoctors().getSpecialist());
+                notify.putExtra("lastname",booking.getPurpose());
+                notify.putExtra("date",booking.getDate());
+                notify.putExtra("time",booking.getTime());
+                notify.putExtra("purpose",booking.getPurpose());
+                notify.putExtra("image", booking.getDoctors().getImage());
+                mContext.startActivity(notify);
+            }
+        });
     }
 
     @Override
@@ -120,8 +143,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         CircleImageView imgProfile;
         TextView docfirstname, doclastname, docspecialist, docgender, docprice, username, date, time, purpose;
-//        LinearLayout linearLayout;
-//        RelativeLayout expandableLayout;
+
+        ImageView imgviewmoreNotification;
 
 
         public NotificationsViewHolder(@NonNull View itemView) {
@@ -138,6 +161,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             time = itemView.findViewById(R.id.noti_Time);
             purpose = itemView.findViewById(R.id.noti_Purpose);
 
+            imgviewmoreNotification = itemView.findViewById(R.id.imgviewmorenotification);
 
         }
     }

@@ -1,15 +1,18 @@
 package com.dawa.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.dawa.mobilehealth.R;
+import com.dawa.mobilehealth.Appointment_info_details_crud;
 import com.dawa.model.Booking;
 import com.dawa.url.url;
 import com.squareup.picasso.Picasso;
@@ -67,8 +70,27 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.date.setText(booking.getDate());
         holder.time.setText(booking.getTime());
 
-//       boolean isExpandble = bookingList.get(i).isExpandable();
-//       holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
+        holder.imgviewmoreNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent notify = new Intent(mContext, Appointment_info_details_crud.class);
+                notify.putExtra("id", booking.getId());
+                notify.putExtra("username", booking.getUser().getUsername());
+                notify.putExtra("firstname", booking.getDoctors().getFirstname());
+                notify.putExtra("lastname", booking.getDoctors().getLastname());
+                notify.putExtra("gender", booking.getDoctors().getGender());
+                notify.putExtra("price", booking.getDoctors().getPrice());
+                notify.putExtra("specialist", booking.getDoctors().getSpecialist());
+                notify.putExtra("lastname",booking.getPurpose());
+                notify.putExtra("date",booking.getDate());
+                notify.putExtra("time",booking.getTime());
+                notify.putExtra("purpose",booking.getPurpose());
+                notify.putExtra("image", booking.getDoctors().getImage());
+                mContext.startActivity(notify);
+            }
+        });
+
 
     }
 
@@ -117,8 +139,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         CircleImageView imgProfile;
         TextView docfirstname, doclastname, docspecialist, docgender, docprice, username, date, time, purpose;
-//        LinearLayout linearLayout;
-//        RelativeLayout expandableLayout;
+        ImageView imgviewmoreNotification;
 
 
         public NotificationsViewHolder(@NonNull View itemView) {
@@ -135,17 +156,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             time = itemView.findViewById(R.id.noti_Time);
             purpose = itemView.findViewById(R.id.noti_Purpose);
 
-//            linearLayout = itemView.findViewById(R.id.linear_layout_notification);
-//            expandableLayout = itemView.findViewById(R.id.expandable_layout_notification);
-
-//            linearLayout.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Booking bookings = bookingList.get(getAdapterPosition());
-//                    bookings.setExpandable(!bookings.isExpandable());
-//                    notifyItemChanged(getAdapterPosition());
-//                }
-//            });
+            imgviewmoreNotification = itemView.findViewById(R.id.imgviewmorenotification);
 
         }
     }
