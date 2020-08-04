@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="10sp"
+            android:layout_marginLeft="55dp"
+            android:textColor="@color/colorRed"
+            android:text="My Appointments"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imgAdminBack"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/adminback"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentEnd="true"
+            android:onClick="OpenAdminDashboard"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

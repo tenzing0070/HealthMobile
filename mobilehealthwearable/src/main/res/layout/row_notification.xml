@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_notification"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c2c5">
+
+            <TextView
+                android:id="@+id/doc_noti_Specialist"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:hint=" Specialist"
+                android:textSize="10sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorRed"/>
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"
+                android:layout_toRightOf="@id/doc_noti_Specialist"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/noti_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Date"
+                android:textSize="10sp"
+                android:textColor="@color/colorRed"
+                android:layout_below="@+id/tv9"
+                android:layout_toRightOf="@+id/doc_noti_Specialist"
+                android:layout_marginLeft="1dp"/>
+
+            <TextView
+                android:id="@+id/tv10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Time"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"
+                android:layout_toRightOf="@+id/tv9"
+                android:layout_marginLeft="40dp"/>
+
+            <TextView
+                android:id="@+id/noti_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:textSize="10sp"
+                android:textColor="@color/colorRed"
+                android:layout_below="@+id/tv10"
+                android:layout_toRightOf="@+id/tv9"
+                android:layout_marginLeft="40dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfileDoc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="1dp"
+                android:src="@drawable/doctor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expandable_layout_notification">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textSize="10sp"
+            android:text="Doctor"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/doc_noti_Fname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:textSize="10sp"
+            android:layout_marginTop="0dp"
+            android:layout_below="@+id/tv1"
+            android:textColor="@color/colorRed"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/doc_noti_Lname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint=" Last Name"
+            android:textSize="10sp"
+            android:layout_marginTop="0dp"
+            android:textColor="@color/colorRed"
+            android:layout_below="@+id/doc_noti_Fname"
+            android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/tv1"
+                android:layout_toRightOf="@id/tv1"
+                android:text=" Gender"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/doc_noti_Gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:hint=" Gender"
+            android:textSize="10sp"
+            android:layout_below="@+id/tv4"
+            android:layout_toRightOf="@+id/tv1"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/colorRed"/>
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@id/tv4"
+            android:layout_toRightOf="@id/tv4"
+            android:text=" Service Charge"
+            android:textColor="#000000"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/doc_noti_Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/tv4"
+            android:layout_toRightOf="@id/tv4"
+            android:hint=" Price"
+            android:textSize="10sp"
+            android:layout_below="@+id/tv5"
+            android:textColor="@color/colorRed"/>
+
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/doc_noti_Lname"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Patient"
+                android:textColor="@color/colorBlack"
+                android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/user_noti_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:hint="Username"
+            android:textSize="10sp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/tv6"
+            android:textColor="@color/colorBlue"/>
+
+        <TextView
+            android:id="@+id/tv11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Purpose"
+            android:textSize="10sp"
+            android:layout_toRightOf="@+id/tv6"
+            android:layout_below="@+id/doc_noti_Gender"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="40dp"/>
+
+        <TextView
+            android:id="@+id/noti_Purpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:hint="Purpose"
+            android:textSize="10sp"
+            android:layout_toRightOf="@+id/tv6"
+            android:layout_below="@+id/tv11"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/colorBlue"/>
+
+
+</RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

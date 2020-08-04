@@ -40,6 +40,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".NotificationActivity" />
         <activity android:name=".DoctorDetailActivity" />
         <activity android:name=".DocAppointmentActivity" />
         <activity android:name=".FootStepsActivity" />

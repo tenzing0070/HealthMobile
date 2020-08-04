@@ -24,7 +24,7 @@ import retrofit2.Response;
 
 public class Dashboard extends Activity {
 
-    ImageView imgHealthrecord, imgAdminLogout, imgStopwatch, imgFootstep, imgDocAppointment;
+    ImageView imgHealthrecord, imgAdminLogout, imgStopwatch, imgFootstep, imgDocAppointment, imgNotification;
     private TextView firstname;
 
 
@@ -39,6 +39,7 @@ public class Dashboard extends Activity {
         imgStopwatch = findViewById(R.id.imgStopwatch);
         imgFootstep = findViewById(R.id.imgFootstep);
         imgDocAppointment = findViewById(R.id.imgDocAppointment);
+        imgNotification = findViewById(R.id.imgNotification);
 
 
         openuserinfo();
@@ -78,6 +79,15 @@ public class Dashboard extends Activity {
             }
         });
 
+
+        imgNotification.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent openNoti = new Intent(Dashboard.this, NotificationActivity.class);
+                startActivity(openNoti);
+            }
+        });
 
 
         imgAdminLogout.setOnClickListener(new View.OnClickListener() {

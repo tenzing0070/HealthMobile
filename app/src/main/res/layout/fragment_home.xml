@@ -138,7 +138,7 @@
                         android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
-                        android:layout_marginLeft="65sp"
+                        android:layout_marginLeft="45sp"
                         android:layout_below="@+id/imgHealthrecord"
                         android:layout_toRightOf="@+id/tvstopwatch"/>
 
@@ -159,7 +159,7 @@
                         android:textSize="12sp"
                         android:textColor="@color/colorBlack"
                         android:textStyle="bold"
-                        android:layout_marginLeft="60sp"
+                        android:layout_marginLeft="50sp"
                         android:layout_below="@+id/imgQrScan"
                         android:layout_toRightOf="@+id/tvhealthrecord"/>
 

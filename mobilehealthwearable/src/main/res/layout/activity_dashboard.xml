@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:text="Foot\nSteps"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="35dp"
             android:textSize="10sp"
             android:textColor="@color/colorBlack"
             android:textStyle="bold"
@@ -127,6 +127,30 @@
             android:layout_below="@+id/imgDocAppointment"
             android:layout_marginLeft="20dp"
            />
+
+    <ImageView
+        android:id="@+id/imgNotification"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:src="@drawable/notification"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@+id/imgDocAppointment"
+        android:layout_below="@+id/tvstopwatch"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvnotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="10sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_below="@+id/imgNotification"
+        android:layout_toRightOf="@+id/tvhealthrecord"/>
 
 
 

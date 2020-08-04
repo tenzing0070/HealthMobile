@@ -92,7 +92,7 @@ public class DoctorDetailActivity extends Activity {
 
     private void openNoti() {
         Toast.makeText(this,"Booked Successfully", Toast.LENGTH_SHORT).show();
-        Intent openNoti = new Intent(this, Dashboard.class);
+        Intent openNoti = new Intent(this, NotificationActivity.class);
         startActivity(openNoti);
     }
 
