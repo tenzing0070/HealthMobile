@@ -28,13 +28,13 @@
             android:src="@drawable/homefragment"
             android:layout_alignParentLeft="true"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:onClick="UserDashOpen"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="10sp"
             android:gravity="center"
             android:textColor="@color/colorRed"
@@ -48,7 +48,7 @@
             android:src="@drawable/adminback"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:onClick="OpenDocApp" />
 
         <RelativeLayout
@@ -56,10 +56,10 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:layout_marginEnd="10dp"
             android:background="#000000"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="4dp"
             android:layout_below="@+id/imgUserDash"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -118,7 +118,7 @@
             android:textSize="8sp"
             android:layout_toRightOf="@+id/imgProfileDoc"
             android:layout_below="@+id/textViewName"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="0dp"/>
 
         <TextView
@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/doctorLastName"
             android:layout_marginLeft="1dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_toRightOf="@+id/textViewGender"
             android:text="Gender"
             android:textColor="#000000"
@@ -142,14 +142,14 @@
             android:textSize="8sp"
             android:layout_below="@id/textViewGender"
             android:layout_toRightOf="@id/imgProfileDoc"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="0dp"/>
 
         <TextView
             android:id="@+id/doctorSpecialist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="1dp"
             android:text="Specialist"
             android:textColor="#000000"
@@ -193,7 +193,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="8sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="3dp"/>
 
     <TextView
         android:id="@+id/tvinfo"
@@ -207,12 +207,12 @@
 
     <EditText
         android:id="@+id/txtPurpose"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:gravity="center"
-        android:textSize="8dp"
+        android:textSize="10dp"
         android:hint="Example: X-Ray, Backpain, Neckpain"
         android:textColor="#000000"/>
 
@@ -224,7 +224,7 @@
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:text="Date"
             android:textSize="8sp"
             android:textColor="#ee3a2f"
@@ -236,7 +236,7 @@
             android:layout_height="30dp"
             android:layout_below="@+id/tvDate"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:hint="D/M/Y"
             android:textSize="8sp"
             android:inputType="date"
@@ -250,7 +250,7 @@
             android:textColor="#ee3a2f"
             android:textSize="8sp"
             android:layout_toRightOf="@+id/tvDate"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="40dp"/>
 
         <EditText
@@ -263,7 +263,7 @@
             android:textColor="#000000"
             android:layout_below="@id/tvTime"
             android:layout_toRightOf="@+id/etDate"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="10dp"/>
 
         <Button
@@ -274,7 +274,7 @@
             android:text="Appoint"
             android:textSize="10sp"
             android:textColor="@color/colorWhite"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/tvTime"/>
 

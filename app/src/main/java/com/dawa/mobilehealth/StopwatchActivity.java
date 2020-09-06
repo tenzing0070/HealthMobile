@@ -97,5 +97,6 @@ public class StopwatchActivity extends Fragment {
         });
 
         return view;
+
     }
 }

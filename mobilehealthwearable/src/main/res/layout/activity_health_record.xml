@@ -24,7 +24,7 @@
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         android:textColor="@color/colorRed"
         />
 
@@ -33,7 +33,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:src="@drawable/adminback"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="1dp"
             android:layout_alignParentEnd="true"
             android:onClick="OpenAdminDashboard"
             android:layout_marginRight="5dp"
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="10dp"
         android:background="#000000"/>
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="0dp"
         android:gravity="center">
 
     <androidx.cardview.widget.CardView
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
-        app:cardElevation="6dp"
+        app:cardElevation="1dp"
         app:cardCornerRadius="12dp"
         android:layout_margin="12dp">
 
@@ -72,7 +72,7 @@
         android:layout_height="match_parent"
         android:layout_row="0"
         android:layout_column="0"
-        android:padding="10dp"
+        android:padding="0dp"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -365,7 +365,7 @@
             android:text="QR \n generate"
             android:textColor="#FFFFFF"
             android:textSize="10sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@id/qrPlaceHolder"
             android:layout_toRightOf="@id/qrPlaceHolder"

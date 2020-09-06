@@ -13,34 +13,66 @@
         android:scaleType="centerCrop"
         android:src="@drawable/background_image_one_signup" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
-        android:text="mHealth Registration"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.850"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        tools:ignore="MissingConstraints">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgProfile"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/noimage"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2"
-        tools:ignore="MissingConstraints"
-        android:layout_marginTop="60dp"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/noimage"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            android:text=" Registration"
+            android:textColor="@android:color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/imgProfile"
+            android:layout_marginLeft="20dp"/>
+
+    </RelativeLayout>
+
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:id="@+id/imgProfile"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:src="@drawable/noimage"-->
+<!--        app:civ_border_color="#FF000000"-->
+<!--        app:civ_border_width="2dp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textView2"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        android:layout_marginTop="60dp"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text=" Registration"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.850"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+
 
     <LinearLayout
         android:layout_width="match_parent"
