@@ -38,7 +38,6 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
-
     ImageView imgProfile, imgstopwatch, imgemergencycall, imghealthrecord, imgqrscan;
     private TextView firstname;
     LinearLayout llfootstep, llbmiscale, lldocappointment, llheartmonitor, llhealthquiz;
@@ -53,29 +52,25 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-
-
         firstname = v.findViewById(R.id.txtfirstname);
         imgProfile = v.findViewById(R.id.imgProfilee);
         imgstopwatch = v.findViewById(R.id.imgStopwatch);
         imghealthrecord = v.findViewById(R.id.imgHealthrecord);
         imgemergencycall = v.findViewById(R.id.imgEmergencyCall);
         imgqrscan = v.findViewById(R.id.imgQrScan);
-
         llfootstep = v.findViewById(R.id.llFootstep);
         llbmiscale = v.findViewById(R.id.llBmiScale);
         lldocappointment = v.findViewById(R.id.llDocAppointment);
         llheartmonitor = v.findViewById(R.id.llHeartMonitor);
         llhealthquiz = v.findViewById(R.id.llHealthQuiz);
-
         openuserinfo();
-
         //UserProfile
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateProfileActivity()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        new UpdateProfileActivity()).commit();
             }
         });
 
@@ -84,7 +79,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new StopwatchActivity()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        new StopwatchActivity()).commit();
             }
         });
 
@@ -93,7 +89,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new UpdateHealthRecordActivity()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        new UpdateHealthRecordActivity()).commit();
             }
         });
 
@@ -107,10 +104,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
-
-
-//Emergency Call
+        //Emergency Call
         imgemergencycall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,18 +118,18 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new FootStepsActivity()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        new FootStepsActivity()).commit();
 //                Intent openStepCount = new Intent(getActivity(), FootStepsActivity.class);
 //                startActivity(openStepCount);
             }
         });
-
-
         //BMI
         llbmiscale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new BmiActivity()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
+                        new BmiActivity()).commit();
             }
         });
 
@@ -158,8 +152,6 @@ public class HomeFragment extends Fragment {
                 startActivity(openHeartDash);
             }
         });
-
-
 
         //Quiz health
         llhealthquiz.setOnClickListener(new View.OnClickListener() {

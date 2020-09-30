@@ -24,10 +24,8 @@ import com.dawa.mobilehealth.admin.UserActivity;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HeartRateMonitorActivity extends Activity {
-
     private static final String TAG = "HeartRateMonitor";
     private static final AtomicBoolean processing = new AtomicBoolean(false);
-
     private static SurfaceHolder previewHolder = null;
     private static Camera camera = null;
     @SuppressLint("StaticFieldLeak")
@@ -38,23 +36,17 @@ public class HeartRateMonitorActivity extends Activity {
     private static TextView imgavgtxt = null;
     @SuppressLint("StaticFieldLeak")
     private static TextView rollavgtxt = null;
-
     private static WakeLock wakeLock = null;
-
     private static int averageIndex = 0;
     private static final int averageArraySize = 4;
     private static final int[] averageArray = new int[averageArraySize];
-
     public static enum TYPE {
         GREEN, RED
     };
-
     private static TYPE currentType = TYPE.GREEN;
-
     public static TYPE getCurrent() {
         return currentType;
     }
-
     private static int beatsIndex = 0;
     private static final int beatsArraySize = 3;
     private static final int[] beatsArray = new int[beatsArraySize];

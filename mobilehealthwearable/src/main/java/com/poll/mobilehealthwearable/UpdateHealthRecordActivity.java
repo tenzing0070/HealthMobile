@@ -35,8 +35,6 @@ public class UpdateHealthRecordActivity extends Activity {
     private Button  btnQrGenerate;
     private TextView firstname, lastname, age, address, phone, gender, email, weight, height, bloodgroup;
     ImageView imgProfile, qrImage;
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

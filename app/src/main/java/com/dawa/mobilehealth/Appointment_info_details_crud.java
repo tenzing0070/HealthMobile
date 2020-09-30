@@ -28,7 +28,6 @@ import retrofit2.Response;
 
 public class Appointment_info_details_crud extends AppCompatActivity {
 
-
     TextView username, purpose, date, time, docfirstname, doclastname, docgender,
             docprice, docspecialist;
     CircleImageView imgProfile;
@@ -51,8 +50,6 @@ public class Appointment_info_details_crud extends AppCompatActivity {
         docprice = findViewById(R.id.doc_noti_Price);
         docspecialist = findViewById(R.id.doc_noti_Specialist);
         imgProfile = findViewById(R.id.imgProfileDoc);
-
-
 
         bookinginfodelete = findViewById(R.id.imgBookingDelete);
 
@@ -86,25 +83,27 @@ public class Appointment_info_details_crud extends AppCompatActivity {
                     public void onResponse(Call<Booking> call, Response<Booking> response) {
                         if (!response.isSuccessful()) {
 
-                            Toast.makeText(Appointment_info_details_crud.this, "Deleted Appointment Details Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Appointment_info_details_crud.this,
+                                    "Deleted Appointment Details Successfully", Toast.LENGTH_SHORT).show();
 
                             Intent openAppointinfo = new Intent(Appointment_info_details_crud.this, MainActivity.class);
                             startActivity(openAppointinfo);
 
                         }
-                        Toast.makeText(Appointment_info_details_crud.this, "Deleted Appointment Details Successfully !!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Appointment_info_details_crud.this,
+                                "Deleted Appointment Details Successfully !!!", Toast.LENGTH_SHORT).show();
                         Intent openAppointinfo = new Intent(Appointment_info_details_crud.this, MainActivity.class);
                         startActivity(openAppointinfo);
                     }
 
                     @Override
                     public void onFailure(Call<Booking> call, Throwable t) {
-                        Toast.makeText(Appointment_info_details_crud.this, "Deleted Appointment Details Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Appointment_info_details_crud.this,
+                                "Deleted Appointment Details Successfully", Toast.LENGTH_SHORT).show();
                         Intent openAppointinfo = new Intent(Appointment_info_details_crud.this, MainActivity.class);
                         startActivity(openAppointinfo);
                     }
                 });
-
 
             }
         });

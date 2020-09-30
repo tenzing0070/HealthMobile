@@ -1,4 +1,4 @@
-package com.dawa;
+package com.dawa.mobilehealth;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
